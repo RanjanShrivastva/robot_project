@@ -23,7 +23,7 @@ app_login_01
 
 api_testing
     Create Session    mySession    https://gorest.co.in
-    ${response}    Get Request    mySession    /public/v2/posts
+    ${response}    GET On Session    mySession    /public/v2/posts
     log    ${response.status_code}
     log    ${response.content}
     log    ${response.headers}
