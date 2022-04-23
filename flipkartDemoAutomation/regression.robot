@@ -19,6 +19,7 @@ app_login_01
     ${user_name}    get text    //*[@class='exehdJ']
     log    ${user_name}
     Should Be Equal    ${user_name}    Ranjan
+    Click Element    //* [@class='_2KpZ6l _2HKlqd _3AWRsL']4555
     Close Browser
 
 api_testing
