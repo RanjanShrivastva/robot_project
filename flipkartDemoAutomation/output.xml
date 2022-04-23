@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.7.0 on win32)" generated="20220422 04:18:56.133" rpa="false" schemaversion="3">
+<suite id="s1" name="Regression" source="D:\demoProjects\flipkartDemoAutomation\regression.robot">
+<test id="s1-t1" name="app_login_01" line="5">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://www.flipkart.com/</arg>
+<arg>gc</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220422 04:18:56.305" level="INFO">Opening browser 'gc' to base url 'https://www.flipkart.com/'.</msg>
+<status status="PASS" starttime="20220422 04:18:56.305" endtime="20220422 04:18:59.238"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220422 04:18:59.238" endtime="20220422 04:18:59.376"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220422 04:19:01.384" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220422 04:18:59.376" endtime="20220422 04:19:01.384"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//* [@class='_2IX_2- VJZDxU']</arg>
+<arg>9738308627</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220422 04:19:01.384" level="INFO">Typing text '9738308627' into text field '//* [@class='_2IX_2- VJZDxU']'.</msg>
+<status status="PASS" starttime="20220422 04:19:01.384" endtime="20220422 04:19:01.508"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220422 04:19:03.521" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220422 04:19:01.509" endtime="20220422 04:19:03.521"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//* [@type='password']</arg>
+<arg>Flipkart2022@@@</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220422 04:19:03.521" level="INFO">Typing text 'Flipkart2022@@@' into text field '//* [@type='password']'.</msg>
+<status status="PASS" starttime="20220422 04:19:03.521" endtime="20220422 04:19:03.639"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220422 04:19:05.650" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220422 04:19:03.639" endtime="20220422 04:19:05.650"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//* [@class='_2KpZ6l _2HKlqd _3AWRsL']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220422 04:19:05.650" level="INFO">Clicking element '//* [@class='_2KpZ6l _2HKlqd _3AWRsL']'.</msg>
+<status status="PASS" starttime="20220422 04:19:05.650" endtime="20220422 04:19:05.719"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220422 04:19:07.721" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220422 04:19:05.720" endtime="20220422 04:19:07.721"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220422 04:19:08.091" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220422 04:19:07.721" endtime="20220422 04:19:08.091"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220422 04:19:08.092" endtime="20220422 04:19:10.212"/>
+</kw>
+<tag>reg</tag>
+<status status="PASS" starttime="20220422 04:18:56.289" endtime="20220422 04:19:10.212"/>
+</test>
+<status status="PASS" starttime="20220422 04:18:56.133" endtime="20220422 04:19:10.212"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">reg</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Regression">Regression</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
