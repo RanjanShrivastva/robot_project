@@ -1,2 +1,2 @@
-cd C:\ProgramData\Jenkins\.jenkins\workspace\robo_project\flipkartDemoAutomation
+cd robot regression.robot
 robot regression.robot
