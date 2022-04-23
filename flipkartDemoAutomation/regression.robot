@@ -16,6 +16,9 @@ app_login_01
     Click Element    //* [@class='_2KpZ6l _2HKlqd _3AWRsL']
     sleep    2
     Capture Page Screenshot
+    ${user_name}    get text    //*[@class='exehdJ']
+    log    ${user_name}
+    Should Be Equal    ${user_name}    Ranjan
     Close Browser
 
 api_testing
