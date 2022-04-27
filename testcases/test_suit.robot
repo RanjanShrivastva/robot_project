@@ -3,6 +3,7 @@ Library           SeleniumLibrary
 Library           requests
 Library           RequestsLibrary
 Library           OperatingSystem
+Resource          ../userDefinedKeywords/UDK.robot
 
 *** Test Cases ***
 app_login_01
@@ -49,7 +50,6 @@ api_testing_put_example
     Create Session    mySession    https://reqres.in/
     ${data}    Get File    D:\\demoProjects\\flipkartDemoAutomation\\putdata.txt
     log    ${data}
-    Comment    ${data}    Evaluate    json.dumps($data)    json
     ${headers}    Create Dictionary    Content-Type=application/json
     ${response}    POST On Session    mySession    api/users/2    ${data}    ${headers}
     log    ${response.status_code}
@@ -59,9 +59,15 @@ api_testing_put_example
 api_testing_delete_example
     Comment    Creating session
     Create Session    mySession    https://reqres.in/
-    Comment    ${data}    Evaluate    json.dumps($data)    json
-    ${headers}    Create Dictionary    Content-Type=application/json
     ${response}    Delete On Session    mySession    api/users/2
     log    ${response.status_code}
     log    ${response.content}
     log    ${response.headers}
+
+pom_app_login
+    [Documentation]    This test case is desgined in POM
+    [Tags]    regression
+    # Login to application
+    appLogin
+    #Closing all running browsers
+    Close All Browsers

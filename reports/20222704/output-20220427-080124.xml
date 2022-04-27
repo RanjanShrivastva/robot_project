@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.7.0 on win32)" generated="20220427 08:01:24.153" rpa="false" schemaversion="3">
+<suite id="s1" name="demoProjects" source="D:\demoProjects">
+<suite id="s1-s1" name="Testcases" source="D:\demoProjects\testcases">
+<suite id="s1-s1-s1" name="Test Suit" source="D:\demoProjects\testcases\test_suit.robot">
+<test id="s1-s1-s1-t1" name="pom_app_login" line="67">
+<kw name="appLogin" library="UDK">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${app_URL}</arg>
+<arg>${browserName}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220427 08:01:24.716" level="INFO">Opening browser 'gc' to base url 'https://www.flipkart.com/'.</msg>
+<status status="PASS" starttime="20220427 08:01:24.716" endtime="20220427 08:01:28.242"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220427 08:01:28.242" endtime="20220427 08:01:28.393"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${delay_short}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220427 08:01:30.404" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220427 08:01:28.393" endtime="20220427 08:01:30.404"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${textbox_username_xpath}</arg>
+<arg>${username_value}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220427 08:01:30.404" level="INFO">Typing text '9738308627' into text field '//* [@class='_2IX_2- VJZDxU']'.</msg>
+<status status="PASS" starttime="20220427 08:01:30.404" endtime="20220427 08:01:30.542"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${delay_short}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220427 08:01:32.544" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220427 08:01:30.542" endtime="20220427 08:01:32.544"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${textbox_password_xpath}</arg>
+<arg>${password_value}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220427 08:01:32.544" level="INFO">Typing text 'Flipkart2022@@@' into text field '//* [@type='password']'.</msg>
+<status status="PASS" starttime="20220427 08:01:32.544" endtime="20220427 08:01:32.695"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${delay_short}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220427 08:01:34.708" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220427 08:01:32.695" endtime="20220427 08:01:34.709"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${button_login_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220427 08:01:34.709" level="INFO">Clicking element '//* [@class='_2KpZ6l _2HKlqd _3AWRsL']'.</msg>
+<status status="PASS" starttime="20220427 08:01:34.709" endtime="20220427 08:01:34.784"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${delay_short}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220427 08:01:36.798" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220427 08:01:34.784" endtime="20220427 08:01:36.798"/>
+</kw>
+<status status="PASS" starttime="20220427 08:01:24.716" endtime="20220427 08:01:36.798"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220427 08:01:36.798" endtime="20220427 08:01:39.109"/>
+</kw>
+<doc>This test case is desgined in POM</doc>
+<tag>regression</tag>
+<status status="PASS" starttime="20220427 08:01:24.716" endtime="20220427 08:01:39.109"/>
+</test>
+<status status="PASS" starttime="20220427 08:01:24.247" endtime="20220427 08:01:39.109"/>
+</suite>
+<status status="PASS" starttime="20220427 08:01:24.247" endtime="20220427 08:01:39.109"/>
+</suite>
+<status status="PASS" starttime="20220427 08:01:24.200" endtime="20220427 08:01:39.109"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">regression</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="demoProjects">demoProjects</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Testcases">demoProjects.Testcases</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="Test Suit">demoProjects.Testcases.Test Suit</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
