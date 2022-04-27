@@ -6,3 +6,4 @@ ${delay_short}    2
 ${delay_medium}    5
 ${delay_long}     10
 ${browserName}    gc
+${responseCode}    200
