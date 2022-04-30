@@ -1,7 +1,6 @@
 *** Settings ***
-Test Template     Invalid Login2
+Test Template     #Invalid Login2
 Resource          ../common/commom_libraries.robot
-Library           DataDriver    ../testData/user_login_data.xlsx    sheet_name=Sheet1
 
 *** Variables ***
 
@@ -142,26 +141,6 @@ app_alert
     Open Browser    https://demoqa.com/alerts    gc    alias=first_window
     Maximize Browser Window
     Click Element    //button[@id='alertButton']
-    aler
-
-app_ddt_loginTestUsingExcelData
-    [Setup]    Open My Browser
-    Comment    Invalid Login2    r@gmail.com    ${EMPTY}
-    log    ${username}    ${password}
-    [Teardown]    Close All Browser
-
-app_ddt_loginTestUsingExcelData_test
-    [Setup]    Open My Browser
-    Invalid Login2    ${username}    ${password}
-    Comment    log    ${username}    ${password}
-    log    ${username}
-    log    ${password}
-    [Teardown]    Close All Browser
+    Handle Alert    accept
 
 *** Keywords ***
-Invalid Login2
-    [Arguments]    ${username}    ${password}
-    Input Username    ${username}
-    Input Password    ${password}
-    Click On Login Button
-    Error Message Should Be Visible When Password Is Empty
