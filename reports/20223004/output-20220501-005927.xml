@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.7.0 on win32)" generated="20220501 00:59:27.975" rpa="false" schemaversion="3">
+<suite id="s1" name="demoProjects" source="D:\demoProjects">
+<suite id="s1-s1" name="Testcases" source="D:\demoProjects\testcases">
+<suite id="s1-s1-s1" name="GUI scripts" source="D:\demoProjects\testcases\GUI_scripts.robot">
+<test id="s1-s1-s1-t1" name="app_ddt_loginTestUsingExcelData_test" line="153">
+<kw name="Open My Browser" library="UDK" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${app_URL}</arg>
+<arg>${browserName}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220501 00:59:29.985" level="INFO">Opening browser 'gc' to base url 'https://www.flipkart.com/'.</msg>
+<status status="PASS" starttime="20220501 00:59:29.985" endtime="20220501 00:59:34.568"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220501 00:59:34.568" endtime="20220501 00:59:34.704"/>
+</kw>
+<status status="PASS" starttime="20220501 00:59:29.985" endtime="20220501 00:59:34.704"/>
+</kw>
+<kw name="Invalid Login2">
+<arg>A@gmail.com</arg>
+<arg>Namma2020@@@</arg>
+<kw name="Input Username" library="UDK">
+<arg>${username}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${textbox_username_xpath}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220501 00:59:34.704" level="INFO">Typing text 'A@gmail.com' into text field '//* [@class='_2IX_2- VJZDxU']'.</msg>
+<status status="PASS" starttime="20220501 00:59:34.704" endtime="20220501 00:59:34.914"/>
+</kw>
+<status status="PASS" starttime="20220501 00:59:34.704" endtime="20220501 00:59:34.914"/>
+</kw>
+<kw name="Input Password" library="UDK">
+<arg>${password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${textbox_password_xpath}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220501 00:59:34.929" level="INFO">Typing text 'Namma2020@@@' into text field '//* [@type='password']'.</msg>
+<status status="PASS" starttime="20220501 00:59:34.929" endtime="20220501 00:59:35.077"/>
+</kw>
+<status status="PASS" starttime="20220501 00:59:34.914" endtime="20220501 00:59:35.078"/>
+</kw>
+<kw name="Click On Login Button" library="UDK">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${button_login_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220501 00:59:35.078" level="INFO">Clicking element '//* [@class='_2KpZ6l _2HKlqd _3AWRsL']'.</msg>
+<status status="PASS" starttime="20220501 00:59:35.078" endtime="20220501 00:59:35.150"/>
+</kw>
+<status status="PASS" starttime="20220501 00:59:35.078" endtime="20220501 00:59:35.150"/>
+</kw>
+<kw name="Error Message Should Be Visible When Password Is Empty" library="UDK">
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Please enter Password</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220501 00:59:35.616" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220501 00:59:35.616" level="FAIL">Page should have contained text 'Please enter Password' but did not.</msg>
+<status status="FAIL" starttime="20220501 00:59:35.158" endtime="20220501 00:59:35.616"/>
+</kw>
+<status status="FAIL" starttime="20220501 00:59:35.158" endtime="20220501 00:59:35.624"/>
+</kw>
+<status status="FAIL" starttime="20220501 00:59:34.704" endtime="20220501 00:59:35.624"/>
+</kw>
+<kw name="Close All Browser" library="UDK" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220501 00:59:35.624" endtime="20220501 00:59:37.833"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220501 00:59:37.833" endtime="20220501 00:59:37.833"/>
+</kw>
+<status status="PASS" starttime="20220501 00:59:35.624" endtime="20220501 00:59:37.833"/>
+</kw>
+<status status="FAIL" starttime="20220501 00:59:29.969" endtime="20220501 00:59:37.833">Page should have contained text 'Please enter Password' but did not.</status>
+</test>
+<test id="s1-s1-s1-t2" name="app_ddt_loginTestUsingExcelData_test" line="153">
+<kw name="Open My Browser" library="UDK" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${app_URL}</arg>
+<arg>${browserName}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220501 00:59:37.833" level="INFO">Opening browser 'gc' to base url 'https://www.flipkart.com/'.</msg>
+<status status="PASS" starttime="20220501 00:59:37.833" endtime="20220501 00:59:41.399"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220501 00:59:41.399" endtime="20220501 00:59:41.543"/>
+</kw>
+<status status="PASS" starttime="20220501 00:59:37.833" endtime="20220501 00:59:41.543"/>
+</kw>
+<kw name="Invalid Login2">
+<arg>B@outlook.com</arg>
+<arg>Namma2021@@@</arg>
+<kw name="Input Username" library="UDK">
+<arg>${username}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${textbox_username_xpath}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220501 00:59:41.543" level="INFO">Typing text 'B@outlook.com' into text field '//* [@class='_2IX_2- VJZDxU']'.</msg>
+<status status="PASS" starttime="20220501 00:59:41.543" endtime="20220501 00:59:41.750"/>
+</kw>
+<status status="PASS" starttime="20220501 00:59:41.543" endtime="20220501 00:59:41.750"/>
+</kw>
+<kw name="Input Password" library="UDK">
+<arg>${password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${textbox_password_xpath}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220501 00:59:41.750" level="INFO">Typing text 'Namma2021@@@' into text field '//* [@type='password']'.</msg>
+<status status="PASS" starttime="20220501 00:59:41.750" endtime="20220501 00:59:41.895"/>
+</kw>
+<status status="PASS" starttime="20220501 00:59:41.750" endtime="20220501 00:59:41.903"/>
+</kw>
+<kw name="Click On Login Button" library="UDK">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${button_login_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220501 00:59:41.903" level="INFO">Clicking element '//* [@class='_2KpZ6l _2HKlqd _3AWRsL']'.</msg>
+<status status="PASS" starttime="20220501 00:59:41.903" endtime="20220501 00:59:41.981"/>
+</kw>
+<status status="PASS" starttime="20220501 00:59:41.903" endtime="20220501 00:59:41.981"/>
+</kw>
+<kw name="Error Message Should Be Visible When Password Is Empty" library="UDK">
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Please enter Password</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220501 00:59:42.383" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220501 00:59:42.383" level="FAIL">Page should have contained text 'Please enter Password' but did not.</msg>
+<status status="FAIL" starttime="20220501 00:59:41.981" endtime="20220501 00:59:42.383"/>
+</kw>
+<status status="FAIL" starttime="20220501 00:59:41.981" endtime="20220501 00:59:42.391"/>
+</kw>
+<status status="FAIL" starttime="20220501 00:59:41.543" endtime="20220501 00:59:42.391"/>
+</kw>
+<kw name="Close All Browser" library="UDK" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220501 00:59:42.391" endtime="20220501 00:59:44.583"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220501 00:59:44.583" endtime="20220501 00:59:44.583"/>
+</kw>
+<status status="PASS" starttime="20220501 00:59:42.391" endtime="20220501 00:59:44.583"/>
+</kw>
+<status status="FAIL" starttime="20220501 00:59:37.833" endtime="20220501 00:59:44.583">Page should have contained text 'Please enter Password' but did not.</status>
+</test>
+<test id="s1-s1-s1-t3" name="app_ddt_loginTestUsingExcelData_test" line="153">
+<kw name="Open My Browser" library="UDK" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${app_URL}</arg>
+<arg>${browserName}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220501 00:59:44.583" level="INFO">Opening browser 'gc' to base url 'https://www.flipkart.com/'.</msg>
+<status status="PASS" starttime="20220501 00:59:44.583" endtime="20220501 00:59:49.623"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220501 00:59:49.623" endtime="20220501 00:59:49.759"/>
+</kw>
+<status status="PASS" starttime="20220501 00:59:44.583" endtime="20220501 00:59:49.759"/>
+</kw>
+<kw name="Invalid Login2">
+<arg>C@gmail.com</arg>
+<arg>Namma2022@@@</arg>
+<kw name="Input Username" library="UDK">
+<arg>${username}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${textbox_username_xpath}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220501 00:59:49.765" level="INFO">Typing text 'C@gmail.com' into text field '//* [@class='_2IX_2- VJZDxU']'.</msg>
+<status status="PASS" starttime="20220501 00:59:49.765" endtime="20220501 00:59:49.998"/>
+</kw>
+<status status="PASS" starttime="20220501 00:59:49.759" endtime="20220501 00:59:50.002"/>
+</kw>
+<kw name="Input Password" library="UDK">
+<arg>${password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${textbox_password_xpath}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220501 00:59:50.002" level="INFO">Typing text 'Namma2022@@@' into text field '//* [@type='password']'.</msg>
+<status status="PASS" starttime="20220501 00:59:50.002" endtime="20220501 00:59:50.147"/>
+</kw>
+<status status="PASS" starttime="20220501 00:59:50.002" endtime="20220501 00:59:50.147"/>
+</kw>
+<kw name="Click On Login Button" library="UDK">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${button_login_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220501 00:59:50.147" level="INFO">Clicking element '//* [@class='_2KpZ6l _2HKlqd _3AWRsL']'.</msg>
+<status status="PASS" starttime="20220501 00:59:50.147" endtime="20220501 00:59:50.227"/>
+</kw>
+<status status="PASS" starttime="20220501 00:59:50.147" endtime="20220501 00:59:50.227"/>
+</kw>
+<kw name="Error Message Should Be Visible When Password Is Empty" library="UDK">
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Please enter Password</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220501 00:59:50.681" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220501 00:59:50.681" level="FAIL">Page should have contained text 'Please enter Password' but did not.</msg>
+<status status="FAIL" starttime="20220501 00:59:50.227" endtime="20220501 00:59:50.681"/>
+</kw>
+<status status="FAIL" starttime="20220501 00:59:50.227" endtime="20220501 00:59:50.681"/>
+</kw>
+<status status="FAIL" starttime="20220501 00:59:49.759" endtime="20220501 00:59:50.681"/>
+</kw>
+<kw name="Close All Browser" library="UDK" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220501 00:59:50.689" endtime="20220501 00:59:52.859"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220501 00:59:52.859" endtime="20220501 00:59:52.859"/>
+</kw>
+<status status="PASS" starttime="20220501 00:59:50.689" endtime="20220501 00:59:52.859"/>
+</kw>
+<status status="FAIL" starttime="20220501 00:59:44.583" endtime="20220501 00:59:52.859">Page should have contained text 'Please enter Password' but did not.</status>
+</test>
+<test id="s1-s1-s1-t4" name="app_ddt_loginTestUsingExcelData_test" line="153">
+<kw name="Open My Browser" library="UDK" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${app_URL}</arg>
+<arg>${browserName}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220501 00:59:52.859" level="INFO">Opening browser 'gc' to base url 'https://www.flipkart.com/'.</msg>
+<status status="PASS" starttime="20220501 00:59:52.859" endtime="20220501 00:59:56.960"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220501 00:59:56.960" endtime="20220501 00:59:57.109"/>
+</kw>
+<status status="PASS" starttime="20220501 00:59:52.859" endtime="20220501 00:59:57.109"/>
+</kw>
+<kw name="Invalid Login2">
+<arg>D@outlook.com</arg>
+<arg>Namma2023@@@</arg>
+<kw name="Input Username" library="UDK">
+<arg>${username}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${textbox_username_xpath}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220501 00:59:57.109" level="INFO">Typing text 'D@outlook.com' into text field '//* [@class='_2IX_2- VJZDxU']'.</msg>
+<status status="PASS" starttime="20220501 00:59:57.109" endtime="20220501 00:59:57.325"/>
+</kw>
+<status status="PASS" starttime="20220501 00:59:57.109" endtime="20220501 00:59:57.325"/>
+</kw>
+<kw name="Input Password" library="UDK">
+<arg>${password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${textbox_password_xpath}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220501 00:59:57.325" level="INFO">Typing text 'Namma2023@@@' into text field '//* [@type='password']'.</msg>
+<status status="PASS" starttime="20220501 00:59:57.325" endtime="20220501 00:59:57.483"/>
+</kw>
+<status status="PASS" starttime="20220501 00:59:57.325" endtime="20220501 00:59:57.483"/>
+</kw>
+<kw name="Click On Login Button" library="UDK">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${button_login_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220501 00:59:57.483" level="INFO">Clicking element '//* [@class='_2KpZ6l _2HKlqd _3AWRsL']'.</msg>
+<status status="PASS" starttime="20220501 00:59:57.483" endtime="20220501 00:59:57.579"/>
+</kw>
+<status status="PASS" starttime="20220501 00:59:57.483" endtime="20220501 00:59:57.579"/>
+</kw>
+<kw name="Error Message Should Be Visible When Password Is Empty" library="UDK">
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Please enter Password</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220501 00:59:58.052" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220501 00:59:58.052" level="FAIL">Page should have contained text 'Please enter Password' but did not.</msg>
+<status status="FAIL" starttime="20220501 00:59:57.579" endtime="20220501 00:59:58.055"/>
+</kw>
+<status status="FAIL" starttime="20220501 00:59:57.579" endtime="20220501 00:59:58.055"/>
+</kw>
+<status status="FAIL" starttime="20220501 00:59:57.109" endtime="20220501 00:59:58.055"/>
+</kw>
+<kw name="Close All Browser" library="UDK" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220501 00:59:58.055" endtime="20220501 01:00:00.282"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220501 01:00:00.282" endtime="20220501 01:00:00.282"/>
+</kw>
+<status status="PASS" starttime="20220501 00:59:58.055" endtime="20220501 01:00:00.282"/>
+</kw>
+<status status="FAIL" starttime="20220501 00:59:52.859" endtime="20220501 01:00:00.282">Page should have contained text 'Please enter Password' but did not.</status>
+</test>
+<test id="s1-s1-s1-t5" name="app_ddt_loginTestUsingExcelData_test" line="153">
+<kw name="Open My Browser" library="UDK" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${app_URL}</arg>
+<arg>${browserName}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220501 01:00:00.282" level="INFO">Opening browser 'gc' to base url 'https://www.flipkart.com/'.</msg>
+<status status="PASS" starttime="20220501 01:00:00.282" endtime="20220501 01:00:04.202"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220501 01:00:04.202" endtime="20220501 01:00:04.355"/>
+</kw>
+<status status="PASS" starttime="20220501 01:00:00.282" endtime="20220501 01:00:04.355"/>
+</kw>
+<kw name="Invalid Login2">
+<arg>E@gmail.com</arg>
+<arg>Namma2024@@@</arg>
+<kw name="Input Username" library="UDK">
+<arg>${username}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${textbox_username_xpath}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220501 01:00:04.361" level="INFO">Typing text 'E@gmail.com' into text field '//* [@class='_2IX_2- VJZDxU']'.</msg>
+<status status="PASS" starttime="20220501 01:00:04.355" endtime="20220501 01:00:04.545"/>
+</kw>
+<status status="PASS" starttime="20220501 01:00:04.355" endtime="20220501 01:00:04.545"/>
+</kw>
+<kw name="Input Password" library="UDK">
+<arg>${password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${textbox_password_xpath}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220501 01:00:04.545" level="INFO">Typing text 'Namma2024@@@' into text field '//* [@type='password']'.</msg>
+<status status="PASS" starttime="20220501 01:00:04.545" endtime="20220501 01:00:04.685"/>
+</kw>
+<status status="PASS" starttime="20220501 01:00:04.545" endtime="20220501 01:00:04.685"/>
+</kw>
+<kw name="Click On Login Button" library="UDK">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${button_login_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220501 01:00:04.685" level="INFO">Clicking element '//* [@class='_2KpZ6l _2HKlqd _3AWRsL']'.</msg>
+<status status="PASS" starttime="20220501 01:00:04.685" endtime="20220501 01:00:04.765"/>
+</kw>
+<status status="PASS" starttime="20220501 01:00:04.685" endtime="20220501 01:00:04.765"/>
+</kw>
+<kw name="Error Message Should Be Visible When Password Is Empty" library="UDK">
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Please enter Password</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220501 01:00:05.148" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220501 01:00:05.148" level="FAIL">Page should have contained text 'Please enter Password' but did not.</msg>
+<status status="FAIL" starttime="20220501 01:00:04.765" endtime="20220501 01:00:05.148"/>
+</kw>
+<status status="FAIL" starttime="20220501 01:00:04.765" endtime="20220501 01:00:05.148"/>
+</kw>
+<status status="FAIL" starttime="20220501 01:00:04.355" endtime="20220501 01:00:05.156"/>
+</kw>
+<kw name="Close All Browser" library="UDK" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220501 01:00:05.156" endtime="20220501 01:00:07.342"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220501 01:00:07.342" endtime="20220501 01:00:07.342"/>
+</kw>
+<status status="PASS" starttime="20220501 01:00:05.156" endtime="20220501 01:00:07.342"/>
+</kw>
+<status status="FAIL" starttime="20220501 01:00:00.282" endtime="20220501 01:00:07.342">Page should have contained text 'Please enter Password' but did not.</status>
+</test>
+<test id="s1-s1-s1-t6" name="app_ddt_loginTestUsingExcelData_test" line="153">
+<kw name="Open My Browser" library="UDK" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${app_URL}</arg>
+<arg>${browserName}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220501 01:00:07.346" level="INFO">Opening browser 'gc' to base url 'https://www.flipkart.com/'.</msg>
+<status status="PASS" starttime="20220501 01:00:07.346" endtime="20220501 01:00:10.847"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220501 01:00:10.847" endtime="20220501 01:00:10.983"/>
+</kw>
+<status status="PASS" starttime="20220501 01:00:07.346" endtime="20220501 01:00:10.983"/>
+</kw>
+<kw name="Invalid Login2">
+<arg>F@outlook.com</arg>
+<arg>Namma2025@@@</arg>
+<kw name="Input Username" library="UDK">
+<arg>${username}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${textbox_username_xpath}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220501 01:00:10.983" level="INFO">Typing text 'F@outlook.com' into text field '//* [@class='_2IX_2- VJZDxU']'.</msg>
+<status status="PASS" starttime="20220501 01:00:10.983" endtime="20220501 01:00:11.187"/>
+</kw>
+<status status="PASS" starttime="20220501 01:00:10.983" endtime="20220501 01:00:11.187"/>
+</kw>
+<kw name="Input Password" library="UDK">
+<arg>${password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${textbox_password_xpath}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220501 01:00:11.187" level="INFO">Typing text 'Namma2025@@@' into text field '//* [@type='password']'.</msg>
+<status status="PASS" starttime="20220501 01:00:11.187" endtime="20220501 01:00:11.321"/>
+</kw>
+<status status="PASS" starttime="20220501 01:00:11.187" endtime="20220501 01:00:11.321"/>
+</kw>
+<kw name="Click On Login Button" library="UDK">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${button_login_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220501 01:00:11.321" level="INFO">Clicking element '//* [@class='_2KpZ6l _2HKlqd _3AWRsL']'.</msg>
+<status status="PASS" starttime="20220501 01:00:11.321" endtime="20220501 01:00:11.393"/>
+</kw>
+<status status="PASS" starttime="20220501 01:00:11.321" endtime="20220501 01:00:11.401"/>
+</kw>
+<kw name="Error Message Should Be Visible When Password Is Empty" library="UDK">
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Please enter Password</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220501 01:00:11.854" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220501 01:00:11.854" level="FAIL">Page should have contained text 'Please enter Password' but did not.</msg>
+<status status="FAIL" starttime="20220501 01:00:11.401" endtime="20220501 01:00:11.854"/>
+</kw>
+<status status="FAIL" starttime="20220501 01:00:11.401" endtime="20220501 01:00:11.862"/>
+</kw>
+<status status="FAIL" starttime="20220501 01:00:10.983" endtime="20220501 01:00:11.862"/>
+</kw>
+<kw name="Close All Browser" library="UDK" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220501 01:00:11.862" endtime="20220501 01:00:14.034"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220501 01:00:14.034" endtime="20220501 01:00:14.035"/>
+</kw>
+<status status="PASS" starttime="20220501 01:00:11.862" endtime="20220501 01:00:14.035"/>
+</kw>
+<status status="FAIL" starttime="20220501 01:00:07.346" endtime="20220501 01:00:14.036">Page should have contained text 'Please enter Password' but did not.</status>
+</test>
+<status status="FAIL" starttime="20220501 00:59:28.572" endtime="20220501 01:00:14.038"/>
+</suite>
+<status status="FAIL" starttime="20220501 00:59:28.085" endtime="20220501 01:00:14.039"/>
+</suite>
+<status status="FAIL" starttime="20220501 00:59:28.038" endtime="20220501 01:00:14.039"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="6" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="6" skip="0" id="s1" name="demoProjects">demoProjects</stat>
+<stat pass="0" fail="6" skip="0" id="s1-s1" name="Testcases">demoProjects.Testcases</stat>
+<stat pass="0" fail="6" skip="0" id="s1-s1-s1" name="GUI scripts">demoProjects.Testcases.GUI scripts</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220501 00:59:37.833" level="WARN">Multiple tests with name 'app_ddt_loginTestUsingExcelData_test' executed in suite 'demoProjects.Testcases.GUI scripts'.</msg>
+<msg timestamp="20220501 00:59:44.583" level="WARN">Multiple tests with name 'app_ddt_loginTestUsingExcelData_test' executed in suite 'demoProjects.Testcases.GUI scripts'.</msg>
+<msg timestamp="20220501 00:59:52.859" level="WARN">Multiple tests with name 'app_ddt_loginTestUsingExcelData_test' executed in suite 'demoProjects.Testcases.GUI scripts'.</msg>
+<msg timestamp="20220501 01:00:00.282" level="WARN">Multiple tests with name 'app_ddt_loginTestUsingExcelData_test' executed in suite 'demoProjects.Testcases.GUI scripts'.</msg>
+<msg timestamp="20220501 01:00:07.346" level="WARN">Multiple tests with name 'app_ddt_loginTestUsingExcelData_test' executed in suite 'demoProjects.Testcases.GUI scripts'.</msg>
+</errors>
+</robot>

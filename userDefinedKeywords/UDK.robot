@@ -8,6 +8,9 @@ Library           RequestsLibrary
 Library           OperatingSystem
 
 *** Keywords ***
+Test Template
+    Invalid Login
+
 App Login
     Open Browser    ${app_URL}    ${browserName}
     Maximize Browser Window
@@ -53,14 +56,14 @@ Error Message Should Be Visible When Username Or Password Is Invalid
 Message Should Be Visible When Username Or Password Is Valid
     Page Should Contain    Become a Seller
 
+Read CSV File
+    [Arguments]    ${file_name}
+    ${data}    Get File    ${file_name}
+    log    ${data}
+
 Invalid Login
     [Arguments]    ${username}    ${password}
     Input Username    ${username}
     Input Password    ${password}
     Click On Login Button
     Error Message Should Be Visible When Password Is Empty
-
-Read CSV File
-    [Arguments]    ${file_name}
-    ${data}    Get File    ${file_name}
-    log    ${data}

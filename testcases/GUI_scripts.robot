@@ -1,5 +1,5 @@
 *** Settings ***
-Test Template
+Test Template     Invalid Login2
 Resource          ../common/commom_libraries.robot
 Library           DataDriver    ../testData/user_login_data.xlsx    sheet_name=Sheet1
 
@@ -146,12 +146,22 @@ app_alert
 
 app_ddt_loginTestUsingExcelData
     [Setup]    Open My Browser
-    Comment    Invalid Login    r@gmail.com    ${EMPTY}
+    Comment    Invalid Login2    r@gmail.com    ${EMPTY}
     log    ${username}    ${password}
     [Teardown]    Close All Browser
 
 app_ddt_loginTestUsingExcelData_test
     [Setup]    Open My Browser
-    Invalid Login    ${username}    ${password}
+    Invalid Login2    ${username}    ${password}
     Comment    log    ${username}    ${password}
+    log    ${username}
+    log    ${password}
     [Teardown]    Close All Browser
+
+*** Keywords ***
+Invalid Login2
+    [Arguments]    ${username}    ${password}
+    Input Username    ${username}
+    Input Password    ${password}
+    Click On Login Button
+    Error Message Should Be Visible When Password Is Empty
