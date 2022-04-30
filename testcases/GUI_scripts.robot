@@ -138,9 +138,47 @@ test
     log    @{hello}[0]
 
 app_alert
-    Open Browser    https://demoqa.com/alerts    gc    alias=first_window
+    Open Browser    https://demoqa.com/alerts    gc
     Maximize Browser Window
+    # Accept Alert
     Click Element    //button[@id='alertButton']
-    Handle Alert    accept
+    sleep    2
+    Handle Alert    ACCEPT
+    # Dismiss Alert
+    Click Element    //button[@id="timerAlertButton"]
+    sleep    7
+    Handle Alert    DISMISS
+    [Teardown]    Close Browser
+
+app_frame
+    Launch App Browser    https://demoqa.com/frames
+    Select Frame    //*[@id="frame1"]
+    ${myString}    Get Text    //h1[@id="sampleHeading"]
+    log    ${myString}
+
+app_sleep_speed_timeout_Implict
+    Launch App Browser    https://demoqa.com/automation-practice-form
+    # Sleep
+    sleep    5
+    # Selenium Speed
+    ${s_speed}=    Get Selenium Speed
+    log    ${s_speed}
+    Set Selenium Speed    3
+    Input Text    //*[@id="firstName"]    Hello
+    Input Text    //*[@id="lastName"]    Robot
+    ${s_speed}=    Get Selenium Speed
+    log    ${s_speed}
+    # Selenium Timeout
+    ${s_timeout}    Get Selenium Timeout
+    log    ${s_timeout}
+    Set Selenium Timeout    10
+    ${s_timeout}    Get Selenium Timeout
+    log    ${s_timeout}
+    Comment    Wait Until Page Contains    adsf    # enable in webinar
+    ${siw}    Get Selenium Implicit Wait
+    log    ${siw}
+    Set Selenium Implicit Wait    10
+    log    ${siw}
+    Wait Until Page Contains    adsf
 
 *** Keywords ***

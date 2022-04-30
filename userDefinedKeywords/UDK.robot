@@ -67,3 +67,8 @@ Invalid Login
     Input Password    ${password}
     Click On Login Button
     Error Message Should Be Visible When Password Is Empty
+
+Launch App Browser
+    [Arguments]    ${URL}
+    Open Browser    ${URL}    gc
+    Maximize Browser Window

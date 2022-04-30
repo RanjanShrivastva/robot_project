@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.7.0 on win32)" generated="20220501 01:55:15.471" rpa="false" schemaversion="3">
+<suite id="s1" name="demoProjects" source="D:\demoProjects">
+<suite id="s1-s1" name="Testcases" source="D:\demoProjects\testcases">
+<suite id="s1-s1-s1" name="GUI scripts" source="D:\demoProjects\testcases\GUI_scripts.robot">
+<test id="s1-s1-s1-t1" name="app_frame" line="153">
+<kw name="Launch App Browser" library="UDK">
+<arg>https://demoqa.com/frames</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>gc</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220501 01:55:16.271" level="INFO">Opening browser 'gc' to base url 'https://demoqa.com/frames'.</msg>
+<status status="PASS" starttime="20220501 01:55:16.271" endtime="20220501 01:55:23.884"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220501 01:55:23.884" endtime="20220501 01:55:24.022"/>
+</kw>
+<status status="PASS" starttime="20220501 01:55:16.255" endtime="20220501 01:55:24.022"/>
+</kw>
+<kw name="Select Frame" library="SeleniumLibrary">
+<arg>//*[@id="frame1"]</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<msg timestamp="20220501 01:55:24.022" level="INFO">Selecting frame '//*[@id="frame1"]'.</msg>
+<status status="PASS" starttime="20220501 01:55:24.022" endtime="20220501 01:55:24.072"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Get Text</arg>
+<arg>//h1[@id="sampleHeading"]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220501 01:55:24.072" level="FAIL">Invalid log level '//h1[@id="sampleHeading"]'.</msg>
+<status status="FAIL" starttime="20220501 01:55:24.072" endtime="20220501 01:55:24.072"/>
+</kw>
+<status status="FAIL" starttime="20220501 01:55:16.255" endtime="20220501 01:55:24.075">Invalid log level '//h1[@id="sampleHeading"]'.</status>
+</test>
+<status status="FAIL" starttime="20220501 01:55:16.239" endtime="20220501 01:55:24.075"/>
+</suite>
+<status status="FAIL" starttime="20220501 01:55:15.581" endtime="20220501 01:55:24.078"/>
+</suite>
+<status status="FAIL" starttime="20220501 01:55:15.534" endtime="20220501 01:55:24.078"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="demoProjects">demoProjects</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Testcases">demoProjects.Testcases</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="GUI scripts">demoProjects.Testcases.GUI scripts</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

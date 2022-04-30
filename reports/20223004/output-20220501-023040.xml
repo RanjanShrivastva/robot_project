@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.7.0 on win32)" generated="20220501 02:30:40.578" rpa="false" schemaversion="3">
+<suite id="s1" name="demoProjects" source="D:\demoProjects">
+<suite id="s1-s1" name="Testcases" source="D:\demoProjects\testcases">
+<suite id="s1-s1-s1" name="GUI scripts" source="D:\demoProjects\testcases\GUI_scripts.robot">
+<test id="s1-s1-s1-t1" name="app_sleep_speed_timeout_Implict" line="159">
+<kw name="Launch App Browser" library="UDK">
+<arg>https://demoqa.com/automation-practice-form</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>gc</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220501 02:30:41.302" level="INFO">Opening browser 'gc' to base url 'https://demoqa.com/automation-practice-form'.</msg>
+<status status="PASS" starttime="20220501 02:30:41.302" endtime="20220501 02:30:48.778"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220501 02:30:48.778" endtime="20220501 02:30:48.918"/>
+</kw>
+<status status="PASS" starttime="20220501 02:30:41.302" endtime="20220501 02:30:48.918"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220501 02:30:53.922" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220501 02:30:48.918" endtime="20220501 02:30:53.922"/>
+</kw>
+<kw name="Get Selenium Speed" library="SeleniumLibrary">
+<var>${s_speed}</var>
+<doc>Gets the delay that is waited after each Selenium command.</doc>
+<msg timestamp="20220501 02:30:53.922" level="INFO">${s_speed} = 0 seconds</msg>
+<status status="PASS" starttime="20220501 02:30:53.922" endtime="20220501 02:30:53.922"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${s_speed}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220501 02:30:53.922" level="INFO">0 seconds</msg>
+<status status="PASS" starttime="20220501 02:30:53.922" endtime="20220501 02:30:53.922"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>3</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20220501 02:30:53.922" endtime="20220501 02:30:53.922"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@id="firstName"]</arg>
+<arg>Hello</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220501 02:30:53.922" level="INFO">Typing text 'Hello' into text field '//*[@id="firstName"]'.</msg>
+<status status="PASS" starttime="20220501 02:30:53.922" endtime="20220501 02:31:03.333"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@id="lastName"]</arg>
+<arg>Robot</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220501 02:31:03.333" level="INFO">Typing text 'Robot' into text field '//*[@id="lastName"]'.</msg>
+<status status="PASS" starttime="20220501 02:31:03.333" endtime="20220501 02:31:12.501"/>
+</kw>
+<kw name="Get Selenium Speed" library="SeleniumLibrary">
+<var>${s_speed}</var>
+<doc>Gets the delay that is waited after each Selenium command.</doc>
+<msg timestamp="20220501 02:31:12.501" level="INFO">${s_speed} = 3 seconds</msg>
+<status status="PASS" starttime="20220501 02:31:12.501" endtime="20220501 02:31:12.501"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${s_speed}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220501 02:31:12.501" level="INFO">3 seconds</msg>
+<status status="PASS" starttime="20220501 02:31:12.501" endtime="20220501 02:31:12.501"/>
+</kw>
+<kw name="Get Selenium Timeout" library="SeleniumLibrary">
+<var>${s_timeout}</var>
+<doc>Gets the timeout that is used by various keywords.</doc>
+<msg timestamp="20220501 02:31:12.501" level="INFO">${s_timeout} = 5 seconds</msg>
+<status status="PASS" starttime="20220501 02:31:12.501" endtime="20220501 02:31:12.501"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${s_timeout}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220501 02:31:12.501" level="INFO">5 seconds</msg>
+<status status="PASS" starttime="20220501 02:31:12.501" endtime="20220501 02:31:12.501"/>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>10</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20220501 02:31:12.501" endtime="20220501 02:31:15.509"/>
+</kw>
+<kw name="Get Selenium Timeout" library="SeleniumLibrary">
+<var>${s_timeout}</var>
+<doc>Gets the timeout that is used by various keywords.</doc>
+<msg timestamp="20220501 02:31:15.509" level="INFO">${s_timeout} = 10 seconds</msg>
+<status status="PASS" starttime="20220501 02:31:15.509" endtime="20220501 02:31:15.509"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${s_timeout}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220501 02:31:15.509" level="INFO">10 seconds</msg>
+<status status="PASS" starttime="20220501 02:31:15.509" endtime="20220501 02:31:15.509"/>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<arg>Wait Until Page Contains</arg>
+<arg>adsf</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="PASS" starttime="20220501 02:31:15.509" endtime="20220501 02:31:15.509"/>
+</kw>
+<kw name="Get Selenium Implicit Wait" library="SeleniumLibrary">
+<var>${siw}</var>
+<doc>Gets the implicit wait value used by Selenium.</doc>
+<msg timestamp="20220501 02:31:15.509" level="INFO">${siw} = 0 seconds</msg>
+<status status="PASS" starttime="20220501 02:31:15.509" endtime="20220501 02:31:15.509"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${siw}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220501 02:31:15.509" level="INFO">0 seconds</msg>
+<status status="PASS" starttime="20220501 02:31:15.509" endtime="20220501 02:31:15.509"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>10</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220501 02:31:15.509" endtime="20220501 02:31:18.517"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${siw}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220501 02:31:18.517" level="INFO">0 seconds</msg>
+<status status="PASS" starttime="20220501 02:31:18.517" endtime="20220501 02:31:18.517"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>adsf</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<msg timestamp="20220501 02:31:35.008" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-13.png"&gt;&lt;img src="selenium-screenshot-13.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220501 02:31:35.008" level="FAIL">Text 'adsf' did not appear in 10 seconds.</msg>
+<status status="FAIL" starttime="20220501 02:31:18.517" endtime="20220501 02:31:35.019"/>
+</kw>
+<status status="FAIL" starttime="20220501 02:30:41.302" endtime="20220501 02:31:35.019">Text 'adsf' did not appear in 10 seconds.</status>
+</test>
+<status status="FAIL" starttime="20220501 02:30:41.287" endtime="20220501 02:31:35.019"/>
+</suite>
+<status status="FAIL" starttime="20220501 02:30:40.694" endtime="20220501 02:31:35.019"/>
+</suite>
+<status status="FAIL" starttime="20220501 02:30:40.648" endtime="20220501 02:31:35.030"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="demoProjects">demoProjects</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Testcases">demoProjects.Testcases</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="GUI scripts">demoProjects.Testcases.GUI scripts</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
