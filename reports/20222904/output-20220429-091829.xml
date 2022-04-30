@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.7.0 on win32)" generated="20220429 09:18:29.933" rpa="false" schemaversion="3">
+<suite id="s1" name="demoProjects" source="D:\demoProjects">
+<suite id="s1-s1" name="Testcases" source="D:\demoProjects\testcases">
+<suite id="s1-s1-s1" name="GUI scripts" source="D:\demoProjects\testcases\GUI_scripts.robot">
+<test id="s1-s1-s1-t1" name="app_button_example" line="53">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://demoqa.com/buttons</arg>
+<arg>gc</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220429 09:18:30.484" level="INFO">Opening browser 'gc' to base url 'https://demoqa.com/buttons'.</msg>
+<status status="PASS" starttime="20220429 09:18:30.484" endtime="20220429 09:18:35.833"/>
+</kw>
+<kw name="Double Click Element" library="SeleniumLibrary">
+<arg>//*[@id="doubleClickBtn"]</arg>
+<doc>Double clicks the element identified by ``locator``.</doc>
+<msg timestamp="20220429 09:18:35.833" level="INFO">Double clicking element '//*[@id="doubleClickBtn"]'.</msg>
+<status status="PASS" starttime="20220429 09:18:35.833" endtime="20220429 09:18:36.138"/>
+</kw>
+<kw name="Open Context Menu" library="SeleniumLibrary">
+<arg>//*[@id="rightClickBtn"]</arg>
+<doc>Opens the context menu on the element identified by ``locator``.</doc>
+<status status="PASS" starttime="20220429 09:18:36.138" endtime="20220429 09:18:36.439"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220429 09:18:41.452" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220429 09:18:36.439" endtime="20220429 09:18:41.452"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>/html/body/div[2]/div/div/div[2]/div[2]/div[2]/div[3]/button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220429 09:18:41.452" level="INFO">Clicking element '/html/body/div[2]/div/div/div[2]/div[2]/div[2]/div[3]/button'.</msg>
+<msg timestamp="20220429 09:18:41.708" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-19.png"&gt;&lt;img src="selenium-screenshot-19.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220429 09:18:41.708" level="FAIL">Element with locator '/html/body/div[2]/div/div/div[2]/div[2]/div[2]/div[3]/button' not found.</msg>
+<status status="FAIL" starttime="20220429 09:18:41.452" endtime="20220429 09:18:41.716"/>
+</kw>
+<status status="FAIL" starttime="20220429 09:18:30.484" endtime="20220429 09:18:41.724">Element with locator '/html/body/div[2]/div/div/div[2]/div[2]/div[2]/div[3]/button' not found.</status>
+</test>
+<status status="FAIL" starttime="20220429 09:18:30.468" endtime="20220429 09:18:41.724"/>
+</suite>
+<status status="FAIL" starttime="20220429 09:18:30.011" endtime="20220429 09:18:41.724"/>
+</suite>
+<status status="FAIL" starttime="20220429 09:18:29.965" endtime="20220429 09:18:41.724"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="demoProjects">demoProjects</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Testcases">demoProjects.Testcases</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="GUI scripts">demoProjects.Testcases.GUI scripts</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

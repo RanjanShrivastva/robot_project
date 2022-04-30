@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.7.0 on win32)" generated="20220429 06:51:34.866" rpa="false" schemaversion="3">
+<suite id="s1" name="demoProjects" source="D:\demoProjects">
+<suite id="s1-s1" name="Testcases" source="D:\demoProjects\testcases">
+<suite id="s1-s1-s1" name="GUI scripts" source="D:\demoProjects\testcases\GUI_scripts.robot">
+<test id="s1-s1-s1-t1" name="app_radio_button_example" line="31">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://www.functionize.com/h/test-automation?utm_source=google&amp;utm_medium=paid%20search&amp;utm_campaign=automated%20web%20testing&amp;gclid=CjwKCAjw9qiTBhBbEiwAp-GE0SWDDqMwxZ9iMu-SZdx_WMVvbLRVG3rpzSqRJllTBCoz_5Hvw3mMexoCgcoQAvD_BwE</arg>
+<arg>gc</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220429 06:51:35.414" level="INFO">Opening browser 'gc' to base url 'https://www.functionize.com/h/test-automation?utm_source=google&amp;utm_medium=paid%20search&amp;utm_campaign=automated%20web%20testing&amp;gclid=CjwKCAjw9qiTBhBbEiwAp-GE0SWDDqMwxZ9iMu-SZdx_WMVvbLRVG3rpzSqRJllTBCoz_5Hvw3mMexoCgcoQAvD_BwE'.</msg>
+<status status="PASS" starttime="20220429 06:51:35.414" endtime="20220429 06:51:39.980"/>
+</kw>
+<status status="PASS" starttime="20220429 06:51:35.414" endtime="20220429 06:51:39.980"/>
+</test>
+<status status="PASS" starttime="20220429 06:51:35.398" endtime="20220429 06:51:39.980"/>
+</suite>
+<status status="PASS" starttime="20220429 06:51:34.960" endtime="20220429 06:51:39.988"/>
+</suite>
+<status status="PASS" starttime="20220429 06:51:34.913" endtime="20220429 06:51:39.988"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="demoProjects">demoProjects</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Testcases">demoProjects.Testcases</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="GUI scripts">demoProjects.Testcases.GUI scripts</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

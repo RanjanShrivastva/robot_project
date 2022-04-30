@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.7.0 on win32)" generated="20220429 11:22:55.719" rpa="false" schemaversion="3">
+<suite id="s1" name="demoProjects" source="D:\demoProjects">
+<suite id="s1-s1" name="Testcases" source="D:\demoProjects\testcases">
+<suite id="s1-s1-s1" name="GUI scripts" source="D:\demoProjects\testcases\GUI_scripts.robot">
+<test id="s1-s1-s1-t1" name="app_switch_new_tab" line="71">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://demoqa.com/browser-windows</arg>
+<arg>gc</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220429 11:22:56.313" level="INFO">Opening browser 'gc' to base url 'https://demoqa.com/browser-windows'.</msg>
+<status status="PASS" starttime="20220429 11:22:56.313" endtime="20220429 11:23:06.128"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//button[@id='tabButton']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220429 11:23:06.128" level="INFO">Clicking element '//button[@id='tabButton']'.</msg>
+<status status="PASS" starttime="20220429 11:23:06.128" endtime="20220429 11:23:06.240"/>
+</kw>
+<kw name="Get Window Titles" library="SeleniumLibrary">
+<var>${main_window_titles}</var>
+<doc>Returns and logs titles of all windows of the selected browser.</doc>
+<msg timestamp="20220429 11:23:06.464" level="INFO">Altogether 2 items.
+1: ToolsQA
+2: undefined</msg>
+<msg timestamp="20220429 11:23:06.464" level="INFO">${main_window_titles} = ['ToolsQA', 'undefined']</msg>
+<status status="PASS" starttime="20220429 11:23:06.240" endtime="20220429 11:23:06.464"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${main_window_titles[0]}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220429 11:23:06.472" level="INFO">ToolsQA</msg>
+<status status="PASS" starttime="20220429 11:23:06.472" endtime="20220429 11:23:06.472"/>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<arg>${b_ids}</arg>
+<arg>Get Browser Ids</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="PASS" starttime="20220429 11:23:06.480" endtime="20220429 11:23:06.480"/>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<arg>log</arg>
+<arg>@{b_ids}[0]</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="PASS" starttime="20220429 11:23:06.480" endtime="20220429 11:23:06.480"/>
+</kw>
+<kw name="Switch Browser" library="SeleniumLibrary">
+<arg>${main_window_titles[1]}</arg>
+<doc>Switches between active browsers using ``index_or_alias``.</doc>
+<msg timestamp="20220429 11:23:06.760" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-22.png"&gt;&lt;img src="selenium-screenshot-22.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220429 11:23:06.760" level="FAIL">No browser with index or alias 'undefined' found.</msg>
+<status status="FAIL" starttime="20220429 11:23:06.480" endtime="20220429 11:23:12.105"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${sample_text}</var>
+<arg>//h1[@id="sampleHeading"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220429 11:23:12.105" endtime="20220429 11:23:12.105"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${sample_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20220429 11:23:12.105" endtime="20220429 11:23:12.105"/>
+</kw>
+<status status="FAIL" starttime="20220429 11:22:56.313" endtime="20220429 11:23:12.105">No browser with index or alias 'undefined' found.</status>
+</test>
+<status status="FAIL" starttime="20220429 11:22:56.282" endtime="20220429 11:23:12.105"/>
+</suite>
+<status status="FAIL" starttime="20220429 11:22:55.828" endtime="20220429 11:23:12.113"/>
+</suite>
+<status status="FAIL" starttime="20220429 11:22:55.781" endtime="20220429 11:23:12.113"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="demoProjects">demoProjects</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Testcases">demoProjects.Testcases</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="GUI scripts">demoProjects.Testcases.GUI scripts</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

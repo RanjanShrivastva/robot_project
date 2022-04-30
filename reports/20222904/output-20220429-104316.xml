@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.7.0 on win32)" generated="20220429 10:43:16.533" rpa="false" schemaversion="3">
+<suite id="s1" name="demoProjects" source="D:\demoProjects">
+<suite id="s1-s1" name="Testcases" source="D:\demoProjects\testcases">
+<suite id="s1-s1-s1" name="GUI scripts" source="D:\demoProjects\testcases\GUI_scripts.robot">
+<test id="s1-s1-s1-t1" name="app_upload_download" line="64">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://demoqa.com/buttons</arg>
+<arg>gc</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220429 10:43:17.252" level="INFO">Opening browser 'gc' to base url 'https://demoqa.com/buttons'.</msg>
+<status status="PASS" starttime="20220429 10:43:17.236" endtime="20220429 10:43:30.623"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//a[@id='downloadButton']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220429 10:43:30.623" level="INFO">Clicking element '//a[@id='downloadButton']'.</msg>
+<msg timestamp="20220429 10:43:30.814" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-21.png"&gt;&lt;img src="selenium-screenshot-21.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220429 10:43:30.814" level="FAIL">Element with locator '//a[@id='downloadButton']' not found.</msg>
+<status status="FAIL" starttime="20220429 10:43:30.623" endtime="20220429 10:43:30.830"/>
+</kw>
+<kw name="Choose File" library="SeleniumLibrary">
+<arg>//input[@id='uploadFile']</arg>
+<arg>C:\\Users\\ranja\\OneDrive\\Desktop\\dummy.xlsx</arg>
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<status status="NOT RUN" starttime="20220429 10:43:30.830" endtime="20220429 10:43:30.830"/>
+</kw>
+<status status="FAIL" starttime="20220429 10:43:17.236" endtime="20220429 10:43:30.830">Element with locator '//a[@id='downloadButton']' not found.</status>
+</test>
+<status status="FAIL" starttime="20220429 10:43:17.220" endtime="20220429 10:43:30.830"/>
+</suite>
+<status status="FAIL" starttime="20220429 10:43:16.642" endtime="20220429 10:43:30.830"/>
+</suite>
+<status status="FAIL" starttime="20220429 10:43:16.595" endtime="20220429 10:43:30.845"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="demoProjects">demoProjects</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Testcases">demoProjects.Testcases</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="GUI scripts">demoProjects.Testcases.GUI scripts</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

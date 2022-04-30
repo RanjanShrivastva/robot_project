@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Rebot 5.0 (Python 3.7.0 on win32)" generated="20220427 14:23:15.606" rpa="false" schemaversion="3">
+<suite id="s1" name="GUI scripts" source="D:\demoProjects\testcases\GUI_scripts.robot">
+<test id="s1-t1" name="app_login_01" line="5">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://www.flipkart.com/</arg>
+<arg>gc</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220427 14:22:44.251" level="INFO">Opening browser 'gc' to base url 'https://www.flipkart.com/'.</msg>
+<status status="PASS" starttime="20220427 14:22:44.251" endtime="20220427 14:22:59.056"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220427 14:22:59.057" endtime="20220427 14:22:59.195"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220427 14:23:01.205" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220427 14:22:59.196" endtime="20220427 14:23:01.205"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//* [@class='_2IX_2- VJZDxU']</arg>
+<arg>9738308627</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220427 14:23:01.205" level="INFO">Typing text '9738308627' into text field '//* [@class='_2IX_2- VJZDxU']'.</msg>
+<status status="PASS" starttime="20220427 14:23:01.205" endtime="20220427 14:23:01.309"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220427 14:23:03.311" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220427 14:23:01.309" endtime="20220427 14:23:03.311"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//* [@type='password']</arg>
+<arg>Flipkart2022@@@</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220427 14:23:03.312" level="INFO">Typing text 'Flipkart2022@@@' into text field '//* [@type='password']'.</msg>
+<status status="PASS" starttime="20220427 14:23:03.312" endtime="20220427 14:23:03.424"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220427 14:23:05.440" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220427 14:23:03.425" endtime="20220427 14:23:05.440"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//* [@class='_2KpZ6l _2HKlqd _3AWRsL']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220427 14:23:05.441" level="INFO">Clicking element '//* [@class='_2KpZ6l _2HKlqd _3AWRsL']'.</msg>
+<status status="PASS" starttime="20220427 14:23:05.440" endtime="20220427 14:23:05.502"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220427 14:23:07.516" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220427 14:23:05.502" endtime="20220427 14:23:07.516"/>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<arg>Capture Page Screenshot</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="PASS" starttime="20220427 14:23:07.517" endtime="20220427 14:23:07.517"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${user_name}</var>
+<arg>//*[@class='exehdJ']</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220427 14:23:07.597" level="INFO">${user_name} = Ranjan</msg>
+<status status="PASS" starttime="20220427 14:23:07.517" endtime="20220427 14:23:07.597"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${user_name}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220427 14:23:07.598" level="INFO">Ranjan</msg>
+<status status="PASS" starttime="20220427 14:23:07.598" endtime="20220427 14:23:07.598"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${user_name}</arg>
+<arg>Ranjan</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220427 14:23:07.598" endtime="20220427 14:23:07.599"/>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<arg>Click Element</arg>
+<arg>//* [@class='_2KpZ6l _2HKlqd _3AWRsL']4555</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="PASS" starttime="20220427 14:23:07.599" endtime="20220427 14:23:07.599"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220427 14:23:07.599" endtime="20220427 14:23:09.750"/>
+</kw>
+<tag>reg</tag>
+<status status="PASS" starttime="20220427 14:22:44.251" endtime="20220427 14:23:09.750"/>
+</test>
+<test id="s1-t2" name="pom_app_login" line="23">
+<kw name="appLogin" library="UDK">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${app_URL}</arg>
+<arg>${browserName}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220427 14:23:09.750" level="INFO">Opening browser 'gc' to base url 'https://www.flipkart.com/'.</msg>
+<status status="PASS" starttime="20220427 14:23:09.750" endtime="20220427 14:23:15.069"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<msg timestamp="20220427 14:23:15.078" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=100.0.4896.127)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x006A7413+2389011]
+	Ordinal0 [0x00639F61+1941345]
+	Ordinal0 [0x0052C658+837208]
+	Ordinal0 [0x00514480+738432]
+	Ordinal0 [0x00576999+1141145]
+	Ordinal0 [0x00583AA2+1194658]
+	Ordinal0 [0x00573F66+1130342]
+	Ordinal0 [0x0054E546+976198]
+	Ordinal0 [0x0054F456+980054]
+	GetHandleVerifier [0x00859632+1727522]
+	GetHandleVerifier [0x0090BA4D+2457661]
+	GetHandleVerifier [0x0073EB81+569713]
+	GetHandleVerifier [0x0073DD76+566118]
+	Ordinal0 [0x00640B2B+1968939]
+	Ordinal0 [0x00645988+1989000]
+	Ordinal0 [0x00645A75+1989237]
+	Ordinal0 [0x0064ECB1+2026673]
+	BaseThreadInitThunk [0x75826739+25]
+	RtlGetFullPathName_UEx [0x772B8E7F+1215]
+	RtlGetFullPathName_UEx [0x772B8E4D+1165]
+</msg>
+<msg timestamp="20220427 14:23:15.082" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=100.0.4896.127)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x006A7413+2389011]
+	Ordinal0 [0x00639F61+1941345]
+	Ordinal0 [0x0052C658+837208]
+	Ordinal0 [0x00514480+738432]
+	Ordinal0 [0x00576999+1141145]
+	Ordinal0 [0x00583AA2+1194658]
+	Ordinal0 [0x00573F66+1130342]
+	Ordinal0 [0x0054E546+976198]
+	Ordinal0 [0x0054F456+980054]
+	GetHandleVerifier [0x00859632+1727522]
+	GetHandleVerifier [0x0090BA4D+2457661]
+	GetHandleVerifier [0x0073EB81+569713]
+	GetHandleVerifier [0x0073DD76+566118]
+	Ordinal0 [0x00640B2B+1968939]
+	Ordinal0 [0x00645988+1989000]
+	Ordinal0 [0x00645A75+1989237]
+	Ordinal0 [0x0064ECB1+2026673]
+	BaseThreadInitThunk [0x75826739+25]
+	RtlGetFullPathName_UEx [0x772B8E7F+1215]
+	RtlGetFullPathName_UEx [0x772B8E4D+1165]
+</msg>
+<status status="FAIL" starttime="20220427 14:23:15.069" endtime="20220427 14:23:15.115"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${delay_short}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20220427 14:23:15.116" endtime="20220427 14:23:15.116"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${textbox_username_xpath}</arg>
+<arg>${username_value}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220427 14:23:15.116" endtime="20220427 14:23:15.117"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${delay_short}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20220427 14:23:15.117" endtime="20220427 14:23:15.118"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${textbox_password_xpath}</arg>
+<arg>${password_value}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220427 14:23:15.119" endtime="20220427 14:23:15.119"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${delay_short}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20220427 14:23:15.120" endtime="20220427 14:23:15.120"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${button_login_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220427 14:23:15.121" endtime="20220427 14:23:15.121"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${delay_short}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20220427 14:23:15.121" endtime="20220427 14:23:15.122"/>
+</kw>
+<status status="FAIL" starttime="20220427 14:23:09.750" endtime="20220427 14:23:15.129"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="NOT RUN" starttime="20220427 14:23:15.134" endtime="20220427 14:23:15.134"/>
+</kw>
+<doc>This test case is desgined in POM</doc>
+<tag>regression</tag>
+<status status="FAIL" starttime="20220427 14:23:09.750" endtime="20220427 14:23:15.136">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=100.0.4896.127)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x006A7413+2389011]
+	Ordinal0 [0x00639F61+1941345]
+	Ordinal0 [0x0052C658+837208]
+	Ordinal0 [0x00514480+738432]
+	Ordinal0 [0x00576999+1141145]
+	Ordinal0 [0x00583AA2+1194658]
+	Ordinal0 [0x00573F66+1130342]
+	Ordinal0 [0x0054E546+976198]
+	Ordinal0 [0x0054F456+980054]
+	GetHandleVerifier [0x00859632+1727522]
+	GetHandleVerifier [0x0090BA4D+2457661]
+	GetHandleVerifier [0x0073EB81+569713]
+	GetHandleVerifier [0x0073DD76+566118]
+	Ordinal0 [0x00640B2B+1968939]
+	Ordinal0 [0x00645988+1989000]
+	Ordinal0 [0x00645A75+1989237]
+	Ordinal0 [0x0064ECB1+2026673]
+	BaseThreadInitThunk [0x75826739+25]
+	RtlGetFullPathName_UEx [0x772B8E7F+1215]
+	RtlGetFullPathName_UEx [0x772B8E4D+1165]
+</status>
+</test>
+<doc>[https://pabot.org/?ref=log|Pabot] result from 1 executions.</doc>
+<status status="FAIL" starttime="20220427 14:22:44.030" endtime="20220427 14:23:15.142"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">reg</stat>
+<stat pass="0" fail="1" skip="0">regression</stat>
+</tag>
+<suite>
+<stat pass="1" fail="1" skip="0" id="s1" name="GUI scripts">GUI scripts</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220427 14:23:15.078" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=100.0.4896.127)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x006A7413+2389011]
+	Ordinal0 [0x00639F61+1941345]
+	Ordinal0 [0x0052C658+837208]
+	Ordinal0 [0x00514480+738432]
+	Ordinal0 [0x00576999+1141145]
+	Ordinal0 [0x00583AA2+1194658]
+	Ordinal0 [0x00573F66+1130342]
+	Ordinal0 [0x0054E546+976198]
+	Ordinal0 [0x0054F456+980054]
+	GetHandleVerifier [0x00859632+1727522]
+	GetHandleVerifier [0x0090BA4D+2457661]
+	GetHandleVerifier [0x0073EB81+569713]
+	GetHandleVerifier [0x0073DD76+566118]
+	Ordinal0 [0x00640B2B+1968939]
+	Ordinal0 [0x00645988+1989000]
+	Ordinal0 [0x00645A75+1989237]
+	Ordinal0 [0x0064ECB1+2026673]
+	BaseThreadInitThunk [0x75826739+25]
+	RtlGetFullPathName_UEx [0x772B8E7F+1215]
+	RtlGetFullPathName_UEx [0x772B8E4D+1165]
+</msg>
+</errors>
+</robot>

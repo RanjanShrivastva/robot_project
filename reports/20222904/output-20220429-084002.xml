@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.7.0 on win32)" generated="20220429 08:40:02.665" rpa="false" schemaversion="3">
+<suite id="s1" name="demoProjects" source="D:\demoProjects">
+<suite id="s1-s1" name="Testcases" source="D:\demoProjects\testcases">
+<suite id="s1-s1-s1" name="GUI scripts" source="D:\demoProjects\testcases\GUI_scripts.robot">
+<test id="s1-s1-s1-t1" name="app_radio_button_example" line="31">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://www.functionize.com/h/test-automation?utm_source=google&amp;utm_medium=paid%20search&amp;utm_campaign=automated%20web%20testing&amp;gclid=CjwKCAjw9qiTBhBbEiwAp-GE0SWDDqMwxZ9iMu-SZdx_WMVvbLRVG3rpzSqRJllTBCoz_5Hvw3mMexoCgcoQAvD_BwE</arg>
+<arg>gc</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220429 08:40:03.289" level="INFO">Opening browser 'gc' to base url 'https://www.functionize.com/h/test-automation?utm_source=google&amp;utm_medium=paid%20search&amp;utm_campaign=automated%20web%20testing&amp;gclid=CjwKCAjw9qiTBhBbEiwAp-GE0SWDDqMwxZ9iMu-SZdx_WMVvbLRVG3rpzSqRJllTBCoz_5Hvw3mMexoCgcoQAvD_BwE'.</msg>
+<status status="PASS" starttime="20220429 08:40:03.289" endtime="20220429 08:40:07.413"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220429 08:40:07.413" endtime="20220429 08:40:07.549"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@name='firstname']</arg>
+<arg>Ranjan</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220429 08:40:07.557" level="INFO">Typing text 'Ranjan' into text field '//*[@name='firstname']'.</msg>
+<status status="PASS" starttime="20220429 08:40:07.549" endtime="20220429 08:40:07.773"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@name='lastname']</arg>
+<arg>Shrivastava</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220429 08:40:07.773" level="INFO">Typing text 'Shrivastava' into text field '//*[@name='lastname']'.</msg>
+<status status="PASS" starttime="20220429 08:40:07.773" endtime="20220429 08:40:07.965"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@name='email']</arg>
+<arg>rk@jio.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220429 08:40:07.965" level="INFO">Typing text 'rk@jio.com' into text field '//*[@name='email']'.</msg>
+<status status="PASS" starttime="20220429 08:40:07.965" endtime="20220429 08:40:08.125"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@name='phone']</arg>
+<arg>9738308627</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220429 08:40:08.125" level="INFO">Typing text '9738308627' into text field '//*[@name='phone']'.</msg>
+<status status="PASS" starttime="20220429 08:40:08.125" endtime="20220429 08:40:08.285"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@name='company']</arg>
+<arg>xyz technologies</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220429 08:40:08.285" level="INFO">Typing text 'xyz technologies' into text field '//*[@name='company']'.</msg>
+<status status="PASS" starttime="20220429 08:40:08.285" endtime="20220429 08:40:08.454"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>//*[@name='job_role']</arg>
+<arg>QA Analyst / Test Analyst</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20220429 08:40:08.462" level="INFO">Selecting options from selection list '//*[@name='job_role']' by value QA Analyst / Test Analyst.</msg>
+<status status="PASS" starttime="20220429 08:40:08.462" endtime="20220429 08:40:08.598"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>//*[@name='total_size_of_test_suite']</arg>
+<arg>0-500</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20220429 08:40:08.598" level="INFO">Selecting options from selection list '//*[@name='total_size_of_test_suite']' by value 0-500.</msg>
+<status status="PASS" starttime="20220429 08:40:08.598" endtime="20220429 08:40:08.710"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//*[@id="do_you_have_any_hands_on_experience_with_selenium_or_other_scripted_automation_0-e65821c3-a1ec-4b15-9767-25c917c9afc1"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220429 08:40:08.710" level="INFO">Clicking element '//*[@id="do_you_have_any_hands_on_experience_with_selenium_or_other_scripted_automation_0-e65821c3-a1ec-4b15-9767-25c917c9afc1"]'.</msg>
+<status status="PASS" starttime="20220429 08:40:08.710" endtime="20220429 08:40:08.806"/>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<arg>Select Radio Button</arg>
+<arg>//*[@id="do_you_have_any_hands_on_experience_with_selenium_or_other_scripted_automation_0-e65821c3-a1ec-4b15-9767-25c917c9afc1"]</arg>
+<arg>Yes</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="PASS" starttime="20220429 08:40:08.806" endtime="20220429 08:40:08.806"/>
+</kw>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>//*[@name="terms_and_conditions"]</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20220429 08:40:08.814" level="INFO">Selecting checkbox '//*[@name="terms_and_conditions"]'.</msg>
+<status status="PASS" starttime="20220429 08:40:08.814" endtime="20220429 08:40:08.942"/>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<arg>Click Element</arg>
+<arg>//*[@id="i_m_interested_in_learning_more_about0-46e27199-313a-4a78-bd72-b85b29dd0158"]</arg>
+<arg>Digital Experience Monitoring with AI</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="PASS" starttime="20220429 08:40:08.942" endtime="20220429 08:40:08.942"/>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<arg>Select Radio Button</arg>
+<arg>//*[@id="i_m_interested_in_learning_more_about1-46e27199-313a-4a78-bd72-b85b29dd0158"]</arg>
+<arg>Enterprise Packaged App Testing with AI (Salesforce, Workday, SAP)</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="PASS" starttime="20220429 08:40:08.942" endtime="20220429 08:40:08.942"/>
+</kw>
+<status status="PASS" starttime="20220429 08:40:03.289" endtime="20220429 08:40:08.942"/>
+</test>
+<status status="PASS" starttime="20220429 08:40:03.265" endtime="20220429 08:40:08.942"/>
+</suite>
+<status status="PASS" starttime="20220429 08:40:02.761" endtime="20220429 08:40:08.942"/>
+</suite>
+<status status="PASS" starttime="20220429 08:40:02.721" endtime="20220429 08:40:08.950"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="demoProjects">demoProjects</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Testcases">demoProjects.Testcases</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="GUI scripts">demoProjects.Testcases.GUI scripts</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

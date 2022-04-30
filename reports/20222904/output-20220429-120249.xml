@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.7.0 on win32)" generated="20220429 12:02:50.002" rpa="false" schemaversion="3">
+<suite id="s1" name="demoProjects" source="D:\demoProjects">
+<suite id="s1-s1" name="Testcases" source="D:\demoProjects\testcases">
+<suite id="s1-s1-s1" name="GUI scripts" source="D:\demoProjects\testcases\GUI_scripts.robot">
+<test id="s1-s1-s1-t1" name="app_switch_new_tab" line="71">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://demoqa.com/browser-windows</arg>
+<arg>gc</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220429 12:02:50.312" level="INFO">Opening browser 'gc' to base url 'https://demoqa.com/browser-windows'.</msg>
+<status status="PASS" starttime="20220429 12:02:50.310" endtime="20220429 12:02:56.995"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//button[@id='tabButton']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220429 12:02:56.996" level="INFO">Clicking element '//button[@id='tabButton']'.</msg>
+<status status="PASS" starttime="20220429 12:02:56.995" endtime="20220429 12:02:57.062"/>
+</kw>
+<kw name="Get Window Titles" library="SeleniumLibrary">
+<var>${main_window_titles}</var>
+<doc>Returns and logs titles of all windows of the selected browser.</doc>
+<msg timestamp="20220429 12:02:57.257" level="INFO">Altogether 2 items.
+1: ToolsQA
+2: undefined</msg>
+<msg timestamp="20220429 12:02:57.257" level="INFO">${main_window_titles} = ['ToolsQA', 'undefined']</msg>
+<status status="PASS" starttime="20220429 12:02:57.063" endtime="20220429 12:02:57.257"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${main_window_titles[0]}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220429 12:02:57.259" level="INFO">ToolsQA</msg>
+<status status="PASS" starttime="20220429 12:02:57.258" endtime="20220429 12:02:57.259"/>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<arg>${b_ids}</arg>
+<arg>Get Browser Ids</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="PASS" starttime="20220429 12:02:57.259" endtime="20220429 12:02:57.259"/>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<arg>log</arg>
+<arg>@{b_ids}[0]</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="PASS" starttime="20220429 12:02:57.260" endtime="20220429 12:02:57.260"/>
+</kw>
+<kw name="Get Window Handles" library="SeleniumLibrary">
+<var>@{handles}</var>
+<doc>Returns all child window handles of the selected browser as a list.</doc>
+<msg timestamp="20220429 12:02:57.262" level="INFO">@{handles} = [ CDwindow-8337C444AB7C51FACB3EA832BBB5B19B | CDwindow-13FF58FA27402399A35B51A19AB0E5B4 ]</msg>
+<status status="PASS" starttime="20220429 12:02:57.260" endtime="20220429 12:02:57.263"/>
+</kw>
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>@{handles}[1]</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<msg timestamp="20220429 12:02:57.264" level="FAIL">Value of variable '@{handles}[1]' is not list or list-like.</msg>
+<status status="FAIL" starttime="20220429 12:02:57.263" endtime="20220429 12:02:57.264"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>@{handles}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20220429 12:02:57.264" endtime="20220429 12:02:57.264"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>@{handles}[1]</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20220429 12:02:57.264" endtime="20220429 12:02:57.265"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${sample_text}</var>
+<arg>//h1[@id="sampleHeading"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220429 12:02:57.265" endtime="20220429 12:02:57.265"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${sample_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20220429 12:02:57.265" endtime="20220429 12:02:57.265"/>
+</kw>
+<status status="FAIL" starttime="20220429 12:02:50.310" endtime="20220429 12:02:57.266">Value of variable '@{handles}[1]' is not list or list-like.</status>
+</test>
+<status status="FAIL" starttime="20220429 12:02:50.290" endtime="20220429 12:02:57.267"/>
+</suite>
+<status status="FAIL" starttime="20220429 12:02:50.056" endtime="20220429 12:02:57.268"/>
+</suite>
+<status status="FAIL" starttime="20220429 12:02:50.023" endtime="20220429 12:02:57.272"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="demoProjects">demoProjects</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Testcases">demoProjects.Testcases</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="GUI scripts">demoProjects.Testcases.GUI scripts</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

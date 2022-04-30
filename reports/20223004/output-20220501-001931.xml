@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.7.0 on win32)" generated="20220501 00:19:31.592" rpa="false" schemaversion="3">
+<suite id="s1" name="demoProjects" source="D:\demoProjects">
+<suite id="s1-s1" name="Testcases" source="D:\demoProjects\testcases">
+<suite id="s1-s1-s1" name="GUI scripts" source="D:\demoProjects\testcases\GUI_scripts.robot">
+<test id="s1-s1-s1-t1" name="app_ddt_loginTestUsingExcelData" line="145">
+<kw name="Open My Browser" library="UDK" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${app_URL}</arg>
+<arg>${browserName}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220501 00:19:33.555" level="INFO">Opening browser 'gc' to base url 'https://www.flipkart.com/'.</msg>
+<status status="PASS" starttime="20220501 00:19:33.555" endtime="20220501 00:19:37.544"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220501 00:19:37.544" endtime="20220501 00:19:37.704"/>
+</kw>
+<status status="PASS" starttime="20220501 00:19:33.544" endtime="20220501 00:19:37.704"/>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<arg>Invalid Login</arg>
+<arg>r@gmail.com</arg>
+<arg>${EMPTY}</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="PASS" starttime="20220501 00:19:37.704" endtime="20220501 00:19:37.715"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${username}</arg>
+<arg>${password}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220501 00:19:37.720" level="FAIL">Variable '${username}' not found. Did you mean:
+    ${username_value}</msg>
+<status status="FAIL" starttime="20220501 00:19:37.715" endtime="20220501 00:19:37.720"/>
+</kw>
+<kw name="Close All Browser" library="UDK" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220501 00:19:37.725" endtime="20220501 00:19:39.955"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220501 00:19:39.955" endtime="20220501 00:19:39.955"/>
+</kw>
+<status status="PASS" starttime="20220501 00:19:37.724" endtime="20220501 00:19:39.955"/>
+</kw>
+<status status="FAIL" starttime="20220501 00:19:33.544" endtime="20220501 00:19:39.955">Variable '${username}' not found. Did you mean:
+    ${username_value}</status>
+</test>
+<status status="FAIL" starttime="20220501 00:19:32.158" endtime="20220501 00:19:39.955"/>
+</suite>
+<status status="FAIL" starttime="20220501 00:19:31.695" endtime="20220501 00:19:39.955"/>
+</suite>
+<status status="FAIL" starttime="20220501 00:19:31.656" endtime="20220501 00:19:39.955"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="demoProjects">demoProjects</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Testcases">demoProjects.Testcases</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="GUI scripts">demoProjects.Testcases.GUI scripts</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220501 00:19:33.544" level="ERROR">[ DataDriver ] Error in robot file:
+  File "D:\demoProjects\testcases\GUI_scripts.robot", line 0</msg>
+<msg timestamp="20220501 00:19:33.544" level="ERROR">In source file:
+  File "D:\demoProjects\testcases\../testData/user_login_data.xlsx", line 0</msg>
+<msg timestamp="20220501 00:19:33.544" level="ERROR">Calling method '_start_suite' of listener 'DataDriver' failed: AttributeError: No "Test Template" keyword found for first test case.</msg>
+</errors>
+</robot>

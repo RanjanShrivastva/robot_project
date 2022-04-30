@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.7.0 on win32)" generated="20220429 12:54:43.429" rpa="false" schemaversion="3">
+<suite id="s1" name="demoProjects" source="D:\demoProjects">
+<suite id="s1-s1" name="Testcases" source="D:\demoProjects\testcases">
+<suite id="s1-s1-s1" name="GUI scripts" source="D:\demoProjects\testcases\GUI_scripts.robot">
+<test id="s1-s1-s1-t1" name="app_switch_newWindow" line="86">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://demoqa.com/browser-windows</arg>
+<arg>gc</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220429 12:54:43.742" level="INFO">Opening browser 'gc' to base url 'https://demoqa.com/browser-windows'.</msg>
+<status status="PASS" starttime="20220429 12:54:43.742" endtime="20220429 12:54:51.684"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//button[@id='windowButton']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220429 12:54:51.685" level="INFO">Clicking element '//button[@id='windowButton']'.</msg>
+<status status="PASS" starttime="20220429 12:54:51.684" endtime="20220429 12:54:51.785"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220429 12:54:51.786" endtime="20220429 12:54:51.928"/>
+</kw>
+<kw name="Get Window Handles" library="SeleniumLibrary">
+<var>${handles}</var>
+<doc>Returns all child window handles of the selected browser as a list.</doc>
+<msg timestamp="20220429 12:54:51.932" level="INFO">${handles} = ['CDwindow-AB4CF8FB569D5ADFD02755B8F4848602', 'CDwindow-5B636B904ED3C5FFB6C5AB2DD0DC10CB']</msg>
+<status status="PASS" starttime="20220429 12:54:51.928" endtime="20220429 12:54:51.932"/>
+</kw>
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>${handles}[1]</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20220429 12:54:51.933" endtime="20220429 12:54:51.991"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${sample_text}</var>
+<arg>//h1[@id="sampleHeading"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220429 12:54:52.028" level="INFO">${sample_text} = This is a sample page</msg>
+<status status="PASS" starttime="20220429 12:54:51.992" endtime="20220429 12:54:52.028"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${sample_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220429 12:54:52.029" level="INFO">This is a sample page</msg>
+<status status="PASS" starttime="20220429 12:54:52.028" endtime="20220429 12:54:52.029"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220429 12:54:52.029" endtime="20220429 12:54:52.146"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220429 12:54:54.156" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220429 12:54:52.146" endtime="20220429 12:54:54.156"/>
+</kw>
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>${handles}[0]</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20220429 12:54:54.156" endtime="20220429 12:54:54.170"/>
+</kw>
+<status status="PASS" starttime="20220429 12:54:43.742" endtime="20220429 12:54:54.170"/>
+</test>
+<status status="PASS" starttime="20220429 12:54:43.727" endtime="20220429 12:54:54.171"/>
+</suite>
+<status status="PASS" starttime="20220429 12:54:43.483" endtime="20220429 12:54:54.174"/>
+</suite>
+<status status="PASS" starttime="20220429 12:54:43.460" endtime="20220429 12:54:54.177"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="demoProjects">demoProjects</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Testcases">demoProjects.Testcases</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="GUI scripts">demoProjects.Testcases.GUI scripts</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

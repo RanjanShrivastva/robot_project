@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.7.0 on win32)" generated="20220429 12:53:21.933" rpa="false" schemaversion="3">
+<suite id="s1" name="demoProjects" source="D:\demoProjects">
+<suite id="s1-s1" name="Testcases" source="D:\demoProjects\testcases">
+<suite id="s1-s1-s1" name="GUI scripts" source="D:\demoProjects\testcases\GUI_scripts.robot">
+<test id="s1-s1-s1-t1" name="app_switch_newWindow" line="86">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://demoqa.com/browser-windows</arg>
+<arg>gc</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220429 12:53:22.246" level="INFO">Opening browser 'gc' to base url 'https://demoqa.com/browser-windows'.</msg>
+<status status="PASS" starttime="20220429 12:53:22.246" endtime="20220429 12:53:31.653"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//button[@id='windowButton']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220429 12:53:31.655" level="INFO">Clicking element '//button[@id='windowButton']'.</msg>
+<status status="PASS" starttime="20220429 12:53:31.654" endtime="20220429 12:53:31.755"/>
+</kw>
+<kw name="Get Window Handles" library="SeleniumLibrary">
+<var>${handles}</var>
+<doc>Returns all child window handles of the selected browser as a list.</doc>
+<msg timestamp="20220429 12:53:31.763" level="INFO">${handles} = ['CDwindow-DDC0CE2EB921A04E1AB34AD99DCFC508', 'CDwindow-8C8DE71A83057D2DCB436B9D57F78AB0']</msg>
+<status status="PASS" starttime="20220429 12:53:31.756" endtime="20220429 12:53:31.763"/>
+</kw>
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>${handles}[1]</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20220429 12:53:31.764" endtime="20220429 12:53:31.819"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${sample_text}</var>
+<arg>//h1[@id="sampleHeading"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220429 12:53:31.935" level="INFO">${sample_text} = This is a sample page</msg>
+<status status="PASS" starttime="20220429 12:53:31.820" endtime="20220429 12:53:31.935"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${sample_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220429 12:53:31.936" level="INFO">This is a sample page</msg>
+<status status="PASS" starttime="20220429 12:53:31.935" endtime="20220429 12:53:31.936"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220429 12:53:31.936" endtime="20220429 12:53:32.064"/>
+</kw>
+<status status="PASS" starttime="20220429 12:53:22.246" endtime="20220429 12:53:32.064"/>
+</test>
+<status status="PASS" starttime="20220429 12:53:22.230" endtime="20220429 12:53:32.065"/>
+</suite>
+<status status="PASS" starttime="20220429 12:53:21.980" endtime="20220429 12:53:32.066"/>
+</suite>
+<status status="PASS" starttime="20220429 12:53:21.964" endtime="20220429 12:53:32.068"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="demoProjects">demoProjects</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Testcases">demoProjects.Testcases</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="GUI scripts">demoProjects.Testcases.GUI scripts</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

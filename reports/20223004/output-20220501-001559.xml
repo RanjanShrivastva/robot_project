@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.7.0 on win32)" generated="20220501 00:15:59.176" rpa="false" schemaversion="3">
+<suite id="s1" name="demoProjects" source="D:\demoProjects">
+<suite id="s1-s1" name="Testcases" source="D:\demoProjects\testcases">
+<suite id="s1-s1-s1" name="Read Write" source="D:\demoProjects\testcases\Read_Write.robot">
+<test id="s1-s1-s1-t1" name="TC01 Read Data From CSV" line="5">
+<kw name="Read CSV File" library="UDK">
+<arg>D:\\demoProjects\\testData\\user_data_csv.csv</arg>
+<kw name="Get File" library="OperatingSystem">
+<var>${data}</var>
+<arg>${file_name}</arg>
+<doc>Returns the contents of a specified file.</doc>
+<msg timestamp="20220501 00:16:02.003" level="INFO" html="true">Getting file '&lt;a href="file://D:\demoProjects\testData\user_data_csv.csv"&gt;D:\demoProjects\testData\user_data_csv.csv&lt;/a&gt;'.</msg>
+<msg timestamp="20220501 00:16:02.003" level="INFO">${data} = Name, Id
+ranjan, 5
+suman, 9</msg>
+<status status="PASS" starttime="20220501 00:16:02.003" endtime="20220501 00:16:02.003"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${data}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220501 00:16:02.013" level="INFO">Name, Id
+ranjan, 5
+suman, 9</msg>
+<status status="PASS" starttime="20220501 00:16:02.003" endtime="20220501 00:16:02.013"/>
+</kw>
+<status status="PASS" starttime="20220501 00:16:02.003" endtime="20220501 00:16:02.013"/>
+</kw>
+<status status="PASS" starttime="20220501 00:16:02.003" endtime="20220501 00:16:02.013"/>
+</test>
+<status status="PASS" starttime="20220501 00:15:59.774" endtime="20220501 00:16:02.013"/>
+</suite>
+<status status="PASS" starttime="20220501 00:15:59.272" endtime="20220501 00:16:02.013"/>
+</suite>
+<status status="PASS" starttime="20220501 00:15:59.230" endtime="20220501 00:16:02.013"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="demoProjects">demoProjects</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Testcases">demoProjects.Testcases</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="Read Write">demoProjects.Testcases.Read Write</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220501 00:16:01.992" level="ERROR">[ DataDriver ] Error in robot file:
+  File "D:\demoProjects\testcases\Read_Write.robot", line 0</msg>
+<msg timestamp="20220501 00:16:01.992" level="ERROR">In source file:
+  File "D:\demoProjects\testcases\../testData/user_login_data.xlsx", line 0</msg>
+<msg timestamp="20220501 00:16:02.003" level="ERROR">Calling method '_start_suite' of listener 'DataDriver' failed: AttributeError: No "Test Template" keyword found for first test case.</msg>
+</errors>
+</robot>

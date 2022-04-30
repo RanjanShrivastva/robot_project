@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.7.0 on win32)" generated="20220429 10:56:14.974" rpa="false" schemaversion="3">
+<suite id="s1" name="demoProjects" source="D:\demoProjects">
+<suite id="s1-s1" name="Testcases" source="D:\demoProjects\testcases">
+<suite id="s1-s1-s1" name="GUI scripts" source="D:\demoProjects\testcases\GUI_scripts.robot">
+<test id="s1-s1-s1-t1" name="app_switch_new_tab" line="71">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://demoqa.com/browser-windows</arg>
+<arg>gc</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220429 10:56:15.584" level="INFO">Opening browser 'gc' to base url 'https://demoqa.com/browser-windows'.</msg>
+<status status="PASS" starttime="20220429 10:56:15.584" endtime="20220429 10:56:42.473"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//button[@id='tabButton']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220429 10:56:42.479" level="INFO">Clicking element '//button[@id='tabButton']'.</msg>
+<status status="PASS" starttime="20220429 10:56:42.479" endtime="20220429 10:56:42.607"/>
+</kw>
+<kw name="Get Browser Ids" library="SeleniumLibrary">
+<var>@{b_ids}</var>
+<doc>Returns index of all active browser as list.</doc>
+<msg timestamp="20220429 10:56:42.615" level="INFO">@{b_ids} = [ 1 ]</msg>
+<status status="PASS" starttime="20220429 10:56:42.607" endtime="20220429 10:56:42.615"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>@{b_ids}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220429 10:56:42.615" level="INFO">1</msg>
+<status status="PASS" starttime="20220429 10:56:42.615" endtime="20220429 10:56:42.615"/>
+</kw>
+<kw name="Switch Browser" library="SeleniumLibrary">
+<arg>@{b_ids}[0]</arg>
+<doc>Switches between active browsers using ``index_or_alias``.</doc>
+<msg timestamp="20220429 10:56:42.615" level="FAIL">Value of variable '@{b_ids}[0]' is not list or list-like.</msg>
+<status status="FAIL" starttime="20220429 10:56:42.615" endtime="20220429 10:56:42.615"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${sample_text}</var>
+<arg>//h1[@id="sampleHeading"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220429 10:56:42.615" endtime="20220429 10:56:42.615"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${sample_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20220429 10:56:42.615" endtime="20220429 10:56:42.615"/>
+</kw>
+<status status="FAIL" starttime="20220429 10:56:15.584" endtime="20220429 10:56:42.623">Value of variable '@{b_ids}[0]' is not list or list-like.</status>
+</test>
+<status status="FAIL" starttime="20220429 10:56:15.568" endtime="20220429 10:56:42.623"/>
+</suite>
+<status status="FAIL" starttime="20220429 10:56:15.068" endtime="20220429 10:56:42.631"/>
+</suite>
+<status status="FAIL" starttime="20220429 10:56:15.037" endtime="20220429 10:56:42.631"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="demoProjects">demoProjects</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Testcases">demoProjects.Testcases</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="GUI scripts">demoProjects.Testcases.GUI scripts</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

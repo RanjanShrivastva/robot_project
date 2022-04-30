@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.7.0 on win32)" generated="20220429 10:43:58.343" rpa="false" schemaversion="3">
+<suite id="s1" name="demoProjects" source="D:\demoProjects">
+<suite id="s1-s1" name="Testcases" source="D:\demoProjects\testcases">
+<suite id="s1-s1-s1" name="GUI scripts" source="D:\demoProjects\testcases\GUI_scripts.robot">
+<test id="s1-s1-s1-t1" name="app_upload_download" line="64">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://demoqa.com/upload-download</arg>
+<arg>gc</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220429 10:43:58.959" level="INFO">Opening browser 'gc' to base url 'https://demoqa.com/upload-download'.</msg>
+<status status="PASS" starttime="20220429 10:43:58.959" endtime="20220429 10:44:23.976"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//a[@id='downloadButton']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220429 10:44:23.976" level="INFO">Clicking element '//a[@id='downloadButton']'.</msg>
+<status status="PASS" starttime="20220429 10:44:23.976" endtime="20220429 10:44:24.088"/>
+</kw>
+<kw name="Choose File" library="SeleniumLibrary">
+<arg>//input[@id='uploadFile']</arg>
+<arg>C:\\Users\\ranja\\OneDrive\\Desktop\\dummy.xlsx</arg>
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<msg timestamp="20220429 10:44:24.096" level="INFO">Sending C:\Users\ranja\OneDrive\Desktop\dummy.xlsx to browser.</msg>
+<status status="PASS" starttime="20220429 10:44:24.088" endtime="20220429 10:44:24.160"/>
+</kw>
+<status status="PASS" starttime="20220429 10:43:58.959" endtime="20220429 10:44:24.160"/>
+</test>
+<status status="PASS" starttime="20220429 10:43:58.943" endtime="20220429 10:44:24.160"/>
+</suite>
+<status status="PASS" starttime="20220429 10:43:58.443" endtime="20220429 10:44:24.168"/>
+</suite>
+<status status="PASS" starttime="20220429 10:43:58.380" endtime="20220429 10:44:24.168"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="demoProjects">demoProjects</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Testcases">demoProjects.Testcases</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="GUI scripts">demoProjects.Testcases.GUI scripts</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -8,7 +8,7 @@ Library           RequestsLibrary
 Library           OperatingSystem
 
 *** Keywords ***
-appLogin
+App Login
     Open Browser    ${app_URL}    ${browserName}
     Maximize Browser Window
     sleep    ${delay_short}
@@ -19,6 +19,48 @@ appLogin
     Click Element    ${button_login_xpath}
     sleep    ${delay_short}
 
-close_browsers
+Close All Browser
     Close Browser
     Close All Browsers
+
+Open My Browser
+    Open Browser    ${app_URL}    ${browserName}
+    Maximize Browser Window
+
+Input Username
+    [Arguments]    ${username}
+    Input Text    ${textbox_username_xpath}    ${username}
+
+Input Password
+    [Arguments]    ${password}
+    Input Text    ${textbox_password_xpath}    ${password}
+
+Click On Login Button
+    Click Element    ${button_login_xpath}
+
+Error Message Should Be Visible When Password Is Empty
+    Page Should Contain    Please enter Password
+
+Error Message Should Be Visible When Username Is Empty
+    Page Should Contain    Please enter valid Email ID/Mobile number
+
+Error Message Should Be Visible When Username And Password Is Empty
+    Page Should Contain    Please enter valid Email ID/Mobile number
+
+Error Message Should Be Visible When Username Or Password Is Invalid
+    Page Should Contain    Your username or password is incorrect
+
+Message Should Be Visible When Username Or Password Is Valid
+    Page Should Contain    Become a Seller
+
+Invalid Login
+    [Arguments]    ${username}    ${password}
+    Input Username    ${username}
+    Input Password    ${password}
+    Click On Login Button
+    Error Message Should Be Visible When Password Is Empty
+
+Read CSV File
+    [Arguments]    ${file_name}
+    ${data}    Get File    ${file_name}
+    log    ${data}

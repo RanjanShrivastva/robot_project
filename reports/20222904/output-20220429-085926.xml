@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.7.0 on win32)" generated="20220429 08:59:26.824" rpa="false" schemaversion="3">
+<suite id="s1" name="demoProjects" source="D:\demoProjects">
+<suite id="s1-s1" name="Testcases" source="D:\demoProjects\testcases">
+<suite id="s1-s1-s1" name="GUI scripts" source="D:\demoProjects\testcases\GUI_scripts.robot">
+<test id="s1-s1-s1-t1" name="app_button_example" line="53">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://demoqa.com/buttons</arg>
+<arg>gc</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220429 08:59:27.434" level="INFO">Opening browser 'gc' to base url 'https://demoqa.com/buttons'.</msg>
+<status status="PASS" starttime="20220429 08:59:27.434" endtime="20220429 08:59:32.764"/>
+</kw>
+<kw name="Double Click Element" library="SeleniumLibrary">
+<arg>id="doubleClickBtn"</arg>
+<doc>Double clicks the element identified by ``locator``.</doc>
+<msg timestamp="20220429 08:59:32.764" level="INFO">Double clicking element 'id="doubleClickBtn"'.</msg>
+<msg timestamp="20220429 08:59:32.970" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-12.png"&gt;&lt;img src="selenium-screenshot-12.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220429 08:59:32.970" level="FAIL">InvalidSelectorException: Message: invalid selector: An invalid or illegal selector was specified
+  (Session info: chrome=100.0.4896.127)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00EA7413+2389011]
+	Ordinal0 [0x00E39F61+1941345]
+	Ordinal0 [0x00D2C658+837208]
+	Ordinal0 [0x00D2F064+847972]
+	Ordinal0 [0x00D2EF22+847650]
+	Ordinal0 [0x00D2F1B0+848304]
+	Ordinal0 [0x00D58EF2+1019634]
+	Ordinal0 [0x00D5949B+1021083]
+	Ordinal0 [0x00D8606C+1204332]
+	Ordinal0 [0x00D74194+1130900]
+	Ordinal0 [0x00D84302+1196802]
+	Ordinal0 [0x00D73F66+1130342]
+	Ordinal0 [0x00D4E546+976198]
+	Ordinal0 [0x00D4F456+980054]
+	GetHandleVerifier [0x01059632+1727522]
+	GetHandleVerifier [0x0110BA4D+2457661]
+	GetHandleVerifier [0x00F3EB81+569713]
+	GetHandleVerifier [0x00F3DD76+566118]
+	Ordinal0 [0x00E40B2B+1968939]
+	Ordinal0 [0x00E45988+1989000]
+	Ordinal0 [0x00E45A75+1989237]
+	Ordinal0 [0x00E4ECB1+2026673]
+	BaseThreadInitThunk [0x75826739+25]
+	RtlGetFullPathName_UEx [0x772B8E7F+1215]
+	RtlGetFullPathName_UEx [0x772B8E4D+1165]
+</msg>
+<status status="FAIL" starttime="20220429 08:59:32.764" endtime="20220429 08:59:33.002"/>
+</kw>
+<kw name="Open Context Menu" library="SeleniumLibrary">
+<arg>id="rightClickBtn"</arg>
+<doc>Opens the context menu on the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220429 08:59:33.002" endtime="20220429 08:59:33.002"/>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>id="G2Lbp"</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220429 08:59:33.002" endtime="20220429 08:59:33.002"/>
+</kw>
+<status status="FAIL" starttime="20220429 08:59:27.434" endtime="20220429 08:59:33.002">InvalidSelectorException: Message: invalid selector: An invalid or illegal selector was specified
+  (Session info: chrome=100.0.4896.127)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00EA7413+2389011]
+	Ordinal0 [0x00E39F61+1941345]
+	Ordinal0 [0x00D2C658+837208]
+	Ordinal0 [0x00D2F064+847972]
+	Ordinal0 [0x00D2EF22+847650]
+	Ordinal0 [0x00D2F1B0+848304]
+	Ordinal0 [0x00D58EF2+1019634]
+	Ordinal0 [0x00D5949B+1021083]
+	Ordinal0 [0x00D8606C+1204332]
+	Ordinal0 [0x00D74194+1130900]
+	Ordinal0 [0x00D84302+1196802]
+	Ordinal0 [0x00D73F66+1130342]
+	Ordinal0 [0x00D4E546+976198]
+	Ordinal0 [0x00D4F456+980054]
+	GetHandleVerifier [0x01059632+1727522]
+	GetHandleVerifier [0x0110BA4D+2457661]
+	GetHandleVerifier [0x00F3EB81+569713]
+	GetHandleVerifier [0x00F3DD76+566118]
+	Ordinal0 [0x00E40B2B+1968939]
+	Ordinal0 [0x00E45988+1989000]
+	Ordinal0 [0x00E45A75+1989237]
+	Ordinal0 [0x00E4ECB1+2026673]
+	BaseThreadInitThunk [0x75826739+25]
+	RtlGetFullPathName_UEx [0x772B8E7F+1215]
+	RtlGetFullPathName_UEx [0x772B8E4D+1165]
+</status>
+</test>
+<status status="FAIL" starttime="20220429 08:59:27.419" endtime="20220429 08:59:33.002"/>
+</suite>
+<status status="FAIL" starttime="20220429 08:59:26.918" endtime="20220429 08:59:33.009"/>
+</suite>
+<status status="FAIL" starttime="20220429 08:59:26.887" endtime="20220429 08:59:33.009"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="demoProjects">demoProjects</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Testcases">demoProjects.Testcases</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="GUI scripts">demoProjects.Testcases.GUI scripts</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

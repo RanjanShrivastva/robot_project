@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.7.0 on win32)" generated="20220429 10:55:32.118" rpa="false" schemaversion="3">
+<suite id="s1" name="demoProjects" source="D:\demoProjects">
+<suite id="s1-s1" name="Testcases" source="D:\demoProjects\testcases">
+<suite id="s1-s1-s1" name="GUI scripts" source="D:\demoProjects\testcases\GUI_scripts.robot">
+<test id="s1-s1-s1-t1" name="app_switch_new_tab" line="71">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://demoqa.com/browser-windows</arg>
+<arg>gc</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220429 10:55:32.728" level="INFO">Opening browser 'gc' to base url 'https://demoqa.com/browser-windows'.</msg>
+<status status="PASS" starttime="20220429 10:55:32.712" endtime="20220429 10:55:45.581"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//button[@id='tabButton']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220429 10:55:45.581" level="INFO">Clicking element '//button[@id='tabButton']'.</msg>
+<status status="PASS" starttime="20220429 10:55:45.581" endtime="20220429 10:55:45.693"/>
+</kw>
+<kw name="Get Browser Ids" library="SeleniumLibrary">
+<var>@{b_ids}</var>
+<doc>Returns index of all active browser as list.</doc>
+<msg timestamp="20220429 10:55:45.693" level="INFO">@{b_ids} = [ 1 ]</msg>
+<status status="PASS" starttime="20220429 10:55:45.693" endtime="20220429 10:55:45.693"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>@{b_ids}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220429 10:55:45.693" level="INFO">1</msg>
+<status status="PASS" starttime="20220429 10:55:45.693" endtime="20220429 10:55:45.693"/>
+</kw>
+<kw name="Switch Browser" library="SeleniumLibrary">
+<arg>@{b_ids}[1]</arg>
+<doc>Switches between active browsers using ``index_or_alias``.</doc>
+<msg timestamp="20220429 10:55:45.701" level="FAIL">List '@{b_ids}' has no item in index 1.</msg>
+<status status="FAIL" starttime="20220429 10:55:45.693" endtime="20220429 10:55:45.701"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${sample_text}</var>
+<arg>//h1[@id="sampleHeading"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220429 10:55:45.701" endtime="20220429 10:55:45.701"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${sample_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20220429 10:55:45.701" endtime="20220429 10:55:45.701"/>
+</kw>
+<status status="FAIL" starttime="20220429 10:55:32.712" endtime="20220429 10:55:45.701">List '@{b_ids}' has no item in index 1.</status>
+</test>
+<status status="FAIL" starttime="20220429 10:55:32.697" endtime="20220429 10:55:45.709"/>
+</suite>
+<status status="FAIL" starttime="20220429 10:55:32.205" endtime="20220429 10:55:45.709"/>
+</suite>
+<status status="FAIL" starttime="20220429 10:55:32.165" endtime="20220429 10:55:45.717"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="demoProjects">demoProjects</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Testcases">demoProjects.Testcases</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="GUI scripts">demoProjects.Testcases.GUI scripts</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
