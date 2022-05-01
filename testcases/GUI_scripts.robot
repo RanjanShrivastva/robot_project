@@ -23,6 +23,24 @@ app_login_01
     Comment    Click Element    //* [@class='_2KpZ6l _2HKlqd _3AWRsL']4555
     Close Browser
 
+app_login_01_headless
+    [Tags]    reg
+    Open Browser    https://www.flipkart.com/    headlesschrome
+    Maximize Browser Window
+    sleep    2
+    Input text    //* [@class='_2IX_2- VJZDxU']    ${username_value}
+    sleep    2
+    Input text    //* [@type='password']    ${password_value}
+    sleep    2
+    Click Element    //* [@class='_2KpZ6l _2HKlqd _3AWRsL']
+    sleep    2
+    Comment    Capture Page Screenshot
+    ${user_name}    get text    //*[@class='exehdJ']
+    log    ${user_name}
+    Should Be Equal    ${user_name}    Ranjan
+    Comment    Click Element    //* [@class='_2KpZ6l _2HKlqd _3AWRsL']4555
+    Close Browser
+
 pom_app_login
     [Documentation]    This test case is desgined in POM
     [Tags]    regression
