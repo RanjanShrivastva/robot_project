@@ -1,6 +1,7 @@
 *** Settings ***
 Test Template
 Resource          ../common/commom_libraries.robot
+Library           C:/Python/Python37/Lib/site-packages/Custom Python Scripts/For Loop Keyword.py
 
 *** Variables ***
 
@@ -151,9 +152,6 @@ app_switch_multiBrowser
     END
 
 test
-    Comment    log    @{nums}[0]
-    Comment    log    @{nums}
-    log    @{hello}[0]
 
 app_alert
     Open Browser    https://demoqa.com/alerts    gc
@@ -211,8 +209,8 @@ html_table_validation
     Log To Console    ${cols_count}
     ${captured_data}    Get Text    //table[@id="customers"]/tbody/tr[5]/td[1]
     Log To Console    ${captured_data}
-    table column should contain     //table[@id="customers"]    2    Contact
-    table row should contain     //table[@id="customers"]    4    Ernst Handel
+    table column should contain    //table[@id="customers"]    2    Contact
+    table row should contain    //table[@id="customers"]    4    Ernst Handel
     table cell should contain    //table[@id="customers"]    4    2    Roland Mendel
     table header should contain    //table[@id="customers"]    Country
     [Teardown]    Close Browser
