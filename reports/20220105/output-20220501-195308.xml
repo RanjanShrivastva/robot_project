@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.7.0 on win32)" generated="20220501 19:53:08.985" rpa="false" schemaversion="3">
+<suite id="s1" name="demoProjects" source="D:\demoProjects">
+<suite id="s1-s1" name="Testcases" source="D:\demoProjects\testcases">
+<suite id="s1-s1-s1" name="GUI scripts" source="D:\demoProjects\testcases\GUI_scripts.robot">
+<test id="s1-s1-s1-t1" name="html_table_validation" line="187">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://www.w3schools.com/html/html_tables.asp</arg>
+<arg>gc</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220501 19:53:10.767" level="INFO">Opening browser 'gc' to base url 'https://www.w3schools.com/html/html_tables.asp'.</msg>
+<status status="PASS" starttime="20220501 19:53:10.767" endtime="20220501 19:53:46.422"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<msg timestamp="20220501 19:53:48.692" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-7.png"&gt;&lt;img src="selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220501 19:53:48.695" level="FAIL">WebDriverException: Message: unknown error: failed to change window state to 'normal', current state is 'maximized'
+  (Session info: chrome=100.0.4896.127)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x005F7413+2389011]
+	Ordinal0 [0x00589F61+1941345]
+	Ordinal0 [0x0047C658+837208]
+	Ordinal0 [0x0046722C+750124]
+	Ordinal0 [0x00466191+745873]
+	Ordinal0 [0x00464F52+741202]
+	Ordinal0 [0x004E435F+1262431]
+	Ordinal0 [0x004C414C+1130828]
+	Ordinal0 [0x004D4302+1196802]
+	Ordinal0 [0x004C3F66+1130342]
+	Ordinal0 [0x0049E546+976198]
+	Ordinal0 [0x0049F456+980054]
+	GetHandleVerifier [0x007A9632+1727522]
+	GetHandleVerifier [0x0085BA4D+2457661]
+	GetHandleVerifier [0x0068EB81+569713]
+	GetHandleVerifier [0x0068DD76+566118]
+	Ordinal0 [0x00590B2B+1968939]
+	Ordinal0 [0x00595988+1989000]
+	Ordinal0 [0x00595A75+1989237]
+	Ordinal0 [0x0059ECB1+2026673]
+	BaseThreadInitThunk [0x76E26739+25]
+	RtlGetFullPathName_UEx [0x77D78E7F+1215]
+	RtlGetFullPathName_UEx [0x77D78E4D+1165]
+</msg>
+<status status="FAIL" starttime="20220501 19:53:46.422" endtime="20220501 19:53:55.439"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${rows_count}</var>
+<arg>//table[@id="customers"]/tbody/tr</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="NOT RUN" starttime="20220501 19:53:55.439" endtime="20220501 19:53:55.439"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${cols_count}</var>
+<arg>//table[@id="customers"]/tbody/tr[1]/th</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="NOT RUN" starttime="20220501 19:53:55.439" endtime="20220501 19:53:55.439"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${rows_count}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220501 19:53:55.439" endtime="20220501 19:53:55.439"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${cols_count}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220501 19:53:55.439" endtime="20220501 19:53:55.439"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${captured_data}</var>
+<arg>//table[@id="customers"]/tbody/tr[5]/td[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220501 19:53:55.439" endtime="20220501 19:53:55.439"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${captured_data}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220501 19:53:55.439" endtime="20220501 19:53:55.439"/>
+</kw>
+<status status="FAIL" starttime="20220501 19:53:10.756" endtime="20220501 19:53:55.439">WebDriverException: Message: unknown error: failed to change window state to 'normal', current state is 'maximized'
+  (Session info: chrome=100.0.4896.127)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x005F7413+2389011]
+	Ordinal0 [0x00589F61+1941345]
+	Ordinal0 [0x0047C658+837208]
+	Ordinal0 [0x0046722C+750124]
+	Ordinal0 [0x00466191+745873]
+	Ordinal0 [0x00464F52+741202]
+	Ordinal0 [0x004E435F+1262431]
+	Ordinal0 [0x004C414C+1130828]
+	Ordinal0 [0x004D4302+1196802]
+	Ordinal0 [0x004C3F66+1130342]
+	Ordinal0 [0x0049E546+976198]
+	Ordinal0 [0x0049F456+980054]
+	GetHandleVerifier [0x007A9632+1727522]
+	GetHandleVerifier [0x0085BA4D+2457661]
+	GetHandleVerifier [0x0068EB81+569713]
+	GetHandleVerifier [0x0068DD76+566118]
+	Ordinal0 [0x00590B2B+1968939]
+	Ordinal0 [0x00595988+1989000]
+	Ordinal0 [0x00595A75+1989237]
+	Ordinal0 [0x0059ECB1+2026673]
+	BaseThreadInitThunk [0x76E26739+25]
+	RtlGetFullPathName_UEx [0x77D78E7F+1215]
+	RtlGetFullPathName_UEx [0x77D78E4D+1165]
+</status>
+</test>
+<status status="FAIL" starttime="20220501 19:53:09.764" endtime="20220501 19:53:55.439"/>
+</suite>
+<status status="FAIL" starttime="20220501 19:53:09.108" endtime="20220501 19:53:55.450"/>
+</suite>
+<status status="FAIL" starttime="20220501 19:53:09.050" endtime="20220501 19:53:55.450"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="demoProjects">demoProjects</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Testcases">demoProjects.Testcases</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="GUI scripts">demoProjects.Testcases.GUI scripts</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

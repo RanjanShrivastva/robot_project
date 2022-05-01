@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.7.0 on win32)" generated="20220501 18:49:48.733" rpa="false" schemaversion="3">
+<suite id="s1" name="demoProjects" source="D:\demoProjects">
+<suite id="s1-s1" name="Testcases" source="D:\demoProjects\testcases">
+<suite id="s1-s1-s1" name="Database Test Cases" source="D:\demoProjects\testcases\Database_Test_Cases.robot">
+<test id="s1-s1-s1-t1" name="test_db" line="5">
+<kw name="Connect To Database Using Custom Params" library="DatabaseLibrary">
+<arg>psycopg2</arg>
+<arg>database='students', user='root', password='Mysql2022@@@', host=127.0.0.1, port=3306</arg>
+<doc>Loads the DB API 2.0 module given `dbapiModuleName` then uses it to
+connect to the database using the map string `db_custom_param_string`.</doc>
+<msg timestamp="20220501 18:49:49.249" level="FAIL">ModuleNotFoundError: No module named 'psycopg2'</msg>
+<status status="FAIL" starttime="20220501 18:49:49.249" endtime="20220501 18:49:49.327"/>
+</kw>
+<status status="FAIL" starttime="20220501 18:49:49.249" endtime="20220501 18:49:49.327">ModuleNotFoundError: No module named 'psycopg2'</status>
+</test>
+<status status="FAIL" starttime="20220501 18:49:49.233" endtime="20220501 18:49:49.327"/>
+</suite>
+<status status="FAIL" starttime="20220501 18:49:48.796" endtime="20220501 18:49:49.327"/>
+</suite>
+<status status="FAIL" starttime="20220501 18:49:48.780" endtime="20220501 18:49:49.327"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="demoProjects">demoProjects</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Testcases">demoProjects.Testcases</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="Database Test Cases">demoProjects.Testcases.Database Test Cases</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

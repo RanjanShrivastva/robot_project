@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.7.0 on win32)" generated="20220501 19:09:30.708" rpa="false" schemaversion="3">
+<suite id="s1" name="demoProjects" source="D:\demoProjects">
+<suite id="s1-s1" name="Testcases" source="D:\demoProjects\testcases">
+<suite id="s1-s1-s1" name="Database Test Cases" source="D:\demoProjects\testcases\Database_Test_Cases.robot">
+<test id="s1-s1-s1-t1" name="create new table" line="6">
+<kw name="Establish Database Connection" library="UDK" type="SETUP">
+<kw name="Connect To Database" library="DatabaseLibrary">
+<arg>pymysql</arg>
+<arg>mydb</arg>
+<arg>root</arg>
+<arg>Mysql2022@@@</arg>
+<arg>127.0.0.1</arg>
+<arg>3306</arg>
+<doc>Loads the DB API 2.0 module given `dbapiModuleName` then uses it to
+connect to the database using `dbName`, `dbUsername`, and `dbPassword`.</doc>
+<msg timestamp="20220501 19:09:31.570" level="INFO">Connecting using : pymysql.connect(db=mydb, user=root, passwd=Mysql2022@@@, host=127.0.0.1, port=3306, charset=None) </msg>
+<status status="PASS" starttime="20220501 19:09:31.520" endtime="20220501 19:09:31.573"/>
+</kw>
+<status status="PASS" starttime="20220501 19:09:31.520" endtime="20220501 19:09:31.575"/>
+</kw>
+<kw name="Execute Sql String" library="DatabaseLibrary">
+<var>${output}</var>
+<arg>create table person(id integer, first_name varchar(100), last_name varchar(100))</arg>
+<doc>Executes the sqlString as SQL commands. Useful to pass arguments to your sql. Set optional input `sansTran` to
+True to run command without an explicit transaction commit or rollback.</doc>
+<msg timestamp="20220501 19:09:31.576" level="INFO">Executing : Execute SQL String  |  create table person(id integer, first_name varchar(100), last_name varchar(100)) </msg>
+<msg timestamp="20220501 19:09:31.595" level="INFO">${output} = None</msg>
+<status status="PASS" starttime="20220501 19:09:31.575" endtime="20220501 19:09:31.595"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${output}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220501 19:09:31.596" level="INFO">None</msg>
+<status status="PASS" starttime="20220501 19:09:31.596" endtime="20220501 19:09:31.596"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${output}</arg>
+<arg>None</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20220501 19:09:31.597" level="INFO">Argument types are:
+&lt;class 'NoneType'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20220501 19:09:31.596" endtime="20220501 19:09:31.597"/>
+</kw>
+<kw name="Disconnect From Database" library="UDK" type="TEARDOWN">
+<kw name="Disconnect From Database" library="DatabaseLibrary">
+<doc>Disconnects from the database.</doc>
+<msg timestamp="20220501 19:09:31.598" level="INFO">Executing : Disconnect From Database</msg>
+<status status="PASS" starttime="20220501 19:09:31.597" endtime="20220501 19:09:31.598"/>
+</kw>
+<status status="PASS" starttime="20220501 19:09:31.597" endtime="20220501 19:09:31.599"/>
+</kw>
+<status status="PASS" starttime="20220501 19:09:31.519" endtime="20220501 19:09:31.599"/>
+</test>
+<status status="PASS" starttime="20220501 19:09:31.019" endtime="20220501 19:09:31.600"/>
+</suite>
+<status status="PASS" starttime="20220501 19:09:30.766" endtime="20220501 19:09:31.602"/>
+</suite>
+<status status="PASS" starttime="20220501 19:09:30.741" endtime="20220501 19:09:31.603"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="demoProjects">demoProjects</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Testcases">demoProjects.Testcases</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="Database Test Cases">demoProjects.Testcases.Database Test Cases</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.7.0 on win32)" generated="20220501 10:16:45.502" rpa="false" schemaversion="3">
+<suite id="s1" name="demoProjects" source="D:\demoProjects">
+<suite id="s1-s1" name="Testcases" source="D:\demoProjects\testcases">
+<suite id="s1-s1-s1" name="GUI scripts" source="D:\demoProjects\testcases\GUI_scripts.robot">
+<test id="s1-s1-s1-t1" name="use_of_custom_keyword" line="184">
+<kw name="count_of_characters">
+<arg>Ranjan</arg>
+<msg timestamp="20220501 10:16:46.284" level="FAIL">No keyword with name 'count_of_characters' found.</msg>
+<status status="FAIL" starttime="20220501 10:16:46.284" endtime="20220501 10:16:46.284"/>
+</kw>
+<status status="FAIL" starttime="20220501 10:16:46.268" endtime="20220501 10:16:46.284">No keyword with name 'count_of_characters' found.</status>
+</test>
+<status status="FAIL" starttime="20220501 10:16:46.252" endtime="20220501 10:16:46.284"/>
+</suite>
+<status status="FAIL" starttime="20220501 10:16:45.643" endtime="20220501 10:16:46.299"/>
+</suite>
+<status status="FAIL" starttime="20220501 10:16:45.580" endtime="20220501 10:16:46.299"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="demoProjects">demoProjects</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Testcases">demoProjects.Testcases</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="GUI scripts">demoProjects.Testcases.GUI scripts</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

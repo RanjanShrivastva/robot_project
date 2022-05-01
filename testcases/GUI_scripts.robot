@@ -1,5 +1,5 @@
 *** Settings ***
-Test Template     #Invalid Login2
+Test Template
 Resource          ../common/commom_libraries.robot
 
 *** Variables ***
@@ -10,9 +10,9 @@ app_login_01
     Open Browser    https://www.flipkart.com/    gc
     Maximize Browser Window
     sleep    2
-    Input text    //* [@class='_2IX_2- VJZDxU']    9738308627
+    Input text    //* [@class='_2IX_2- VJZDxU']    ${username_value}
     sleep    2
-    Input text    //* [@type='password']    Flipkart2022@@@
+    Input text    //* [@type='password']    ${password_value}
     sleep    2
     Click Element    //* [@class='_2KpZ6l _2HKlqd _3AWRsL']
     sleep    2
@@ -180,5 +180,23 @@ app_sleep_speed_timeout_Implict
     Set Selenium Implicit Wait    10
     log    ${siw}
     Wait Until Page Contains    adsf
+
+use_of_custom_keyword
+    count_of_characters    Ranjan
+
+html_table_validation
+    Open Browser    https://www.w3schools.com/html/html_tables.asp    gc
+    Maximize Browser Window
+    ${rows_count}    Get Element Count    //table[@id="customers"]/tbody/tr
+    ${cols_count}    Get Element Count    //table[@id="customers"]/tbody/tr[1]/th
+    Log To Console    ${rows_count}
+    Log To Console    ${cols_count}
+    ${captured_data}    Get Text    //table[@id="customers"]/tbody/tr[5]/td[1]
+    Log To Console    ${captured_data}
+    table column should contain     //table[@id="customers"]    2    Contact
+    table row should contain     //table[@id="customers"]    4    Ernst Handel
+    table cell should contain    //table[@id="customers"]    4    2    Roland Mendel
+    table header should contain    //table[@id="customers"]    Country
+    [Teardown]    Close Browser
 
 *** Keywords ***

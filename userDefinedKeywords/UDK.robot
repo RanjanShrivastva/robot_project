@@ -6,6 +6,7 @@ Library           SeleniumLibrary
 Library           requests
 Library           RequestsLibrary
 Library           OperatingSystem
+Library           DatabaseLibrary
 
 *** Keywords ***
 Test Template
@@ -58,8 +59,13 @@ Message Should Be Visible When Username Or Password Is Valid
 
 Read CSV File
     [Arguments]    ${file_name}
-    ${data}    Get File    ${file_name}
-    log    ${data}
+    ${data_set}    Get File    ${file_name}
+    Comment    log    ${data_set}
+    FOR    ${data}    IN    ${data_set}
+        log    *************************
+        log    ${data}
+    END
+    log    ${data_set}[0]
 
 Invalid Login
     [Arguments]    ${username}    ${password}
@@ -72,3 +78,9 @@ Launch App Browser
     [Arguments]    ${URL}
     Open Browser    ${URL}    gc
     Maximize Browser Window
+
+Establish Database Connection
+    Connect To Database    pymysql    mydb    root    Mysql2022@@@    127.0.0.1    3306
+
+Disconnect From Database
+    DatabaseLibrary.Disconnect From Database

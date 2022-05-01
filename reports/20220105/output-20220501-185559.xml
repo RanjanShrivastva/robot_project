@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.7.0 on win32)" generated="20220501 18:55:59.636" rpa="false" schemaversion="3">
+<suite id="s1" name="demoProjects" source="D:\demoProjects">
+<suite id="s1-s1" name="Testcases" source="D:\demoProjects\testcases">
+<suite id="s1-s1-s1" name="Database Test Cases" source="D:\demoProjects\testcases\Database_Test_Cases.robot">
+<test id="s1-s1-s1-t1" name="test_db" line="5">
+<kw name="Connect To Database" library="DatabaseLibrary">
+<arg>pymysql</arg>
+<arg>students</arg>
+<arg>root</arg>
+<arg>Mysql2022@@@</arg>
+<arg>127.0.0.1</arg>
+<arg>3306</arg>
+<doc>Loads the DB API 2.0 module given `dbapiModuleName` then uses it to
+connect to the database using `dbName`, `dbUsername`, and `dbPassword`.</doc>
+<msg timestamp="20220501 18:56:00.105" level="INFO">Connecting using : pymysql.connect(db=students, user=root, passwd=Mysql2022@@@, host=127.0.0.1, port=3306, charset=None) </msg>
+<status status="PASS" starttime="20220501 18:55:59.964" endtime="20220501 18:56:00.105"/>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<arg>database='students', user='root', password='Mysql2022@@@', host=127.0.0.1, port=3306</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="PASS" starttime="20220501 18:56:00.105" endtime="20220501 18:56:00.105"/>
+</kw>
+<status status="PASS" starttime="20220501 18:55:59.964" endtime="20220501 18:56:00.105"/>
+</test>
+<status status="PASS" starttime="20220501 18:55:59.949" endtime="20220501 18:56:00.105"/>
+</suite>
+<status status="PASS" starttime="20220501 18:55:59.699" endtime="20220501 18:56:00.105"/>
+</suite>
+<status status="PASS" starttime="20220501 18:55:59.683" endtime="20220501 18:56:00.105"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="demoProjects">demoProjects</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Testcases">demoProjects.Testcases</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="Database Test Cases">demoProjects.Testcases.Database Test Cases</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

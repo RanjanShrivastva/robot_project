@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.7.0 on win32)" generated="20220501 11:42:02.904" rpa="false" schemaversion="3">
+<suite id="s1" name="demoProjects" source="D:\demoProjects">
+<suite id="s1-s1" name="Testcases" source="D:\demoProjects\testcases">
+<suite id="s1-s1-s1" name="Read Write" source="D:\demoProjects\testcases\Read_Write.robot">
+<test id="s1-s1-s1-t1" name="TC01 Read Data From CSV" line="5">
+<kw name="Read CSV File" library="UDK">
+<arg>D:\\demoProjects\\testData\\user_data_csv.csv</arg>
+<kw name="Get File" library="OperatingSystem">
+<var>${data_set}</var>
+<arg>${file_name}</arg>
+<doc>Returns the contents of a specified file.</doc>
+<msg timestamp="20220501 11:42:03.187" level="INFO" html="true">Getting file '&lt;a href="file://D:\demoProjects\testData\user_data_csv.csv"&gt;D:\demoProjects\testData\user_data_csv.csv&lt;/a&gt;'.</msg>
+<msg timestamp="20220501 11:42:03.203" level="INFO">${data_set} = Name, Id
+ranjan, 5
+suman, 9</msg>
+<status status="PASS" starttime="20220501 11:42:03.187" endtime="20220501 11:42:03.203"/>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<arg>log</arg>
+<arg>${data_set}</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="PASS" starttime="20220501 11:42:03.203" endtime="20220501 11:42:03.203"/>
+</kw>
+<for flavor="IN">
+<var>${data}</var>
+<value>${data_set}</value>
+<iter>
+<var name="${data}">Name, Id
+ranjan, 5
+suman, 9</var>
+<kw name="Log" library="BuiltIn">
+<arg>*************************</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220501 11:42:03.203" level="INFO">*************************</msg>
+<status status="PASS" starttime="20220501 11:42:03.203" endtime="20220501 11:42:03.203"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${data}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220501 11:42:03.203" level="INFO">Name, Id
+ranjan, 5
+suman, 9</msg>
+<status status="PASS" starttime="20220501 11:42:03.203" endtime="20220501 11:42:03.203"/>
+</kw>
+<status status="PASS" starttime="20220501 11:42:03.203" endtime="20220501 11:42:03.203"/>
+</iter>
+<status status="PASS" starttime="20220501 11:42:03.203" endtime="20220501 11:42:03.203"/>
+</for>
+<kw name="Log" library="BuiltIn">
+<arg>${data_set}[0]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220501 11:42:03.203" level="INFO">N</msg>
+<status status="PASS" starttime="20220501 11:42:03.203" endtime="20220501 11:42:03.203"/>
+</kw>
+<status status="PASS" starttime="20220501 11:42:03.187" endtime="20220501 11:42:03.203"/>
+</kw>
+<status status="PASS" starttime="20220501 11:42:03.187" endtime="20220501 11:42:03.203"/>
+</test>
+<status status="PASS" starttime="20220501 11:42:03.171" endtime="20220501 11:42:03.203"/>
+</suite>
+<status status="PASS" starttime="20220501 11:42:02.953" endtime="20220501 11:42:03.203"/>
+</suite>
+<status status="PASS" starttime="20220501 11:42:02.936" endtime="20220501 11:42:03.203"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="demoProjects">demoProjects</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Testcases">demoProjects.Testcases</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="Read Write">demoProjects.Testcases.Read Write</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

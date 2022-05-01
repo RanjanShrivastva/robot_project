@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.7.0 on win32)" generated="20220501 19:18:39.303" rpa="false" schemaversion="3">
+<suite id="s1" name="demoProjects" source="D:\demoProjects">
+<suite id="s1-s1" name="Testcases" source="D:\demoProjects\testcases">
+<suite id="s1-s1-s1" name="Database Test Cases" source="D:\demoProjects\testcases\Database_Test_Cases.robot">
+<test id="s1-s1-s1-t1" name="data_validation" line="27">
+<kw name="Establish Database Connection" library="UDK" type="SETUP">
+<kw name="Connect To Database" library="DatabaseLibrary">
+<arg>pymysql</arg>
+<arg>mydb</arg>
+<arg>root</arg>
+<arg>Mysql2022@@@</arg>
+<arg>127.0.0.1</arg>
+<arg>3306</arg>
+<doc>Loads the DB API 2.0 module given `dbapiModuleName` then uses it to
+connect to the database using `dbName`, `dbUsername`, and `dbPassword`.</doc>
+<msg timestamp="20220501 19:18:40.881" level="INFO">Connecting using : pymysql.connect(db=mydb, user=root, passwd=Mysql2022@@@, host=127.0.0.1, port=3306, charset=None) </msg>
+<status status="PASS" starttime="20220501 19:18:40.818" endtime="20220501 19:18:40.881"/>
+</kw>
+<status status="PASS" starttime="20220501 19:18:40.818" endtime="20220501 19:18:40.881"/>
+</kw>
+<kw name="Check If Exists In Database" library="DatabaseLibrary">
+<arg>select * from mydb.person where first_name="mit";</arg>
+<doc>Check if any row would be returned by given the input `selectStatement`. If there are no results, then this will
+throw an AssertionError. Set optional input `sansTran` to True to run command without an explicit transaction
+commit or rollback.</doc>
+<msg timestamp="20220501 19:18:40.881" level="INFO">Executing : Check If Exists In Database  |  select * from mydb.person where first_name="mit"; </msg>
+<msg timestamp="20220501 19:18:40.881" level="INFO">Executing : Query  |  select * from mydb.person where first_name="mit"; </msg>
+<msg timestamp="20220501 19:18:40.892" level="FAIL">Expected to have have at least one row from 'select * from mydb.person where first_name="mit";' but got 0 rows.</msg>
+<status status="FAIL" starttime="20220501 19:18:40.881" endtime="20220501 19:18:40.892"/>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<arg>log</arg>
+<arg>${output}</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="NOT RUN" starttime="20220501 19:18:40.892" endtime="20220501 19:18:40.892"/>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<arg>Should Be Equal As Strings</arg>
+<arg>${output}</arg>
+<arg>None</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="NOT RUN" starttime="20220501 19:18:40.892" endtime="20220501 19:18:40.892"/>
+</kw>
+<kw name="Disconnect From Database" library="UDK" type="TEARDOWN">
+<kw name="Disconnect From Database" library="DatabaseLibrary">
+<doc>Disconnects from the database.</doc>
+<msg timestamp="20220501 19:18:40.892" level="INFO">Executing : Disconnect From Database</msg>
+<status status="PASS" starttime="20220501 19:18:40.892" endtime="20220501 19:18:40.892"/>
+</kw>
+<status status="PASS" starttime="20220501 19:18:40.892" endtime="20220501 19:18:40.892"/>
+</kw>
+<status status="FAIL" starttime="20220501 19:18:40.818" endtime="20220501 19:18:40.892">Expected to have have at least one row from 'select * from mydb.person where first_name="mit";' but got 0 rows.</status>
+</test>
+<status status="FAIL" starttime="20220501 19:18:39.922" endtime="20220501 19:18:40.903"/>
+</suite>
+<status status="FAIL" starttime="20220501 19:18:39.411" endtime="20220501 19:18:40.903"/>
+</suite>
+<status status="FAIL" starttime="20220501 19:18:39.367" endtime="20220501 19:18:40.903"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="demoProjects">demoProjects</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Testcases">demoProjects.Testcases</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="Database Test Cases">demoProjects.Testcases.Database Test Cases</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
