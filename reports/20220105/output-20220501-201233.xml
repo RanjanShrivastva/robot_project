@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.7.0 on win32)" generated="20220501 20:12:33.199" rpa="false" schemaversion="3">
+<suite id="s1" name="demoProjects" source="D:\demoProjects">
+<suite id="s1-s1" name="Testcases" source="D:\demoProjects\testcases">
+<suite id="s1-s1-s1" name="Read Write" source="D:\demoProjects\testcases\Read_Write.robot">
+<test id="s1-s1-s1-t1" name="TC02 Read Excel" line="9">
+<kw name="Open Excel Document" library="ExcelLibrary">
+<arg>D:\\demoProjects\\testData\\user_login_data .xlsx</arg>
+<arg>1</arg>
+<doc>Opens xlsx document file.</doc>
+<msg timestamp="20220501 20:12:34.702" level="FAIL">FileNotFoundError: [Errno 2] No such file or directory: 'D:\\demoProjects\\testData\\user_login_data .xlsx'</msg>
+<status status="FAIL" starttime="20220501 20:12:34.702" endtime="20220501 20:12:39.972"/>
+</kw>
+<status status="FAIL" starttime="20220501 20:12:34.702" endtime="20220501 20:12:39.972">FileNotFoundError: [Errno 2] No such file or directory: 'D:\\demoProjects\\testData\\user_login_data .xlsx'</status>
+</test>
+<status status="FAIL" starttime="20220501 20:12:33.838" endtime="20220501 20:12:39.972"/>
+</suite>
+<status status="FAIL" starttime="20220501 20:12:33.297" endtime="20220501 20:12:39.972"/>
+</suite>
+<status status="FAIL" starttime="20220501 20:12:33.252" endtime="20220501 20:12:39.982"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="demoProjects">demoProjects</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Testcases">demoProjects.Testcases</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="Read Write">demoProjects.Testcases.Read Write</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.7.0 on win32)" generated="20220501 20:21:16.057" rpa="false" schemaversion="3">
+<suite id="s1" name="demoProjects" source="D:\demoProjects">
+<suite id="s1-s1" name="Testcases" source="D:\demoProjects\testcases">
+<suite id="s1-s1-s1" name="Read Write" source="D:\demoProjects\testcases\Read_Write.robot">
+<test id="s1-s1-s1-t1" name="TC02 Read Excel" line="9">
+<kw name="Open Excel Document" library="ExcelLibrary">
+<arg>D:\\demoProjects\\testData\\user_login_data.xlsx</arg>
+<arg>1</arg>
+<doc>Opens xlsx document file.</doc>
+<status status="PASS" starttime="20220501 20:21:17.507" endtime="20220501 20:21:17.518"/>
+</kw>
+<kw name="Get Sheet" library="ExcelLibrary">
+<var>${no_of_sheets}</var>
+<doc>Returns a page from the current document.</doc>
+<msg timestamp="20220501 20:21:17.518" level="INFO">${no_of_sheets} = &lt;Worksheet "Sheet1"&gt;</msg>
+<status status="PASS" starttime="20220501 20:21:17.518" endtime="20220501 20:21:17.518"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${no_of_sheets}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220501 20:21:17.518" endtime="20220501 20:21:17.518"/>
+</kw>
+<kw name="ExcelLibrary.Get Row Count">
+<var>${no_of_sheets}</var>
+<arg>Sheet1</arg>
+<msg timestamp="20220501 20:21:17.531" level="FAIL">No keyword with name 'ExcelLibrary.Get Row Count' found.</msg>
+<status status="FAIL" starttime="20220501 20:21:17.531" endtime="20220501 20:21:17.531"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${no_of_sheets}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220501 20:21:17.539" endtime="20220501 20:21:17.539"/>
+</kw>
+<status status="FAIL" starttime="20220501 20:21:17.507" endtime="20220501 20:21:17.539">No keyword with name 'ExcelLibrary.Get Row Count' found.</status>
+</test>
+<status status="FAIL" starttime="20220501 20:21:16.664" endtime="20220501 20:21:17.539"/>
+</suite>
+<status status="FAIL" starttime="20220501 20:21:16.163" endtime="20220501 20:21:17.539"/>
+</suite>
+<status status="FAIL" starttime="20220501 20:21:16.115" endtime="20220501 20:21:17.539"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="demoProjects">demoProjects</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Testcases">demoProjects.Testcases</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="Read Write">demoProjects.Testcases.Read Write</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
