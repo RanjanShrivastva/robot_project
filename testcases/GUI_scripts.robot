@@ -2,6 +2,7 @@
 Test Template
 Resource          ../common/commom_libraries.robot
 Library           C:/Python/Python37/Lib/site-packages/Custom Python Scripts/For Loop Keyword.py
+Library           ../utilities/count_of_characters.py
 
 *** Variables ***
 
@@ -152,6 +153,7 @@ app_switch_multiBrowser
     END
 
 test
+    count_of_characters    Ranjan
 
 app_alert
     Open Browser    https://demoqa.com/alerts    gc
