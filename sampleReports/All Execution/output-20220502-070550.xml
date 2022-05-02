@@ -1,0 +1,2378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.7.0 on win32)" generated="20220502 07:05:50.490" rpa="false" schemaversion="3">
+<suite id="s1" name="demoProjects" source="D:\demoProjects">
+<suite id="s1-s1" name="Testcases" source="D:\demoProjects\testcases">
+<suite id="s1-s1-s1" name="API scripts" source="D:\demoProjects\testcases\API_scripts.robot">
+<test id="s1-s1-s1-t1" name="api_testing_put_example" line="5">
+<kw name="Comment" library="BuiltIn">
+<arg>Creating session</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="PASS" starttime="20220502 07:05:52.438" endtime="20220502 07:05:52.438"/>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>mySession</arg>
+<arg>https://reqres.in/</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220502 07:05:52.438" level="INFO">Creating Session using : alias=mySession, url=https://reqres.in/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220502 07:05:52.438" endtime="20220502 07:05:52.438"/>
+</kw>
+<kw name="Get File" library="OperatingSystem">
+<var>${data}</var>
+<arg>D:\\demoProjects\\testData\\putdata.txt</arg>
+<doc>Returns the contents of a specified file.</doc>
+<msg timestamp="20220502 07:05:52.438" level="INFO" html="true">Getting file '&lt;a href="file://D:\demoProjects\testData\putdata.txt"&gt;D:\demoProjects\testData\putdata.txt&lt;/a&gt;'.</msg>
+<msg timestamp="20220502 07:05:52.438" level="INFO">${data} = {
+    "name": "ranjan",
+    "job": "tester"
+}</msg>
+<status status="PASS" starttime="20220502 07:05:52.438" endtime="20220502 07:05:52.438"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${data}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220502 07:05:52.438" level="INFO">{
+    "name": "ranjan",
+    "job": "tester"
+}</msg>
+<status status="PASS" starttime="20220502 07:05:52.438" endtime="20220502 07:05:52.438"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${headers}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20220502 07:05:52.438" level="INFO">${headers} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20220502 07:05:52.438" endtime="20220502 07:05:52.438"/>
+</kw>
+<kw name="POST On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>mySession</arg>
+<arg>api/users/2</arg>
+<arg>${data}</arg>
+<arg>${headers}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20220502 07:05:53.082" level="INFO">POST Request : url=https://reqres.in/api/users/2 
+ path_url=/api/users/2 
+ headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '45'} 
+ body={
+    "name": "ranjan",
+    "job": "tester"
+} 
+ </msg>
+<msg timestamp="20220502 07:05:53.082" level="INFO">POST Response : url=https://reqres.in/api/users/2 
+ status=201, reason=Created 
+ headers={'Date': 'Mon, 02 May 2022 01:35:53 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '51', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"33-Asd/SGdQyqyoIm/A/jHXHFbSFoM"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=PMaHIVTB5alp411lnFt9C3lXUXb5a9rECzo7IBbhRzI0UP2MW%2FZqv5qudkLeHKFh22WEzupSk7b%2BTzLyiF13UMPSpTEjj2Sn1iTBIoqJs8ugpNe39wcVvfVVhpCaBhC9lW2hzH8fzsc%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '704d05d30e5c858f-BOM', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'} 
+ body={"id":"334","createdAt":"2022-05-02T01:35:53.023Z"} 
+ </msg>
+<msg timestamp="20220502 07:05:53.097" level="INFO">c:\python\python37\lib\site-packages\urllib3\connectionpool.py:1050: InsecureRequestWarning: Unverified HTTPS request is being made to host 'reqres.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning,</msg>
+<msg timestamp="20220502 07:05:53.097" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20220502 07:05:52.438" endtime="20220502 07:05:53.097"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220502 07:05:53.097" level="INFO">201</msg>
+<status status="PASS" starttime="20220502 07:05:53.097" endtime="20220502 07:05:53.097"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${response.content}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220502 07:05:53.097" level="INFO">{"id":"334","createdAt":"2022-05-02T01:35:53.023Z"}</msg>
+<status status="PASS" starttime="20220502 07:05:53.097" endtime="20220502 07:05:53.097"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${response.headers}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220502 07:05:53.097" level="INFO">{'Date': 'Mon, 02 May 2022 01:35:53 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '51', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"33-Asd/SGdQyqyoIm/A/jHXHFbSFoM"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=PMaHIVTB5alp411lnFt9C3lXUXb5a9rECzo7IBbhRzI0UP2MW%2FZqv5qudkLeHKFh22WEzupSk7b%2BTzLyiF13UMPSpTEjj2Sn1iTBIoqJs8ugpNe39wcVvfVVhpCaBhC9lW2hzH8fzsc%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '704d05d30e5c858f-BOM', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'}</msg>
+<status status="PASS" starttime="20220502 07:05:53.097" endtime="20220502 07:05:53.097"/>
+</kw>
+<status status="PASS" starttime="20220502 07:05:52.438" endtime="20220502 07:05:53.097"/>
+</test>
+<test id="s1-s1-s1-t2" name="api_testing_post_example" line="16">
+<kw name="Comment" library="BuiltIn">
+<arg>Creating session</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="PASS" starttime="20220502 07:05:53.097" endtime="20220502 07:05:53.097"/>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>mySession</arg>
+<arg>https://reqres.in/</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220502 07:05:53.097" level="INFO">Creating Session using : alias=mySession, url=https://reqres.in/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220502 07:05:53.097" endtime="20220502 07:05:53.097"/>
+</kw>
+<kw name="Get File" library="OperatingSystem">
+<var>${data}</var>
+<arg>D:\\demoProjects\\testData\\postdata.txt</arg>
+<doc>Returns the contents of a specified file.</doc>
+<msg timestamp="20220502 07:05:53.113" level="INFO" html="true">Getting file '&lt;a href="file://D:\demoProjects\testData\postdata.txt"&gt;D:\demoProjects\testData\postdata.txt&lt;/a&gt;'.</msg>
+<msg timestamp="20220502 07:05:53.113" level="INFO">${data} = {
+    "name": "Ranjan",
+    "job": "Anchor"
+}</msg>
+<status status="PASS" starttime="20220502 07:05:53.097" endtime="20220502 07:05:53.113"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${data}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220502 07:05:53.113" level="INFO">{
+    "name": "Ranjan",
+    "job": "Anchor"
+}</msg>
+<status status="PASS" starttime="20220502 07:05:53.113" endtime="20220502 07:05:53.117"/>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<arg>${data}</arg>
+<arg>Evaluate</arg>
+<arg>json.dumps($data)</arg>
+<arg>json</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="PASS" starttime="20220502 07:05:53.117" endtime="20220502 07:05:53.117"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${headers}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20220502 07:05:53.117" level="INFO">${headers} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20220502 07:05:53.117" endtime="20220502 07:05:53.117"/>
+</kw>
+<kw name="POST On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>mySession</arg>
+<arg>api/users</arg>
+<arg>${data}</arg>
+<arg>${headers}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20220502 07:05:53.573" level="INFO">POST Request : url=https://reqres.in/api/users 
+ path_url=/api/users 
+ headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '45'} 
+ body={
+    "name": "Ranjan",
+    "job": "Anchor"
+} 
+ </msg>
+<msg timestamp="20220502 07:05:53.573" level="INFO">POST Response : url=https://reqres.in/api/users 
+ status=201, reason=Created 
+ headers={'Date': 'Mon, 02 May 2022 01:35:53 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '51', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"33-/JyWyaS2Lmenan1DmrpdRcZH+iQ"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=TPT6Y5aPTw8WPUyNup9OmUxUBkYHC1730JvbuB8b85fwnkr8ZiKo8oT1KsoOBpGm%2Fd8gVA8hjRKh16N%2BW427K7mY4pZIJe%2F7KWZ%2FPMn%2FfUxup%2BXGt8YtShnMmE3xwFbq6AjS1VH0SgM%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '704d05d66a266edd-BOM', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'} 
+ body={"id":"157","createdAt":"2022-05-02T01:35:53.623Z"} 
+ </msg>
+<msg timestamp="20220502 07:05:53.573" level="INFO">c:\python\python37\lib\site-packages\urllib3\connectionpool.py:1050: InsecureRequestWarning: Unverified HTTPS request is being made to host 'reqres.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning,</msg>
+<msg timestamp="20220502 07:05:53.573" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20220502 07:05:53.117" endtime="20220502 07:05:53.573"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220502 07:05:53.573" level="INFO">201</msg>
+<status status="PASS" starttime="20220502 07:05:53.573" endtime="20220502 07:05:53.585"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${response.content}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220502 07:05:53.587" level="INFO">{"id":"157","createdAt":"2022-05-02T01:35:53.623Z"}</msg>
+<status status="PASS" starttime="20220502 07:05:53.585" endtime="20220502 07:05:53.587"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${response.headers}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220502 07:05:53.590" level="INFO">{'Date': 'Mon, 02 May 2022 01:35:53 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '51', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"33-/JyWyaS2Lmenan1DmrpdRcZH+iQ"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=TPT6Y5aPTw8WPUyNup9OmUxUBkYHC1730JvbuB8b85fwnkr8ZiKo8oT1KsoOBpGm%2Fd8gVA8hjRKh16N%2BW427K7mY4pZIJe%2F7KWZ%2FPMn%2FfUxup%2BXGt8YtShnMmE3xwFbq6AjS1VH0SgM%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '704d05d66a266edd-BOM', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'}</msg>
+<status status="PASS" starttime="20220502 07:05:53.588" endtime="20220502 07:05:53.590"/>
+</kw>
+<status status="PASS" starttime="20220502 07:05:53.097" endtime="20220502 07:05:53.590"/>
+</test>
+<test id="s1-s1-s1-t3" name="api_testing_get_example" line="28">
+<kw name="Comment" library="BuiltIn">
+<arg>Creating session</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="PASS" starttime="20220502 07:05:53.590" endtime="20220502 07:05:53.590"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${id}</var>
+<arg>2</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220502 07:05:53.590" level="INFO">${id} = 2</msg>
+<status status="PASS" starttime="20220502 07:05:53.590" endtime="20220502 07:05:53.590"/>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>mySession</arg>
+<arg>https://reqres.in/</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220502 07:05:53.590" level="INFO">Creating Session using : alias=mySession, url=https://reqres.in/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220502 07:05:53.590" endtime="20220502 07:05:53.590"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>mySession</arg>
+<arg>api/users/${id}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20220502 07:05:53.711" level="INFO">GET Request : url=https://reqres.in/api/users/2 
+ path_url=/api/users/2 
+ headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220502 07:05:53.711" level="INFO">GET Response : url=https://reqres.in/api/users/2 
+ status=200, reason=OK 
+ headers={'Date': 'Mon, 02 May 2022 01:35:53 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"118-pbdwwFo9SKNhD3Lx5iHJyngpq00"', 'Via': '1.1 vegur', 'Cache-Control': 'max-age=14400', 'CF-Cache-Status': 'HIT', 'Age': '3960', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=jOxSzOMZC9Z0MePTTzws%2BIMghbFrfaosAdxPhyxvLOFr2yDcZvN58q94EInh%2BSGFrJD4yhrLNYw3hx1Tt5VjJWGBOkduSYqnNVbEs%2F0ObI28JQbSBWgXSC9BUoEli2O50JurIud3cs8%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '704d05d978766ec4-BOM', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'} 
+ body={"data":{"id":2,"email":"janet.weaver@reqres.in","first_name":"Janet","last_name":"Weaver","avatar":"https://reqres.in/img/faces/2-image.jpg"},"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}} 
+ </msg>
+<msg timestamp="20220502 07:05:53.711" level="INFO">c:\python\python37\lib\site-packages\urllib3\connectionpool.py:1050: InsecureRequestWarning: Unverified HTTPS request is being made to host 'reqres.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning,</msg>
+<msg timestamp="20220502 07:05:53.711" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220502 07:05:53.590" endtime="20220502 07:05:53.711"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220502 07:05:53.726" level="INFO">200</msg>
+<status status="PASS" starttime="20220502 07:05:53.711" endtime="20220502 07:05:53.726"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${responseCode_int}</var>
+<arg>${responseCode}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20220502 07:05:53.726" level="INFO">${responseCode_int} = 200</msg>
+<status status="PASS" starttime="20220502 07:05:53.726" endtime="20220502 07:05:53.726"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<arg>${responseCode_int}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220502 07:05:53.726" endtime="20220502 07:05:53.726"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${response.content}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220502 07:05:53.726" level="INFO">{"data":{"id":2,"email":"janet.weaver@reqres.in","first_name":"Janet","last_name":"Weaver","avatar":"https://reqres.in/img/faces/2-image.jpg"},"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}}</msg>
+<status status="PASS" starttime="20220502 07:05:53.726" endtime="20220502 07:05:53.726"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${response.headers}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220502 07:05:53.726" level="INFO">{'Date': 'Mon, 02 May 2022 01:35:53 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"118-pbdwwFo9SKNhD3Lx5iHJyngpq00"', 'Via': '1.1 vegur', 'Cache-Control': 'max-age=14400', 'CF-Cache-Status': 'HIT', 'Age': '3960', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=jOxSzOMZC9Z0MePTTzws%2BIMghbFrfaosAdxPhyxvLOFr2yDcZvN58q94EInh%2BSGFrJD4yhrLNYw3hx1Tt5VjJWGBOkduSYqnNVbEs%2F0ObI28JQbSBWgXSC9BUoEli2O50JurIud3cs8%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '704d05d978766ec4-BOM', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'}</msg>
+<status status="PASS" starttime="20220502 07:05:53.726" endtime="20220502 07:05:53.726"/>
+</kw>
+<status status="PASS" starttime="20220502 07:05:53.590" endtime="20220502 07:05:53.726"/>
+</test>
+<test id="s1-s1-s1-t4" name="api_testing_delete_example" line="40">
+<kw name="Comment" library="BuiltIn">
+<arg>Creating session</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="PASS" starttime="20220502 07:05:53.726" endtime="20220502 07:05:53.726"/>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>mySession</arg>
+<arg>https://reqres.in/</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220502 07:05:53.726" level="INFO">Creating Session using : alias=mySession, url=https://reqres.in/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220502 07:05:53.726" endtime="20220502 07:05:53.726"/>
+</kw>
+<kw name="DELETE On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>mySession</arg>
+<arg>api/users/2</arg>
+<doc>Sends a DELETE request on a previously created HTTP Session.</doc>
+<msg timestamp="20220502 07:05:54.183" level="INFO">DELETE Request : url=https://reqres.in/api/users/2 
+ path_url=/api/users/2 
+ headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg timestamp="20220502 07:05:54.183" level="INFO">DELETE Response : url=https://reqres.in/api/users/2 
+ status=204, reason=No Content 
+ headers={'Date': 'Mon, 02 May 2022 01:35:54 GMT', 'Content-Length': '0', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"2-vyGp6PvFo4RvsFtPoIWeCReyIC8"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=scQL9r4Q41Wl1XHWKbEeEiY7zO1SyseI6nJmOXwLDQK2QV%2FJ7xvdZPx20dDdXMlIqSvXkso6EBbA4mJbCnIPX%2FAdpVPc3HbGMKS3QZ1HZhTk%2FEVeEBaMT2COvpvRmm1fN91FuaGVgJI%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '704d05da3ba26ef5-BOM', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'} 
+ body=None 
+ </msg>
+<msg timestamp="20220502 07:05:54.183" level="INFO">c:\python\python37\lib\site-packages\urllib3\connectionpool.py:1050: InsecureRequestWarning: Unverified HTTPS request is being made to host 'reqres.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning,</msg>
+<msg timestamp="20220502 07:05:54.183" level="INFO">${response} = &lt;Response [204]&gt;</msg>
+<status status="PASS" starttime="20220502 07:05:53.726" endtime="20220502 07:05:54.183"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220502 07:05:54.183" level="INFO">204</msg>
+<status status="PASS" starttime="20220502 07:05:54.183" endtime="20220502 07:05:54.183"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${response.content}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220502 07:05:54.183" level="INFO"/>
+<status status="PASS" starttime="20220502 07:05:54.183" endtime="20220502 07:05:54.183"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${response.headers}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220502 07:05:54.183" level="INFO">{'Date': 'Mon, 02 May 2022 01:35:54 GMT', 'Content-Length': '0', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"2-vyGp6PvFo4RvsFtPoIWeCReyIC8"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=scQL9r4Q41Wl1XHWKbEeEiY7zO1SyseI6nJmOXwLDQK2QV%2FJ7xvdZPx20dDdXMlIqSvXkso6EBbA4mJbCnIPX%2FAdpVPc3HbGMKS3QZ1HZhTk%2FEVeEBaMT2COvpvRmm1fN91FuaGVgJI%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '704d05da3ba26ef5-BOM', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'}</msg>
+<status status="PASS" starttime="20220502 07:05:54.183" endtime="20220502 07:05:54.183"/>
+</kw>
+<status status="PASS" starttime="20220502 07:05:53.726" endtime="20220502 07:05:54.183"/>
+</test>
+<status status="PASS" starttime="20220502 07:05:51.308" endtime="20220502 07:05:54.183"/>
+</suite>
+<suite id="s1-s1-s2" name="Data Driven Test Sample" source="D:\demoProjects\testcases\Data_Driven_Test_Sample.robot">
+<test id="s1-s1-s2-t1" name="app_ddt_loginTestUsingExcelData" line="8">
+<kw name="Open My Browser" library="UDK" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${app_URL}</arg>
+<arg>${browserName}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220502 07:05:55.347" level="INFO">Opening browser 'gc' to base url 'https://www.flipkart.com/'.</msg>
+<status status="PASS" starttime="20220502 07:05:55.347" endtime="20220502 07:05:58.984"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220502 07:05:58.984" endtime="20220502 07:05:59.134"/>
+</kw>
+<status status="PASS" starttime="20220502 07:05:55.347" endtime="20220502 07:05:59.134"/>
+</kw>
+<kw name="Invalid Login2">
+<arg>A@gmail.com</arg>
+<arg>Namma2020@@@</arg>
+<kw name="Log" library="BuiltIn">
+<arg>Login Attempt for Username: ${username}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220502 07:05:59.134" level="INFO">Login Attempt for Username: A@gmail.com</msg>
+<status status="PASS" starttime="20220502 07:05:59.134" endtime="20220502 07:05:59.134"/>
+</kw>
+<kw name="Input Username" library="UDK">
+<arg>${username}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${textbox_username_xpath}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220502 07:05:59.134" level="INFO">Typing text 'A@gmail.com' into text field '//* [@class='_2IX_2- VJZDxU']'.</msg>
+<status status="PASS" starttime="20220502 07:05:59.134" endtime="20220502 07:05:59.387"/>
+</kw>
+<status status="PASS" starttime="20220502 07:05:59.134" endtime="20220502 07:05:59.387"/>
+</kw>
+<kw name="Input Password" library="UDK">
+<arg>${password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${textbox_password_xpath}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220502 07:05:59.395" level="INFO">Typing text 'Namma2020@@@' into text field '//* [@type='password']'.</msg>
+<status status="PASS" starttime="20220502 07:05:59.387" endtime="20220502 07:05:59.565"/>
+</kw>
+<status status="PASS" starttime="20220502 07:05:59.387" endtime="20220502 07:05:59.565"/>
+</kw>
+<kw name="Click On Login Button" library="UDK">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${button_login_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220502 07:05:59.565" level="INFO">Clicking element '//* [@class='_2KpZ6l _2HKlqd _3AWRsL']'.</msg>
+<status status="PASS" starttime="20220502 07:05:59.565" endtime="20220502 07:05:59.675"/>
+</kw>
+<status status="PASS" starttime="20220502 07:05:59.565" endtime="20220502 07:05:59.675"/>
+</kw>
+<kw name="Error Message Should Be Visible When Password Is Empty" library="UDK">
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Please enter Password</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220502 07:06:00.137" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220502 07:06:00.137" level="FAIL">Page should have contained text 'Please enter Password' but did not.</msg>
+<status status="FAIL" starttime="20220502 07:05:59.675" endtime="20220502 07:06:00.145"/>
+</kw>
+<status status="FAIL" starttime="20220502 07:05:59.675" endtime="20220502 07:06:00.153"/>
+</kw>
+<status status="FAIL" starttime="20220502 07:05:59.134" endtime="20220502 07:06:00.153"/>
+</kw>
+<kw name="Close All Browser" library="UDK" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220502 07:06:00.153" endtime="20220502 07:06:02.379"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220502 07:06:02.379" endtime="20220502 07:06:02.379"/>
+</kw>
+<status status="PASS" starttime="20220502 07:06:00.153" endtime="20220502 07:06:02.379"/>
+</kw>
+<status status="FAIL" starttime="20220502 07:05:55.331" endtime="20220502 07:06:02.379">Page should have contained text 'Please enter Password' but did not.</status>
+</test>
+<test id="s1-s1-s2-t2" name="app_ddt_loginTestUsingExcelData" line="8">
+<kw name="Open My Browser" library="UDK" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${app_URL}</arg>
+<arg>${browserName}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220502 07:06:02.379" level="INFO">Opening browser 'gc' to base url 'https://www.flipkart.com/'.</msg>
+<status status="PASS" starttime="20220502 07:06:02.379" endtime="20220502 07:06:05.528"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220502 07:06:05.528" endtime="20220502 07:06:05.657"/>
+</kw>
+<status status="PASS" starttime="20220502 07:06:02.379" endtime="20220502 07:06:05.657"/>
+</kw>
+<kw name="Invalid Login2">
+<arg>B@outlook.com</arg>
+<arg>Namma2021@@@</arg>
+<kw name="Log" library="BuiltIn">
+<arg>Login Attempt for Username: ${username}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220502 07:06:05.665" level="INFO">Login Attempt for Username: B@outlook.com</msg>
+<status status="PASS" starttime="20220502 07:06:05.657" endtime="20220502 07:06:05.665"/>
+</kw>
+<kw name="Input Username" library="UDK">
+<arg>${username}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${textbox_username_xpath}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220502 07:06:05.665" level="INFO">Typing text 'B@outlook.com' into text field '//* [@class='_2IX_2- VJZDxU']'.</msg>
+<status status="PASS" starttime="20220502 07:06:05.665" endtime="20220502 07:06:05.859"/>
+</kw>
+<status status="PASS" starttime="20220502 07:06:05.665" endtime="20220502 07:06:05.867"/>
+</kw>
+<kw name="Input Password" library="UDK">
+<arg>${password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${textbox_password_xpath}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220502 07:06:05.867" level="INFO">Typing text 'Namma2021@@@' into text field '//* [@type='password']'.</msg>
+<status status="PASS" starttime="20220502 07:06:05.867" endtime="20220502 07:06:06.020"/>
+</kw>
+<status status="PASS" starttime="20220502 07:06:05.867" endtime="20220502 07:06:06.020"/>
+</kw>
+<kw name="Click On Login Button" library="UDK">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${button_login_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220502 07:06:06.020" level="INFO">Clicking element '//* [@class='_2KpZ6l _2HKlqd _3AWRsL']'.</msg>
+<status status="PASS" starttime="20220502 07:06:06.020" endtime="20220502 07:06:06.103"/>
+</kw>
+<status status="PASS" starttime="20220502 07:06:06.020" endtime="20220502 07:06:06.103"/>
+</kw>
+<kw name="Error Message Should Be Visible When Password Is Empty" library="UDK">
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Please enter Password</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220502 07:06:06.524" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220502 07:06:06.524" level="FAIL">Page should have contained text 'Please enter Password' but did not.</msg>
+<status status="FAIL" starttime="20220502 07:06:06.103" endtime="20220502 07:06:06.524"/>
+</kw>
+<status status="FAIL" starttime="20220502 07:06:06.103" endtime="20220502 07:06:06.532"/>
+</kw>
+<status status="FAIL" starttime="20220502 07:06:05.657" endtime="20220502 07:06:06.532"/>
+</kw>
+<kw name="Close All Browser" library="UDK" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220502 07:06:06.532" endtime="20220502 07:06:08.720"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220502 07:06:08.720" endtime="20220502 07:06:08.720"/>
+</kw>
+<status status="PASS" starttime="20220502 07:06:06.532" endtime="20220502 07:06:08.720"/>
+</kw>
+<status status="FAIL" starttime="20220502 07:06:02.379" endtime="20220502 07:06:08.720">Page should have contained text 'Please enter Password' but did not.</status>
+</test>
+<test id="s1-s1-s2-t3" name="app_ddt_loginTestUsingExcelData" line="8">
+<kw name="Open My Browser" library="UDK" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${app_URL}</arg>
+<arg>${browserName}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220502 07:06:08.727" level="INFO">Opening browser 'gc' to base url 'https://www.flipkart.com/'.</msg>
+<status status="PASS" starttime="20220502 07:06:08.727" endtime="20220502 07:06:11.771"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220502 07:06:11.771" endtime="20220502 07:06:11.910"/>
+</kw>
+<status status="PASS" starttime="20220502 07:06:08.727" endtime="20220502 07:06:11.910"/>
+</kw>
+<kw name="Invalid Login2">
+<arg>C@gmail.com</arg>
+<arg>Namma2022@@@</arg>
+<kw name="Log" library="BuiltIn">
+<arg>Login Attempt for Username: ${username}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220502 07:06:11.910" level="INFO">Login Attempt for Username: C@gmail.com</msg>
+<status status="PASS" starttime="20220502 07:06:11.910" endtime="20220502 07:06:11.910"/>
+</kw>
+<kw name="Input Username" library="UDK">
+<arg>${username}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${textbox_username_xpath}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220502 07:06:11.916" level="INFO">Typing text 'C@gmail.com' into text field '//* [@class='_2IX_2- VJZDxU']'.</msg>
+<status status="PASS" starttime="20220502 07:06:11.916" endtime="20220502 07:06:12.119"/>
+</kw>
+<status status="PASS" starttime="20220502 07:06:11.910" endtime="20220502 07:06:12.119"/>
+</kw>
+<kw name="Input Password" library="UDK">
+<arg>${password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${textbox_password_xpath}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220502 07:06:12.127" level="INFO">Typing text 'Namma2022@@@' into text field '//* [@type='password']'.</msg>
+<status status="PASS" starttime="20220502 07:06:12.127" endtime="20220502 07:06:12.272"/>
+</kw>
+<status status="PASS" starttime="20220502 07:06:12.127" endtime="20220502 07:06:12.272"/>
+</kw>
+<kw name="Click On Login Button" library="UDK">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${button_login_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220502 07:06:12.272" level="INFO">Clicking element '//* [@class='_2KpZ6l _2HKlqd _3AWRsL']'.</msg>
+<status status="PASS" starttime="20220502 07:06:12.272" endtime="20220502 07:06:12.348"/>
+</kw>
+<status status="PASS" starttime="20220502 07:06:12.272" endtime="20220502 07:06:12.348"/>
+</kw>
+<kw name="Error Message Should Be Visible When Password Is Empty" library="UDK">
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Please enter Password</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220502 07:06:12.746" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220502 07:06:12.746" level="FAIL">Page should have contained text 'Please enter Password' but did not.</msg>
+<status status="FAIL" starttime="20220502 07:06:12.356" endtime="20220502 07:06:12.746"/>
+</kw>
+<status status="FAIL" starttime="20220502 07:06:12.356" endtime="20220502 07:06:12.746"/>
+</kw>
+<status status="FAIL" starttime="20220502 07:06:11.910" endtime="20220502 07:06:12.746"/>
+</kw>
+<kw name="Close All Browser" library="UDK" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220502 07:06:12.754" endtime="20220502 07:06:14.947"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220502 07:06:14.947" endtime="20220502 07:06:14.947"/>
+</kw>
+<status status="PASS" starttime="20220502 07:06:12.754" endtime="20220502 07:06:14.947"/>
+</kw>
+<status status="FAIL" starttime="20220502 07:06:08.720" endtime="20220502 07:06:14.947">Page should have contained text 'Please enter Password' but did not.</status>
+</test>
+<test id="s1-s1-s2-t4" name="app_ddt_loginTestUsingExcelData" line="8">
+<kw name="Open My Browser" library="UDK" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${app_URL}</arg>
+<arg>${browserName}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220502 07:06:14.947" level="INFO">Opening browser 'gc' to base url 'https://www.flipkart.com/'.</msg>
+<status status="PASS" starttime="20220502 07:06:14.947" endtime="20220502 07:06:18.121"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220502 07:06:18.121" endtime="20220502 07:06:18.259"/>
+</kw>
+<status status="PASS" starttime="20220502 07:06:14.947" endtime="20220502 07:06:18.259"/>
+</kw>
+<kw name="Invalid Login2">
+<arg>D@outlook.com</arg>
+<arg>Namma2023@@@</arg>
+<kw name="Log" library="BuiltIn">
+<arg>Login Attempt for Username: ${username}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220502 07:06:18.259" level="INFO">Login Attempt for Username: D@outlook.com</msg>
+<status status="PASS" starttime="20220502 07:06:18.259" endtime="20220502 07:06:18.259"/>
+</kw>
+<kw name="Input Username" library="UDK">
+<arg>${username}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${textbox_username_xpath}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220502 07:06:18.259" level="INFO">Typing text 'D@outlook.com' into text field '//* [@class='_2IX_2- VJZDxU']'.</msg>
+<status status="PASS" starttime="20220502 07:06:18.259" endtime="20220502 07:06:18.457"/>
+</kw>
+<status status="PASS" starttime="20220502 07:06:18.259" endtime="20220502 07:06:18.457"/>
+</kw>
+<kw name="Input Password" library="UDK">
+<arg>${password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${textbox_password_xpath}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220502 07:06:18.457" level="INFO">Typing text 'Namma2023@@@' into text field '//* [@type='password']'.</msg>
+<status status="PASS" starttime="20220502 07:06:18.457" endtime="20220502 07:06:18.616"/>
+</kw>
+<status status="PASS" starttime="20220502 07:06:18.457" endtime="20220502 07:06:18.616"/>
+</kw>
+<kw name="Click On Login Button" library="UDK">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${button_login_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220502 07:06:18.616" level="INFO">Clicking element '//* [@class='_2KpZ6l _2HKlqd _3AWRsL']'.</msg>
+<status status="PASS" starttime="20220502 07:06:18.616" endtime="20220502 07:06:18.696"/>
+</kw>
+<status status="PASS" starttime="20220502 07:06:18.616" endtime="20220502 07:06:18.696"/>
+</kw>
+<kw name="Error Message Should Be Visible When Password Is Empty" library="UDK">
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Please enter Password</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220502 07:06:19.033" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220502 07:06:19.033" level="FAIL">Page should have contained text 'Please enter Password' but did not.</msg>
+<status status="FAIL" starttime="20220502 07:06:18.696" endtime="20220502 07:06:19.033"/>
+</kw>
+<status status="FAIL" starttime="20220502 07:06:18.696" endtime="20220502 07:06:19.033"/>
+</kw>
+<status status="FAIL" starttime="20220502 07:06:18.259" endtime="20220502 07:06:19.033"/>
+</kw>
+<kw name="Close All Browser" library="UDK" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220502 07:06:19.033" endtime="20220502 07:06:21.263"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220502 07:06:21.263" endtime="20220502 07:06:21.263"/>
+</kw>
+<status status="PASS" starttime="20220502 07:06:19.033" endtime="20220502 07:06:21.263"/>
+</kw>
+<status status="FAIL" starttime="20220502 07:06:14.947" endtime="20220502 07:06:21.263">Page should have contained text 'Please enter Password' but did not.</status>
+</test>
+<test id="s1-s1-s2-t5" name="app_ddt_loginTestUsingExcelData" line="8">
+<kw name="Open My Browser" library="UDK" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${app_URL}</arg>
+<arg>${browserName}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220502 07:06:21.263" level="INFO">Opening browser 'gc' to base url 'https://www.flipkart.com/'.</msg>
+<status status="PASS" starttime="20220502 07:06:21.263" endtime="20220502 07:06:24.508"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220502 07:06:24.508" endtime="20220502 07:06:24.639"/>
+</kw>
+<status status="PASS" starttime="20220502 07:06:21.263" endtime="20220502 07:06:24.639"/>
+</kw>
+<kw name="Invalid Login2">
+<arg>E@gmail.com</arg>
+<arg>Namma2024@@@</arg>
+<kw name="Log" library="BuiltIn">
+<arg>Login Attempt for Username: ${username}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220502 07:06:24.639" level="INFO">Login Attempt for Username: E@gmail.com</msg>
+<status status="PASS" starttime="20220502 07:06:24.639" endtime="20220502 07:06:24.639"/>
+</kw>
+<kw name="Input Username" library="UDK">
+<arg>${username}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${textbox_username_xpath}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220502 07:06:24.648" level="INFO">Typing text 'E@gmail.com' into text field '//* [@class='_2IX_2- VJZDxU']'.</msg>
+<status status="PASS" starttime="20220502 07:06:24.648" endtime="20220502 07:06:24.864"/>
+</kw>
+<status status="PASS" starttime="20220502 07:06:24.639" endtime="20220502 07:06:24.872"/>
+</kw>
+<kw name="Input Password" library="UDK">
+<arg>${password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${textbox_password_xpath}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220502 07:06:24.872" level="INFO">Typing text 'Namma2024@@@' into text field '//* [@type='password']'.</msg>
+<status status="PASS" starttime="20220502 07:06:24.872" endtime="20220502 07:06:25.029"/>
+</kw>
+<status status="PASS" starttime="20220502 07:06:24.872" endtime="20220502 07:06:25.029"/>
+</kw>
+<kw name="Click On Login Button" library="UDK">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${button_login_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220502 07:06:25.029" level="INFO">Clicking element '//* [@class='_2KpZ6l _2HKlqd _3AWRsL']'.</msg>
+<status status="PASS" starttime="20220502 07:06:25.029" endtime="20220502 07:06:25.124"/>
+</kw>
+<status status="PASS" starttime="20220502 07:06:25.029" endtime="20220502 07:06:25.124"/>
+</kw>
+<kw name="Error Message Should Be Visible When Password Is Empty" library="UDK">
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Please enter Password</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220502 07:06:25.532" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220502 07:06:25.532" level="FAIL">Page should have contained text 'Please enter Password' but did not.</msg>
+<status status="FAIL" starttime="20220502 07:06:25.124" endtime="20220502 07:06:25.532"/>
+</kw>
+<status status="FAIL" starttime="20220502 07:06:25.124" endtime="20220502 07:06:25.532"/>
+</kw>
+<status status="FAIL" starttime="20220502 07:06:24.639" endtime="20220502 07:06:25.538"/>
+</kw>
+<kw name="Close All Browser" library="UDK" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220502 07:06:25.538" endtime="20220502 07:06:27.739"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220502 07:06:27.739" endtime="20220502 07:06:27.739"/>
+</kw>
+<status status="PASS" starttime="20220502 07:06:25.538" endtime="20220502 07:06:27.739"/>
+</kw>
+<status status="FAIL" starttime="20220502 07:06:21.263" endtime="20220502 07:06:27.739">Page should have contained text 'Please enter Password' but did not.</status>
+</test>
+<test id="s1-s1-s2-t6" name="app_ddt_loginTestUsingExcelData" line="8">
+<kw name="Open My Browser" library="UDK" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${app_URL}</arg>
+<arg>${browserName}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220502 07:06:27.739" level="INFO">Opening browser 'gc' to base url 'https://www.flipkart.com/'.</msg>
+<status status="PASS" starttime="20220502 07:06:27.739" endtime="20220502 07:06:30.876"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220502 07:06:30.876" endtime="20220502 07:06:31.017"/>
+</kw>
+<status status="PASS" starttime="20220502 07:06:27.739" endtime="20220502 07:06:31.017"/>
+</kw>
+<kw name="Invalid Login2">
+<arg>F@outlook.com</arg>
+<arg>Namma2025@@@</arg>
+<kw name="Log" library="BuiltIn">
+<arg>Login Attempt for Username: ${username}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220502 07:06:31.017" level="INFO">Login Attempt for Username: F@outlook.com</msg>
+<status status="PASS" starttime="20220502 07:06:31.017" endtime="20220502 07:06:31.017"/>
+</kw>
+<kw name="Input Username" library="UDK">
+<arg>${username}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${textbox_username_xpath}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220502 07:06:31.025" level="INFO">Typing text 'F@outlook.com' into text field '//* [@class='_2IX_2- VJZDxU']'.</msg>
+<status status="PASS" starttime="20220502 07:06:31.025" endtime="20220502 07:06:31.230"/>
+</kw>
+<status status="PASS" starttime="20220502 07:06:31.017" endtime="20220502 07:06:31.230"/>
+</kw>
+<kw name="Input Password" library="UDK">
+<arg>${password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${textbox_password_xpath}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220502 07:06:31.230" level="INFO">Typing text 'Namma2025@@@' into text field '//* [@type='password']'.</msg>
+<status status="PASS" starttime="20220502 07:06:31.230" endtime="20220502 07:06:31.383"/>
+</kw>
+<status status="PASS" starttime="20220502 07:06:31.230" endtime="20220502 07:06:31.383"/>
+</kw>
+<kw name="Click On Login Button" library="UDK">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${button_login_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220502 07:06:31.383" level="INFO">Clicking element '//* [@class='_2KpZ6l _2HKlqd _3AWRsL']'.</msg>
+<status status="PASS" starttime="20220502 07:06:31.383" endtime="20220502 07:06:31.484"/>
+</kw>
+<status status="PASS" starttime="20220502 07:06:31.383" endtime="20220502 07:06:31.484"/>
+</kw>
+<kw name="Error Message Should Be Visible When Password Is Empty" library="UDK">
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Please enter Password</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220502 07:06:31.850" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220502 07:06:31.850" level="FAIL">Page should have contained text 'Please enter Password' but did not.</msg>
+<status status="FAIL" starttime="20220502 07:06:31.484" endtime="20220502 07:06:31.850"/>
+</kw>
+<status status="FAIL" starttime="20220502 07:06:31.484" endtime="20220502 07:06:31.858"/>
+</kw>
+<status status="FAIL" starttime="20220502 07:06:31.017" endtime="20220502 07:06:31.858"/>
+</kw>
+<kw name="Close All Browser" library="UDK" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220502 07:06:31.858" endtime="20220502 07:06:34.036"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220502 07:06:34.036" endtime="20220502 07:06:34.036"/>
+</kw>
+<status status="PASS" starttime="20220502 07:06:31.858" endtime="20220502 07:06:34.036"/>
+</kw>
+<status status="FAIL" starttime="20220502 07:06:27.739" endtime="20220502 07:06:34.036">Page should have contained text 'Please enter Password' but did not.</status>
+</test>
+<doc>This test case depicts the Data Driven testing</doc>
+<status status="FAIL" starttime="20220502 07:05:54.198" endtime="20220502 07:06:34.036"/>
+</suite>
+<suite id="s1-s1-s3" name="Database Test Cases" source="D:\demoProjects\testcases\Database_Test_Cases.robot">
+<test id="s1-s1-s3-t1" name="create new table" line="6">
+<kw name="Establish Database Connection" library="UDK" type="SETUP">
+<kw name="Connect To Database" library="DatabaseLibrary">
+<arg>pymysql</arg>
+<arg>mydb</arg>
+<arg>root</arg>
+<arg>Mysql2022@@@</arg>
+<arg>127.0.0.1</arg>
+<arg>3306</arg>
+<doc>Loads the DB API 2.0 module given `dbapiModuleName` then uses it to
+connect to the database using `dbName`, `dbUsername`, and `dbPassword`.</doc>
+<msg timestamp="20220502 07:06:34.162" level="INFO">Connecting using : pymysql.connect(db=mydb, user=root, passwd=Mysql2022@@@, host=127.0.0.1, port=3306, charset=None) </msg>
+<status status="PASS" starttime="20220502 07:06:34.052" endtime="20220502 07:06:34.178"/>
+</kw>
+<status status="PASS" starttime="20220502 07:06:34.052" endtime="20220502 07:06:34.178"/>
+</kw>
+<kw name="Execute Sql String" library="DatabaseLibrary">
+<var>${output}</var>
+<arg>create table person(id integer, first_name varchar(100), last_name varchar(100))</arg>
+<doc>Executes the sqlString as SQL commands. Useful to pass arguments to your sql. Set optional input `sansTran` to
+True to run command without an explicit transaction commit or rollback.</doc>
+<msg timestamp="20220502 07:06:34.178" level="INFO">Executing : Execute SQL String  |  create table person(id integer, first_name varchar(100), last_name varchar(100)) </msg>
+<msg timestamp="20220502 07:06:34.178" level="FAIL">OperationalError: (1050, "Table 'person' already exists")</msg>
+<status status="FAIL" starttime="20220502 07:06:34.178" endtime="20220502 07:06:34.193"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${output}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20220502 07:06:34.193" endtime="20220502 07:06:34.193"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${output}</arg>
+<arg>None</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="NOT RUN" starttime="20220502 07:06:34.193" endtime="20220502 07:06:34.193"/>
+</kw>
+<kw name="Disconnect From Database" library="UDK" type="TEARDOWN">
+<kw name="Disconnect From Database" library="DatabaseLibrary">
+<doc>Disconnects from the database.</doc>
+<msg timestamp="20220502 07:06:34.193" level="INFO">Executing : Disconnect From Database</msg>
+<status status="PASS" starttime="20220502 07:06:34.193" endtime="20220502 07:06:34.193"/>
+</kw>
+<status status="PASS" starttime="20220502 07:06:34.193" endtime="20220502 07:06:34.193"/>
+</kw>
+<status status="FAIL" starttime="20220502 07:06:34.052" endtime="20220502 07:06:34.193">OperationalError: (1050, "Table 'person' already exists")</status>
+</test>
+<test id="s1-s1-s3-t2" name="insert data in table" line="13">
+<kw name="Establish Database Connection" library="UDK" type="SETUP">
+<kw name="Connect To Database" library="DatabaseLibrary">
+<arg>pymysql</arg>
+<arg>mydb</arg>
+<arg>root</arg>
+<arg>Mysql2022@@@</arg>
+<arg>127.0.0.1</arg>
+<arg>3306</arg>
+<doc>Loads the DB API 2.0 module given `dbapiModuleName` then uses it to
+connect to the database using `dbName`, `dbUsername`, and `dbPassword`.</doc>
+<msg timestamp="20220502 07:06:34.193" level="INFO">Connecting using : pymysql.connect(db=mydb, user=root, passwd=Mysql2022@@@, host=127.0.0.1, port=3306, charset=None) </msg>
+<status status="PASS" starttime="20220502 07:06:34.193" endtime="20220502 07:06:34.209"/>
+</kw>
+<status status="PASS" starttime="20220502 07:06:34.193" endtime="20220502 07:06:34.209"/>
+</kw>
+<kw name="Execute Sql String" library="DatabaseLibrary">
+<var>${output}</var>
+<arg>insert into person values(106, "amit", "kumar")</arg>
+<doc>Executes the sqlString as SQL commands. Useful to pass arguments to your sql. Set optional input `sansTran` to
+True to run command without an explicit transaction commit or rollback.</doc>
+<msg timestamp="20220502 07:06:34.209" level="INFO">Executing : Execute SQL String  |  insert into person values(106, "amit", "kumar") </msg>
+<msg timestamp="20220502 07:06:34.209" level="INFO">${output} = None</msg>
+<status status="PASS" starttime="20220502 07:06:34.209" endtime="20220502 07:06:34.209"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${output}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220502 07:06:34.209" level="INFO">None</msg>
+<status status="PASS" starttime="20220502 07:06:34.209" endtime="20220502 07:06:34.209"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${output}</arg>
+<arg>None</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20220502 07:06:34.209" level="INFO">Argument types are:
+&lt;class 'NoneType'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20220502 07:06:34.209" endtime="20220502 07:06:34.209"/>
+</kw>
+<kw name="Disconnect From Database" library="UDK" type="TEARDOWN">
+<kw name="Disconnect From Database" library="DatabaseLibrary">
+<doc>Disconnects from the database.</doc>
+<msg timestamp="20220502 07:06:34.209" level="INFO">Executing : Disconnect From Database</msg>
+<status status="PASS" starttime="20220502 07:06:34.209" endtime="20220502 07:06:34.209"/>
+</kw>
+<status status="PASS" starttime="20220502 07:06:34.209" endtime="20220502 07:06:34.224"/>
+</kw>
+<status status="PASS" starttime="20220502 07:06:34.193" endtime="20220502 07:06:34.224"/>
+</test>
+<test id="s1-s1-s3-t3" name="insert multiple data in table" line="20">
+<kw name="Establish Database Connection" library="UDK" type="SETUP">
+<kw name="Connect To Database" library="DatabaseLibrary">
+<arg>pymysql</arg>
+<arg>mydb</arg>
+<arg>root</arg>
+<arg>Mysql2022@@@</arg>
+<arg>127.0.0.1</arg>
+<arg>3306</arg>
+<doc>Loads the DB API 2.0 module given `dbapiModuleName` then uses it to
+connect to the database using `dbName`, `dbUsername`, and `dbPassword`.</doc>
+<msg timestamp="20220502 07:06:34.224" level="INFO">Connecting using : pymysql.connect(db=mydb, user=root, passwd=Mysql2022@@@, host=127.0.0.1, port=3306, charset=None) </msg>
+<status status="PASS" starttime="20220502 07:06:34.224" endtime="20220502 07:06:34.224"/>
+</kw>
+<status status="PASS" starttime="20220502 07:06:34.224" endtime="20220502 07:06:34.224"/>
+</kw>
+<kw name="Execute Sql Script" library="DatabaseLibrary">
+<var>${output}</var>
+<arg>D:\\demoProjects\\testData\\insert_multiple_data.sql</arg>
+<doc>Executes the content of the `sqlScriptFileName` as SQL commands. Useful for setting the database to a known
+state before running your tests, or clearing out your test data after running each a test. Set optional input
+`sansTran` to True to run command without an explicit transaction commit or rollback.</doc>
+<msg timestamp="20220502 07:06:34.224" level="INFO">Executing : Execute SQL Script  |  D:\demoProjects\testData\insert_multiple_data.sql </msg>
+<msg timestamp="20220502 07:06:34.240" level="INFO">${output} = None</msg>
+<status status="PASS" starttime="20220502 07:06:34.224" endtime="20220502 07:06:34.240"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${output}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220502 07:06:34.240" level="INFO">None</msg>
+<status status="PASS" starttime="20220502 07:06:34.240" endtime="20220502 07:06:34.240"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${output}</arg>
+<arg>None</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20220502 07:06:34.240" level="INFO">Argument types are:
+&lt;class 'NoneType'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20220502 07:06:34.240" endtime="20220502 07:06:34.240"/>
+</kw>
+<kw name="Disconnect From Database" library="UDK" type="TEARDOWN">
+<kw name="Disconnect From Database" library="DatabaseLibrary">
+<doc>Disconnects from the database.</doc>
+<msg timestamp="20220502 07:06:34.240" level="INFO">Executing : Disconnect From Database</msg>
+<status status="PASS" starttime="20220502 07:06:34.240" endtime="20220502 07:06:34.240"/>
+</kw>
+<status status="PASS" starttime="20220502 07:06:34.240" endtime="20220502 07:06:34.240"/>
+</kw>
+<status status="PASS" starttime="20220502 07:06:34.224" endtime="20220502 07:06:34.240"/>
+</test>
+<test id="s1-s1-s3-t4" name="validate data in table" line="27">
+<kw name="Establish Database Connection" library="UDK" type="SETUP">
+<kw name="Connect To Database" library="DatabaseLibrary">
+<arg>pymysql</arg>
+<arg>mydb</arg>
+<arg>root</arg>
+<arg>Mysql2022@@@</arg>
+<arg>127.0.0.1</arg>
+<arg>3306</arg>
+<doc>Loads the DB API 2.0 module given `dbapiModuleName` then uses it to
+connect to the database using `dbName`, `dbUsername`, and `dbPassword`.</doc>
+<msg timestamp="20220502 07:06:34.240" level="INFO">Connecting using : pymysql.connect(db=mydb, user=root, passwd=Mysql2022@@@, host=127.0.0.1, port=3306, charset=None) </msg>
+<status status="PASS" starttime="20220502 07:06:34.240" endtime="20220502 07:06:34.256"/>
+</kw>
+<status status="PASS" starttime="20220502 07:06:34.240" endtime="20220502 07:06:34.256"/>
+</kw>
+<kw name="Check If Exists In Database" library="DatabaseLibrary">
+<arg>select * from mydb.person where first_name="amit";</arg>
+<doc>Check if any row would be returned by given the input `selectStatement`. If there are no results, then this will
+throw an AssertionError. Set optional input `sansTran` to True to run command without an explicit transaction
+commit or rollback.</doc>
+<msg timestamp="20220502 07:06:34.256" level="INFO">Executing : Check If Exists In Database  |  select * from mydb.person where first_name="amit"; </msg>
+<msg timestamp="20220502 07:06:34.256" level="INFO">Executing : Query  |  select * from mydb.person where first_name="amit"; </msg>
+<status status="PASS" starttime="20220502 07:06:34.256" endtime="20220502 07:06:34.256"/>
+</kw>
+<kw name="Check If Not Exists In Database" library="DatabaseLibrary">
+<arg>select * from mydb.person where first_name="hello";</arg>
+<doc>This is the negation of `check_if_exists_in_database`.</doc>
+<msg timestamp="20220502 07:06:34.256" level="INFO">Executing : Check If Not Exists In Database  |  select * from mydb.person where first_name="hello"; </msg>
+<msg timestamp="20220502 07:06:34.256" level="INFO">Executing : Query  |  select * from mydb.person where first_name="hello"; </msg>
+<status status="PASS" starttime="20220502 07:06:34.256" endtime="20220502 07:06:34.256"/>
+</kw>
+<kw name="Table Must Exist" library="DatabaseLibrary">
+<arg>person</arg>
+<doc>Check if the table given exists in the database. Set optional input `sansTran` to True to run command without an
+explicit transaction commit or rollback.</doc>
+<msg timestamp="20220502 07:06:34.256" level="INFO">Executing : Table Must Exist  |  person </msg>
+<msg timestamp="20220502 07:06:34.256" level="INFO">Executing : Row Count  |  SELECT * FROM information_schema.tables WHERE table_name='person' </msg>
+<status status="PASS" starttime="20220502 07:06:34.256" endtime="20220502 07:06:34.274"/>
+</kw>
+<kw name="Row Count Is 0" library="DatabaseLibrary">
+<arg>select * from mydb.person where first_name="hello";</arg>
+<doc>Check if any rows are returned from the submitted `selectStatement`. If there are, then this will throw an
+AssertionError. Set optional input `sansTran` to True to run command without an explicit transaction commit or
+rollback.</doc>
+<msg timestamp="20220502 07:06:34.274" level="INFO">Executing : Row Count Is 0  |  select * from mydb.person where first_name="hello"; </msg>
+<msg timestamp="20220502 07:06:34.274" level="INFO">Executing : Row Count  |  select * from mydb.person where first_name="hello"; </msg>
+<status status="PASS" starttime="20220502 07:06:34.274" endtime="20220502 07:06:34.274"/>
+</kw>
+<kw name="Row Count Is Equal To X" library="DatabaseLibrary">
+<arg>select * from mydb.person where first_name="amit";</arg>
+<arg>1</arg>
+<doc>Check if the number of rows returned from `selectStatement` is equal to the value submitted. If not, then this
+will throw an AssertionError. Set optional input `sansTran` to True to run command without an explicit
+transaction commit or rollback.</doc>
+<msg timestamp="20220502 07:06:34.274" level="INFO">Executing : Row Count Is Equal To X  |  select * from mydb.person where first_name="amit";  |  1 </msg>
+<msg timestamp="20220502 07:06:34.274" level="INFO">Executing : Row Count  |  select * from mydb.person where first_name="amit"; </msg>
+<status status="PASS" starttime="20220502 07:06:34.274" endtime="20220502 07:06:34.274"/>
+</kw>
+<kw name="Row Count" library="DatabaseLibrary">
+<var>${row_counts}</var>
+<arg>select * from mydb.person;</arg>
+<doc>Uses the input `selectStatement` to query the database and returns the number of rows from the query. Set
+optional input `sansTran` to True to run command without an explicit transaction commit or rollback.</doc>
+<msg timestamp="20220502 07:06:34.274" level="INFO">Executing : Row Count  |  select * from mydb.person; </msg>
+<msg timestamp="20220502 07:06:34.274" level="INFO">${row_counts} = 8</msg>
+<status status="PASS" starttime="20220502 07:06:34.274" endtime="20220502 07:06:34.274"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${row_counts}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220502 07:06:34.274" level="INFO">8</msg>
+<status status="PASS" starttime="20220502 07:06:34.274" endtime="20220502 07:06:34.274"/>
+</kw>
+<kw name="Disconnect From Database" library="UDK" type="TEARDOWN">
+<kw name="Disconnect From Database" library="DatabaseLibrary">
+<doc>Disconnects from the database.</doc>
+<msg timestamp="20220502 07:06:34.274" level="INFO">Executing : Disconnect From Database</msg>
+<status status="PASS" starttime="20220502 07:06:34.274" endtime="20220502 07:06:34.274"/>
+</kw>
+<status status="PASS" starttime="20220502 07:06:34.274" endtime="20220502 07:06:34.274"/>
+</kw>
+<status status="PASS" starttime="20220502 07:06:34.240" endtime="20220502 07:06:34.274"/>
+</test>
+<test id="s1-s1-s3-t5" name="update data in table" line="38">
+<kw name="Establish Database Connection" library="UDK" type="SETUP">
+<kw name="Connect To Database" library="DatabaseLibrary">
+<arg>pymysql</arg>
+<arg>mydb</arg>
+<arg>root</arg>
+<arg>Mysql2022@@@</arg>
+<arg>127.0.0.1</arg>
+<arg>3306</arg>
+<doc>Loads the DB API 2.0 module given `dbapiModuleName` then uses it to
+connect to the database using `dbName`, `dbUsername`, and `dbPassword`.</doc>
+<msg timestamp="20220502 07:06:34.287" level="INFO">Connecting using : pymysql.connect(db=mydb, user=root, passwd=Mysql2022@@@, host=127.0.0.1, port=3306, charset=None) </msg>
+<status status="PASS" starttime="20220502 07:06:34.287" endtime="20220502 07:06:34.303"/>
+</kw>
+<status status="PASS" starttime="20220502 07:06:34.287" endtime="20220502 07:06:34.303"/>
+</kw>
+<kw name="Execute Sql String" library="DatabaseLibrary">
+<var>${output}</var>
+<arg>update mydb.person set first_name="shiva" where id=101;</arg>
+<doc>Executes the sqlString as SQL commands. Useful to pass arguments to your sql. Set optional input `sansTran` to
+True to run command without an explicit transaction commit or rollback.</doc>
+<msg timestamp="20220502 07:06:34.303" level="INFO">Executing : Execute SQL String  |  update mydb.person set first_name="shiva" where id=101; </msg>
+<msg timestamp="20220502 07:06:34.303" level="INFO">${output} = None</msg>
+<status status="PASS" starttime="20220502 07:06:34.303" endtime="20220502 07:06:34.303"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${output}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220502 07:06:34.303" level="INFO">None</msg>
+<status status="PASS" starttime="20220502 07:06:34.303" endtime="20220502 07:06:34.303"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${output}</arg>
+<arg>None</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20220502 07:06:34.303" level="INFO">Argument types are:
+&lt;class 'NoneType'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20220502 07:06:34.303" endtime="20220502 07:06:34.303"/>
+</kw>
+<kw name="Disconnect From Database" library="UDK" type="TEARDOWN">
+<kw name="Disconnect From Database" library="DatabaseLibrary">
+<doc>Disconnects from the database.</doc>
+<msg timestamp="20220502 07:06:34.303" level="INFO">Executing : Disconnect From Database</msg>
+<status status="PASS" starttime="20220502 07:06:34.303" endtime="20220502 07:06:34.303"/>
+</kw>
+<status status="PASS" starttime="20220502 07:06:34.303" endtime="20220502 07:06:34.303"/>
+</kw>
+<status status="PASS" starttime="20220502 07:06:34.287" endtime="20220502 07:06:34.303"/>
+</test>
+<test id="s1-s1-s3-t6" name="retrieve data from table" line="45">
+<kw name="Establish Database Connection" library="UDK" type="SETUP">
+<kw name="Connect To Database" library="DatabaseLibrary">
+<arg>pymysql</arg>
+<arg>mydb</arg>
+<arg>root</arg>
+<arg>Mysql2022@@@</arg>
+<arg>127.0.0.1</arg>
+<arg>3306</arg>
+<doc>Loads the DB API 2.0 module given `dbapiModuleName` then uses it to
+connect to the database using `dbName`, `dbUsername`, and `dbPassword`.</doc>
+<msg timestamp="20220502 07:06:34.303" level="INFO">Connecting using : pymysql.connect(db=mydb, user=root, passwd=Mysql2022@@@, host=127.0.0.1, port=3306, charset=None) </msg>
+<status status="PASS" starttime="20220502 07:06:34.303" endtime="20220502 07:06:34.303"/>
+</kw>
+<status status="PASS" starttime="20220502 07:06:34.303" endtime="20220502 07:06:34.319"/>
+</kw>
+<kw name="Query" library="DatabaseLibrary">
+<var>${query_results}</var>
+<arg>select * from mydb.person;</arg>
+<doc>Uses the input `selectStatement` to query for the values that will be returned as a list of tuples. Set optional
+input `sansTran` to True to run command without an explicit transaction commit or rollback.
+Set optional input `returnAsDict` to True to return values as a list of dictionaries.</doc>
+<msg timestamp="20220502 07:06:34.319" level="INFO">Executing : Query  |  select * from mydb.person; </msg>
+<msg timestamp="20220502 07:06:34.319" level="INFO">${query_results} = ((101, 'shiva', 'kumar'), (102, 'sumit', 'gupta'), (103, 'ranjit', 'biswas'), (104, 'om', 'sanodiya'), (106, 'amit', 'kumar'), (102, 'sumit', 'gupta'), (103, 'ranjit', 'biswas'), (104, 'om', 'sanodiya...</msg>
+<status status="PASS" starttime="20220502 07:06:34.319" endtime="20220502 07:06:34.319"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${query_results}[0][0]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220502 07:06:34.319" level="INFO">101</msg>
+<status status="PASS" starttime="20220502 07:06:34.319" endtime="20220502 07:06:34.319"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${query_results}[0][1]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220502 07:06:34.319" level="INFO">shiva</msg>
+<status status="PASS" starttime="20220502 07:06:34.319" endtime="20220502 07:06:34.319"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${query_results}[0][2]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220502 07:06:34.319" level="INFO">kumar</msg>
+<status status="PASS" starttime="20220502 07:06:34.319" endtime="20220502 07:06:34.319"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${query_results}[1][0]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220502 07:06:34.319" level="INFO">102</msg>
+<status status="PASS" starttime="20220502 07:06:34.319" endtime="20220502 07:06:34.319"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${query_results}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220502 07:06:34.319" endtime="20220502 07:06:34.319"/>
+</kw>
+<kw name="Disconnect From Database" library="UDK" type="TEARDOWN">
+<kw name="Disconnect From Database" library="DatabaseLibrary">
+<doc>Disconnects from the database.</doc>
+<msg timestamp="20220502 07:06:34.319" level="INFO">Executing : Disconnect From Database</msg>
+<status status="PASS" starttime="20220502 07:06:34.319" endtime="20220502 07:06:34.319"/>
+</kw>
+<status status="PASS" starttime="20220502 07:06:34.319" endtime="20220502 07:06:34.319"/>
+</kw>
+<status status="PASS" starttime="20220502 07:06:34.303" endtime="20220502 07:06:34.319"/>
+</test>
+<status status="FAIL" starttime="20220502 07:06:34.036" endtime="20220502 07:06:34.319"/>
+</suite>
+<suite id="s1-s1-s4" name="GUI scripts" source="D:\demoProjects\testcases\GUI_scripts.robot">
+<test id="s1-s1-s4-t1" name="app_login_01" line="9">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://www.flipkart.com/</arg>
+<arg>gc</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220502 07:06:34.350" level="INFO">Opening browser 'gc' to base url 'https://www.flipkart.com/'.</msg>
+<status status="PASS" starttime="20220502 07:06:34.350" endtime="20220502 07:06:37.340"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220502 07:06:37.340" endtime="20220502 07:06:37.485"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220502 07:06:39.491" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220502 07:06:37.485" endtime="20220502 07:06:39.491"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//* [@class='_2IX_2- VJZDxU']</arg>
+<arg>${username_value}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220502 07:06:39.491" level="INFO">Typing text '9738308627' into text field '//* [@class='_2IX_2- VJZDxU']'.</msg>
+<status status="PASS" starttime="20220502 07:06:39.491" endtime="20220502 07:06:39.617"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220502 07:06:41.620" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220502 07:06:39.617" endtime="20220502 07:06:41.620"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//* [@type='password']</arg>
+<arg>${password_value}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220502 07:06:41.620" level="INFO">Typing text 'Flipkart2022@@@' into text field '//* [@type='password']'.</msg>
+<status status="PASS" starttime="20220502 07:06:41.620" endtime="20220502 07:06:41.772"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220502 07:06:43.777" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220502 07:06:41.772" endtime="20220502 07:06:43.777"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//* [@class='_2KpZ6l _2HKlqd _3AWRsL']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220502 07:06:43.777" level="INFO">Clicking element '//* [@class='_2KpZ6l _2HKlqd _3AWRsL']'.</msg>
+<status status="PASS" starttime="20220502 07:06:43.777" endtime="20220502 07:06:43.873"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220502 07:06:45.875" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220502 07:06:43.873" endtime="20220502 07:06:45.875"/>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<arg>Capture Page Screenshot</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="PASS" starttime="20220502 07:06:45.875" endtime="20220502 07:06:45.875"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${user_name}</var>
+<arg>//*[@class='exehdJ']</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220502 07:06:46.561" level="INFO">${user_name} = Ranjan</msg>
+<status status="PASS" starttime="20220502 07:06:45.875" endtime="20220502 07:06:46.561"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${user_name}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220502 07:06:46.561" level="INFO">Ranjan</msg>
+<status status="PASS" starttime="20220502 07:06:46.561" endtime="20220502 07:06:46.561"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${user_name}</arg>
+<arg>Ranjan</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220502 07:06:46.561" endtime="20220502 07:06:46.569"/>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<arg>Click Element</arg>
+<arg>//* [@class='_2KpZ6l _2HKlqd _3AWRsL']4555</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="PASS" starttime="20220502 07:06:46.569" endtime="20220502 07:06:46.569"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220502 07:06:46.569" endtime="20220502 07:06:48.866"/>
+</kw>
+<tag>reg</tag>
+<status status="PASS" starttime="20220502 07:06:34.334" endtime="20220502 07:06:48.866"/>
+</test>
+<test id="s1-s1-s4-t2" name="app_login_01_headless" line="27">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://www.flipkart.com/</arg>
+<arg>headlesschrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220502 07:06:48.866" level="INFO">Opening browser 'headlesschrome' to base url 'https://www.flipkart.com/'.</msg>
+<status status="PASS" starttime="20220502 07:06:48.866" endtime="20220502 07:06:54.120"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220502 07:06:54.120" endtime="20220502 07:06:54.240"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220502 07:06:56.241" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220502 07:06:54.240" endtime="20220502 07:06:56.241"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//* [@class='_2IX_2- VJZDxU']</arg>
+<arg>${username_value}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220502 07:06:56.241" level="INFO">Typing text '9738308627' into text field '//* [@class='_2IX_2- VJZDxU']'.</msg>
+<status status="PASS" starttime="20220502 07:06:56.241" endtime="20220502 07:06:56.353"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220502 07:06:58.356" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220502 07:06:56.353" endtime="20220502 07:06:58.356"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//* [@type='password']</arg>
+<arg>${password_value}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220502 07:06:58.356" level="INFO">Typing text 'Flipkart2022@@@' into text field '//* [@type='password']'.</msg>
+<status status="PASS" starttime="20220502 07:06:58.356" endtime="20220502 07:06:58.500"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220502 07:07:00.504" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220502 07:06:58.500" endtime="20220502 07:07:00.504"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//* [@class='_2KpZ6l _2HKlqd _3AWRsL']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220502 07:07:00.504" level="INFO">Clicking element '//* [@class='_2KpZ6l _2HKlqd _3AWRsL']'.</msg>
+<status status="PASS" starttime="20220502 07:07:00.504" endtime="20220502 07:07:00.640"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220502 07:07:02.641" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220502 07:07:00.640" endtime="20220502 07:07:02.641"/>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<arg>Capture Page Screenshot</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="PASS" starttime="20220502 07:07:02.641" endtime="20220502 07:07:02.641"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${user_name}</var>
+<arg>//*[@class='exehdJ']</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220502 07:07:03.146" level="INFO">${user_name} = Ranjan</msg>
+<status status="PASS" starttime="20220502 07:07:02.641" endtime="20220502 07:07:03.146"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${user_name}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220502 07:07:03.146" level="INFO">Ranjan</msg>
+<status status="PASS" starttime="20220502 07:07:03.146" endtime="20220502 07:07:03.146"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${user_name}</arg>
+<arg>Ranjan</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220502 07:07:03.146" endtime="20220502 07:07:03.146"/>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<arg>Click Element</arg>
+<arg>//* [@class='_2KpZ6l _2HKlqd _3AWRsL']4555</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="PASS" starttime="20220502 07:07:03.146" endtime="20220502 07:07:03.146"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220502 07:07:03.146" endtime="20220502 07:07:05.262"/>
+</kw>
+<tag>reg</tag>
+<status status="PASS" starttime="20220502 07:06:48.866" endtime="20220502 07:07:05.262"/>
+</test>
+<test id="s1-s1-s4-t3" name="pom_app_login" line="45">
+<kw name="App Login" library="UDK">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${app_URL}</arg>
+<arg>${browserName}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220502 07:07:05.266" level="INFO">Opening browser 'gc' to base url 'https://www.flipkart.com/'.</msg>
+<status status="PASS" starttime="20220502 07:07:05.266" endtime="20220502 07:07:08.437"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220502 07:07:08.437" endtime="20220502 07:07:08.566"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${delay_short}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220502 07:07:10.582" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220502 07:07:08.566" endtime="20220502 07:07:10.582"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${textbox_username_xpath}</arg>
+<arg>${username_value}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220502 07:07:10.582" level="INFO">Typing text '9738308627' into text field '//* [@class='_2IX_2- VJZDxU']'.</msg>
+<status status="PASS" starttime="20220502 07:07:10.582" endtime="20220502 07:07:10.695"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${delay_short}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220502 07:07:12.705" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220502 07:07:10.695" endtime="20220502 07:07:12.705"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${textbox_password_xpath}</arg>
+<arg>${password_value}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220502 07:07:12.705" level="INFO">Typing text 'Flipkart2022@@@' into text field '//* [@type='password']'.</msg>
+<status status="PASS" starttime="20220502 07:07:12.705" endtime="20220502 07:07:12.847"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${delay_short}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220502 07:07:14.847" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220502 07:07:12.847" endtime="20220502 07:07:14.847"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${button_login_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220502 07:07:14.847" level="INFO">Clicking element '//* [@class='_2KpZ6l _2HKlqd _3AWRsL']'.</msg>
+<status status="PASS" starttime="20220502 07:07:14.847" endtime="20220502 07:07:14.965"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${delay_short}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220502 07:07:16.981" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220502 07:07:14.965" endtime="20220502 07:07:16.981"/>
+</kw>
+<status status="PASS" starttime="20220502 07:07:05.266" endtime="20220502 07:07:16.981"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220502 07:07:16.981" endtime="20220502 07:07:19.242"/>
+</kw>
+<doc>This test case is desgined in POM</doc>
+<tag>regression</tag>
+<status status="PASS" starttime="20220502 07:07:05.262" endtime="20220502 07:07:19.242"/>
+</test>
+<test id="s1-s1-s4-t4" name="app_radio_dropdown_checkbox_example" line="53">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://www.functionize.com/h/test-automation?utm_source=google&amp;utm_medium=paid%20search&amp;utm_campaign=automated%20web%20testing&amp;gclid=CjwKCAjw9qiTBhBbEiwAp-GE0SWDDqMwxZ9iMu-SZdx_WMVvbLRVG3rpzSqRJllTBCoz_5Hvw3mMexoCgcoQAvD_BwE</arg>
+<arg>gc</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220502 07:07:19.242" level="INFO">Opening browser 'gc' to base url 'https://www.functionize.com/h/test-automation?utm_source=google&amp;utm_medium=paid%20search&amp;utm_campaign=automated%20web%20testing&amp;gclid=CjwKCAjw9qiTBhBbEiwAp-GE0SWDDqMwxZ9iMu-SZdx_WMVvbLRVG3rpzSqRJllTBCoz_5Hvw3mMexoCgcoQAvD_BwE'.</msg>
+<status status="PASS" starttime="20220502 07:07:19.242" endtime="20220502 07:07:24.301"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220502 07:07:24.301" endtime="20220502 07:07:24.425"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@name='firstname']</arg>
+<arg>Ranjan</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220502 07:07:24.433" level="INFO">Typing text 'Ranjan' into text field '//*[@name='firstname']'.</msg>
+<status status="PASS" starttime="20220502 07:07:24.425" endtime="20220502 07:07:24.608"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@name='lastname']</arg>
+<arg>Shrivastava</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220502 07:07:24.608" level="INFO">Typing text 'Shrivastava' into text field '//*[@name='lastname']'.</msg>
+<status status="PASS" starttime="20220502 07:07:24.608" endtime="20220502 07:07:24.760"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@name='email']</arg>
+<arg>rk@jio.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220502 07:07:24.768" level="INFO">Typing text 'rk@jio.com' into text field '//*[@name='email']'.</msg>
+<status status="PASS" starttime="20220502 07:07:24.768" endtime="20220502 07:07:24.920"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@name='phone']</arg>
+<arg>9738308627</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220502 07:07:24.920" level="INFO">Typing text '9738308627' into text field '//*[@name='phone']'.</msg>
+<status status="PASS" starttime="20220502 07:07:24.920" endtime="20220502 07:07:25.066"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@name='company']</arg>
+<arg>xyz technologies</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220502 07:07:25.066" level="INFO">Typing text 'xyz technologies' into text field '//*[@name='company']'.</msg>
+<status status="PASS" starttime="20220502 07:07:25.066" endtime="20220502 07:07:25.210"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>//*[@name='job_role']</arg>
+<arg>QA Analyst / Test Analyst</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20220502 07:07:25.210" level="INFO">Selecting options from selection list '//*[@name='job_role']' by value QA Analyst / Test Analyst.</msg>
+<status status="PASS" starttime="20220502 07:07:25.210" endtime="20220502 07:07:25.330"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>//*[@name='total_size_of_test_suite']</arg>
+<arg>0-500</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20220502 07:07:25.330" level="INFO">Selecting options from selection list '//*[@name='total_size_of_test_suite']' by value 0-500.</msg>
+<status status="PASS" starttime="20220502 07:07:25.330" endtime="20220502 07:07:25.426"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//*[@id="do_you_have_any_hands_on_experience_with_selenium_or_other_scripted_automation_0-e65821c3-a1ec-4b15-9767-25c917c9afc1"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220502 07:07:25.426" level="INFO">Clicking element '//*[@id="do_you_have_any_hands_on_experience_with_selenium_or_other_scripted_automation_0-e65821c3-a1ec-4b15-9767-25c917c9afc1"]'.</msg>
+<status status="PASS" starttime="20220502 07:07:25.426" endtime="20220502 07:07:25.498"/>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<arg>Select Radio Button</arg>
+<arg>//*[@id="do_you_have_any_hands_on_experience_with_selenium_or_other_scripted_automation_0-e65821c3-a1ec-4b15-9767-25c917c9afc1"]</arg>
+<arg>Yes</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="PASS" starttime="20220502 07:07:25.506" endtime="20220502 07:07:25.506"/>
+</kw>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>//*[@name="terms_and_conditions"]</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20220502 07:07:25.506" level="INFO">Selecting checkbox '//*[@name="terms_and_conditions"]'.</msg>
+<status status="PASS" starttime="20220502 07:07:25.506" endtime="20220502 07:07:25.602"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220502 07:07:25.602" endtime="20220502 07:07:27.810"/>
+</kw>
+<status status="PASS" starttime="20220502 07:07:19.242" endtime="20220502 07:07:27.810"/>
+</test>
+<test id="s1-s1-s4-t5" name="app_button_example" line="75">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://demoqa.com/buttons</arg>
+<arg>gc</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220502 07:07:27.810" level="INFO">Opening browser 'gc' to base url 'https://demoqa.com/buttons'.</msg>
+<status status="PASS" starttime="20220502 07:07:27.810" endtime="20220502 07:07:33.906"/>
+</kw>
+<kw name="Double Click Element" library="SeleniumLibrary">
+<arg>//*[@id="doubleClickBtn"]</arg>
+<doc>Double clicks the element identified by ``locator``.</doc>
+<msg timestamp="20220502 07:07:33.906" level="INFO">Double clicking element '//*[@id="doubleClickBtn"]'.</msg>
+<status status="PASS" starttime="20220502 07:07:33.906" endtime="20220502 07:07:34.203"/>
+</kw>
+<kw name="Open Context Menu" library="SeleniumLibrary">
+<arg>//*[@id="rightClickBtn"]</arg>
+<doc>Opens the context menu on the element identified by ``locator``.</doc>
+<status status="PASS" starttime="20220502 07:07:34.203" endtime="20220502 07:07:34.507"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220502 07:07:39.510" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220502 07:07:34.507" endtime="20220502 07:07:39.510"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//*[@class="mt-4"][2]//*[@class="btn btn-primary"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220502 07:07:39.510" level="INFO">Clicking element '//*[@class="mt-4"][2]//*[@class="btn btn-primary"]'.</msg>
+<status status="PASS" starttime="20220502 07:07:39.510" endtime="20220502 07:07:39.590"/>
+</kw>
+<kw name="Close All Browser" library="UDK">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220502 07:07:39.590" endtime="20220502 07:07:41.855"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220502 07:07:41.855" endtime="20220502 07:07:41.855"/>
+</kw>
+<status status="PASS" starttime="20220502 07:07:39.590" endtime="20220502 07:07:41.855"/>
+</kw>
+<status status="PASS" starttime="20220502 07:07:27.810" endtime="20220502 07:07:41.855"/>
+</test>
+<test id="s1-s1-s4-t6" name="app_upload_download" line="86">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://demoqa.com/upload-download</arg>
+<arg>gc</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220502 07:07:41.855" level="INFO">Opening browser 'gc' to base url 'https://demoqa.com/upload-download'.</msg>
+<status status="PASS" starttime="20220502 07:07:41.855" endtime="20220502 07:07:46.537"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//a[@id='downloadButton']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220502 07:07:46.537" level="INFO">Clicking element '//a[@id='downloadButton']'.</msg>
+<status status="PASS" starttime="20220502 07:07:46.537" endtime="20220502 07:07:46.625"/>
+</kw>
+<kw name="Choose File" library="SeleniumLibrary">
+<arg>//input[@id='uploadFile']</arg>
+<arg>C:\\Users\\ranja\\OneDrive\\Desktop\\dummy.xlsx</arg>
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<msg timestamp="20220502 07:07:46.625" level="INFO">Sending C:\Users\ranja\OneDrive\Desktop\dummy.xlsx to browser.</msg>
+<status status="PASS" starttime="20220502 07:07:46.625" endtime="20220502 07:07:46.681"/>
+</kw>
+<status status="PASS" starttime="20220502 07:07:41.855" endtime="20220502 07:07:46.681"/>
+</test>
+<test id="s1-s1-s4-t7" name="app_switch_newTab" line="93">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://demoqa.com/browser-windows</arg>
+<arg>gc</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220502 07:07:46.681" level="INFO">Opening browser 'gc' to base url 'https://demoqa.com/browser-windows'.</msg>
+<status status="PASS" starttime="20220502 07:07:46.681" endtime="20220502 07:07:54.740"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//button[@id='tabButton']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220502 07:07:54.740" level="INFO">Clicking element '//button[@id='tabButton']'.</msg>
+<status status="PASS" starttime="20220502 07:07:54.740" endtime="20220502 07:07:54.844"/>
+</kw>
+<kw name="Get Window Titles" library="SeleniumLibrary">
+<var>${main_window_titles}</var>
+<doc>Returns and logs titles of all windows of the selected browser.</doc>
+<msg timestamp="20220502 07:07:55.084" level="INFO">Altogether 2 items.
+1: ToolsQA
+2: undefined</msg>
+<msg timestamp="20220502 07:07:55.084" level="INFO">${main_window_titles} = ['ToolsQA', 'undefined']</msg>
+<status status="PASS" starttime="20220502 07:07:54.844" endtime="20220502 07:07:55.084"/>
+</kw>
+<kw name="Get Window Handles" library="SeleniumLibrary">
+<var>${handles}</var>
+<doc>Returns all child window handles of the selected browser as a list.</doc>
+<msg timestamp="20220502 07:07:55.092" level="INFO">${handles} = ['CDwindow-DADC722F98F6AD3B777F78AB8FE4672B', 'CDwindow-684965B807CA59B1FC6441EA803DBA1F']</msg>
+<status status="PASS" starttime="20220502 07:07:55.084" endtime="20220502 07:07:55.092"/>
+</kw>
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>${handles}[1]</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20220502 07:07:55.092" endtime="20220502 07:07:55.188"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${sample_text}</var>
+<arg>//h1[@id="sampleHeading"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220502 07:07:55.236" level="INFO">${sample_text} = This is a sample page</msg>
+<status status="PASS" starttime="20220502 07:07:55.188" endtime="20220502 07:07:55.236"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${sample_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220502 07:07:55.236" level="INFO">This is a sample page</msg>
+<status status="PASS" starttime="20220502 07:07:55.236" endtime="20220502 07:07:55.236"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220502 07:07:57.239" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220502 07:07:55.236" endtime="20220502 07:07:57.239"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220502 07:07:57.239" endtime="20220502 07:07:59.531"/>
+</kw>
+<status status="PASS" starttime="20220502 07:07:46.681" endtime="20220502 07:07:59.531"/>
+</test>
+<test id="s1-s1-s4-t8" name="app_switch_newWindow" line="105">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://demoqa.com/browser-windows</arg>
+<arg>gc</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220502 07:07:59.531" level="INFO">Opening browser 'gc' to base url 'https://demoqa.com/browser-windows'.</msg>
+<status status="PASS" starttime="20220502 07:07:59.531" endtime="20220502 07:08:04.343"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//button[@id='windowButton']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220502 07:08:04.343" level="INFO">Clicking element '//button[@id='windowButton']'.</msg>
+<status status="PASS" starttime="20220502 07:08:04.343" endtime="20220502 07:08:04.479"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220502 07:08:04.479" endtime="20220502 07:08:04.687"/>
+</kw>
+<kw name="Get Window Handles" library="SeleniumLibrary">
+<var>${handles}</var>
+<doc>Returns all child window handles of the selected browser as a list.</doc>
+<msg timestamp="20220502 07:08:04.695" level="INFO">${handles} = ['CDwindow-A9DA19383BA50BEBA1D00E83FD6DCE3C', 'CDwindow-44C59046B8A4ACEA4EFA142CEAA65FDB']</msg>
+<status status="PASS" starttime="20220502 07:08:04.687" endtime="20220502 07:08:04.695"/>
+</kw>
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>${handles}[1]</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20220502 07:08:04.695" endtime="20220502 07:08:04.783"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${sample_text}</var>
+<arg>//h1[@id="sampleHeading"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220502 07:08:04.847" level="INFO">${sample_text} = This is a sample page</msg>
+<status status="PASS" starttime="20220502 07:08:04.783" endtime="20220502 07:08:04.847"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${sample_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220502 07:08:04.847" level="INFO">This is a sample page</msg>
+<status status="PASS" starttime="20220502 07:08:04.847" endtime="20220502 07:08:04.847"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220502 07:08:04.847" endtime="20220502 07:08:04.983"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220502 07:08:06.993" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220502 07:08:04.983" endtime="20220502 07:08:06.993"/>
+</kw>
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>${handles}[0]</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20220502 07:08:06.993" endtime="20220502 07:08:07.012"/>
+</kw>
+<status status="PASS" starttime="20220502 07:07:59.531" endtime="20220502 07:08:07.012"/>
+</test>
+<test id="s1-s1-s4-t9" name="app_switch_multiBrowser" line="119">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://demoqa.com/browser-windows</arg>
+<arg>gc</arg>
+<arg>alias=first_window</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220502 07:08:07.020" level="INFO">Opening browser 'gc' to base url 'https://demoqa.com/browser-windows'.</msg>
+<status status="PASS" starttime="20220502 07:08:07.020" endtime="20220502 07:08:11.757"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220502 07:08:11.757" endtime="20220502 07:08:11.888"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>1st window open</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220502 07:08:11.888" level="INFO">1st window open</msg>
+<status status="PASS" starttime="20220502 07:08:11.888" endtime="20220502 07:08:11.888"/>
+</kw>
+<kw name="Get Window Handles" library="SeleniumLibrary">
+<var>${window_handles}</var>
+<doc>Returns all child window handles of the selected browser as a list.</doc>
+<msg timestamp="20220502 07:08:11.896" level="INFO">${window_handles} = ['CDwindow-D95B0A1B364E3A0FED600EF6DB700CCC']</msg>
+<status status="PASS" starttime="20220502 07:08:11.888" endtime="20220502 07:08:11.896"/>
+</kw>
+<for flavor="IN">
+<var>${window}</var>
+<value>${window_handles}</value>
+<iter>
+<var name="${window}">['CDwindow-D95B0A1B364E3A0FED600EF6DB700CCC']</var>
+<kw name="Log" library="BuiltIn">
+<arg>${window}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220502 07:08:11.896" level="INFO">['CDwindow-D95B0A1B364E3A0FED600EF6DB700CCC']</msg>
+<status status="PASS" starttime="20220502 07:08:11.896" endtime="20220502 07:08:11.896"/>
+</kw>
+<status status="PASS" starttime="20220502 07:08:11.896" endtime="20220502 07:08:11.896"/>
+</iter>
+<status status="PASS" starttime="20220502 07:08:11.896" endtime="20220502 07:08:11.896"/>
+</for>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220502 07:08:13.907" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220502 07:08:11.896" endtime="20220502 07:08:13.907"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>2nd window open</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220502 07:08:13.907" level="INFO">2nd window open</msg>
+<status status="PASS" starttime="20220502 07:08:13.907" endtime="20220502 07:08:13.907"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://google.com</arg>
+<arg>gc</arg>
+<arg>alias=second_window</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220502 07:08:13.911" level="INFO">Opening browser 'gc' to base url 'https://google.com'.</msg>
+<status status="PASS" starttime="20220502 07:08:13.907" endtime="20220502 07:08:17.237"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220502 07:08:17.237" endtime="20220502 07:08:17.407"/>
+</kw>
+<kw name="Get Window Handles" library="SeleniumLibrary">
+<var>${window_handles}</var>
+<doc>Returns all child window handles of the selected browser as a list.</doc>
+<msg timestamp="20220502 07:08:17.407" level="INFO">${window_handles} = ['CDwindow-EDC067D7FEEEE81B2314C115AD31F324']</msg>
+<status status="PASS" starttime="20220502 07:08:17.407" endtime="20220502 07:08:17.407"/>
+</kw>
+<for flavor="IN">
+<var>${window}</var>
+<value>${window_handles}</value>
+<iter>
+<var name="${window}">['CDwindow-EDC067D7FEEEE81B2314C115AD31F324']</var>
+<kw name="Log" library="BuiltIn">
+<arg>${window}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220502 07:08:17.414" level="INFO">['CDwindow-EDC067D7FEEEE81B2314C115AD31F324']</msg>
+<status status="PASS" starttime="20220502 07:08:17.414" endtime="20220502 07:08:17.414"/>
+</kw>
+<status status="PASS" starttime="20220502 07:08:17.414" endtime="20220502 07:08:17.414"/>
+</iter>
+<status status="PASS" starttime="20220502 07:08:17.407" endtime="20220502 07:08:17.414"/>
+</for>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220502 07:08:19.418" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220502 07:08:17.414" endtime="20220502 07:08:19.418"/>
+</kw>
+<kw name="Switch Browser" library="SeleniumLibrary">
+<arg>1</arg>
+<doc>Switches between active browsers using ``index_or_alias``.</doc>
+<status status="PASS" starttime="20220502 07:08:19.418" endtime="20220502 07:08:19.418"/>
+</kw>
+<kw name="Get Title" library="SeleniumLibrary">
+<var>${window_1}</var>
+<doc>Returns the title of the current page.</doc>
+<msg timestamp="20220502 07:08:19.443" level="INFO">${window_1} = ToolsQA</msg>
+<status status="PASS" starttime="20220502 07:08:19.418" endtime="20220502 07:08:19.443"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${window_1}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220502 07:08:19.443" level="INFO">ToolsQA</msg>
+<status status="PASS" starttime="20220502 07:08:19.443" endtime="20220502 07:08:19.443"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>switched to 1st window</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220502 07:08:19.443" level="INFO">switched to 1st window</msg>
+<status status="PASS" starttime="20220502 07:08:19.443" endtime="20220502 07:08:19.443"/>
+</kw>
+<kw name="Get Window Handles" library="SeleniumLibrary">
+<var>${window_handles}</var>
+<doc>Returns all child window handles of the selected browser as a list.</doc>
+<msg timestamp="20220502 07:08:19.451" level="INFO">${window_handles} = ['CDwindow-2DDFF91232E0EC68233955816A123BC7']</msg>
+<status status="PASS" starttime="20220502 07:08:19.443" endtime="20220502 07:08:19.451"/>
+</kw>
+<for flavor="IN">
+<var>${window}</var>
+<value>${window_handles}</value>
+<iter>
+<var name="${window}">['CDwindow-2DDFF91232E0EC68233955816A123BC7']</var>
+<kw name="Log" library="BuiltIn">
+<arg>${window}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220502 07:08:19.451" level="INFO">['CDwindow-2DDFF91232E0EC68233955816A123BC7']</msg>
+<status status="PASS" starttime="20220502 07:08:19.451" endtime="20220502 07:08:19.451"/>
+</kw>
+<status status="PASS" starttime="20220502 07:08:19.451" endtime="20220502 07:08:19.451"/>
+</iter>
+<status status="PASS" starttime="20220502 07:08:19.451" endtime="20220502 07:08:19.451"/>
+</for>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220502 07:08:21.462" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220502 07:08:19.451" endtime="20220502 07:08:21.462"/>
+</kw>
+<kw name="Switch Browser" library="SeleniumLibrary">
+<arg>2</arg>
+<doc>Switches between active browsers using ``index_or_alias``.</doc>
+<status status="PASS" starttime="20220502 07:08:21.462" endtime="20220502 07:08:21.462"/>
+</kw>
+<kw name="Get Title" library="SeleniumLibrary">
+<var>${window_2}</var>
+<doc>Returns the title of the current page.</doc>
+<msg timestamp="20220502 07:08:25.514" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000002989F839128&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/8e20b56b4bd5bc1e76f2934eccd5449f/title</msg>
+<msg timestamp="20220502 07:08:29.594" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000002989F82EBE0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/8e20b56b4bd5bc1e76f2934eccd5449f/title</msg>
+<msg timestamp="20220502 07:08:33.648" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000002989F82EF98&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/8e20b56b4bd5bc1e76f2934eccd5449f/title</msg>
+<msg timestamp="20220502 07:08:41.783" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000002989F818860&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/8e20b56b4bd5bc1e76f2934eccd5449f/screenshot</msg>
+<msg timestamp="20220502 07:08:45.835" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000002989F818A90&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/8e20b56b4bd5bc1e76f2934eccd5449f/screenshot</msg>
+<msg timestamp="20220502 07:08:49.882" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000002989F818B00&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/8e20b56b4bd5bc1e76f2934eccd5449f/screenshot</msg>
+<msg timestamp="20220502 07:08:53.931" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: HTTPConnectionPool(host='localhost', port=49867): Max retries exceeded with url: /session/8e20b56b4bd5bc1e76f2934eccd5449f/screenshot (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000002989F6BFD68&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))</msg>
+<msg timestamp="20220502 07:08:53.931" level="FAIL">MaxRetryError: HTTPConnectionPool(host='localhost', port=49867): Max retries exceeded with url: /session/8e20b56b4bd5bc1e76f2934eccd5449f/title (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000002989F82EDD8&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))</msg>
+<status status="FAIL" starttime="20220502 07:08:21.462" endtime="20220502 07:08:54.607"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>switched to 2nd window</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20220502 07:08:54.607" endtime="20220502 07:08:54.607"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${window_2}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20220502 07:08:54.607" endtime="20220502 07:08:54.607"/>
+</kw>
+<kw name="Get Window Handles" library="SeleniumLibrary">
+<var>${window_handles}</var>
+<doc>Returns all child window handles of the selected browser as a list.</doc>
+<status status="NOT RUN" starttime="20220502 07:08:54.607" endtime="20220502 07:08:54.607"/>
+</kw>
+<for flavor="IN">
+<var>${window}</var>
+<value>${window_handles}</value>
+<iter>
+<var name="${window}"/>
+<kw name="Log" library="BuiltIn">
+<arg>${window}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20220502 07:08:54.607" endtime="20220502 07:08:54.607"/>
+</kw>
+<status status="NOT RUN" starttime="20220502 07:08:54.607" endtime="20220502 07:08:54.607"/>
+</iter>
+<status status="NOT RUN" starttime="20220502 07:08:54.607" endtime="20220502 07:08:54.607"/>
+</for>
+<status status="FAIL" starttime="20220502 07:08:07.012" endtime="20220502 07:08:54.607">MaxRetryError: HTTPConnectionPool(host='localhost', port=49867): Max retries exceeded with url: /session/8e20b56b4bd5bc1e76f2934eccd5449f/title (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000002989F82EDD8&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))</status>
+</test>
+<test id="s1-s1-s4-t10" name="test" line="154">
+<status status="FAIL" starttime="20220502 07:08:54.607" endtime="20220502 07:08:54.622">Test contains no keywords.</status>
+</test>
+<test id="s1-s1-s4-t11" name="app_alert" line="156">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://demoqa.com/alerts</arg>
+<arg>gc</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220502 07:08:54.622" level="INFO">Opening browser 'gc' to base url 'https://demoqa.com/alerts'.</msg>
+<status status="PASS" starttime="20220502 07:08:54.622" endtime="20220502 07:09:00.034"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220502 07:09:00.034" endtime="20220502 07:09:00.170"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//button[@id='alertButton']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220502 07:09:00.170" level="INFO">Clicking element '//button[@id='alertButton']'.</msg>
+<status status="PASS" starttime="20220502 07:09:00.170" endtime="20220502 07:09:00.259"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220502 07:09:02.269" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220502 07:09:00.259" endtime="20220502 07:09:02.269"/>
+</kw>
+<kw name="Handle Alert" library="SeleniumLibrary">
+<arg>ACCEPT</arg>
+<doc>Handles the current alert and returns its message.</doc>
+<msg timestamp="20220502 07:09:02.269" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<status status="PASS" starttime="20220502 07:09:02.269" endtime="20220502 07:09:02.280"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//button[@id="timerAlertButton"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220502 07:09:02.293" level="INFO">Clicking element '//button[@id="timerAlertButton"]'.</msg>
+<status status="PASS" starttime="20220502 07:09:02.280" endtime="20220502 07:09:02.456"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>7</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220502 07:09:09.465" level="INFO">Slept 7 seconds</msg>
+<status status="PASS" starttime="20220502 07:09:02.456" endtime="20220502 07:09:09.465"/>
+</kw>
+<kw name="Handle Alert" library="SeleniumLibrary">
+<arg>DISMISS</arg>
+<doc>Handles the current alert and returns its message.</doc>
+<msg timestamp="20220502 07:09:09.465" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<status status="PASS" starttime="20220502 07:09:09.465" endtime="20220502 07:09:09.465"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220502 07:09:09.465" endtime="20220502 07:09:11.754"/>
+</kw>
+<status status="PASS" starttime="20220502 07:08:54.622" endtime="20220502 07:09:11.754"/>
+</test>
+<test id="s1-s1-s4-t12" name="app_frame" line="169">
+<kw name="Launch App Browser" library="UDK">
+<arg>https://demoqa.com/frames</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>gc</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220502 07:09:11.754" level="INFO">Opening browser 'gc' to base url 'https://demoqa.com/frames'.</msg>
+<status status="PASS" starttime="20220502 07:09:11.754" endtime="20220502 07:09:17.070"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220502 07:09:17.070" endtime="20220502 07:09:17.199"/>
+</kw>
+<status status="PASS" starttime="20220502 07:09:11.754" endtime="20220502 07:09:17.199"/>
+</kw>
+<kw name="Select Frame" library="SeleniumLibrary">
+<arg>//*[@id="frame1"]</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<msg timestamp="20220502 07:09:17.207" level="INFO">Selecting frame '//*[@id="frame1"]'.</msg>
+<status status="PASS" starttime="20220502 07:09:17.207" endtime="20220502 07:09:17.359"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${myString}</var>
+<arg>//h1[@id="sampleHeading"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220502 07:09:17.407" level="INFO">${myString} = This is a sample page</msg>
+<status status="PASS" starttime="20220502 07:09:17.359" endtime="20220502 07:09:17.407"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${myString}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220502 07:09:17.415" level="INFO">This is a sample page</msg>
+<status status="PASS" starttime="20220502 07:09:17.415" endtime="20220502 07:09:17.415"/>
+</kw>
+<status status="PASS" starttime="20220502 07:09:11.754" endtime="20220502 07:09:17.415"/>
+</test>
+<test id="s1-s1-s4-t13" name="app_sleep_speed_timeout_Implict" line="175">
+<kw name="Launch App Browser" library="UDK">
+<arg>https://demoqa.com/automation-practice-form</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>gc</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220502 07:09:17.415" level="INFO">Opening browser 'gc' to base url 'https://demoqa.com/automation-practice-form'.</msg>
+<status status="PASS" starttime="20220502 07:09:17.415" endtime="20220502 07:09:22.742"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220502 07:09:22.742" endtime="20220502 07:09:22.878"/>
+</kw>
+<status status="PASS" starttime="20220502 07:09:17.415" endtime="20220502 07:09:22.878"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220502 07:09:27.895" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220502 07:09:22.886" endtime="20220502 07:09:27.895"/>
+</kw>
+<kw name="Get Selenium Speed" library="SeleniumLibrary">
+<var>${s_speed}</var>
+<doc>Gets the delay that is waited after each Selenium command.</doc>
+<msg timestamp="20220502 07:09:27.895" level="INFO">${s_speed} = 0 seconds</msg>
+<status status="PASS" starttime="20220502 07:09:27.895" endtime="20220502 07:09:27.895"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${s_speed}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220502 07:09:27.895" level="INFO">0 seconds</msg>
+<status status="PASS" starttime="20220502 07:09:27.895" endtime="20220502 07:09:27.895"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>3</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20220502 07:09:27.895" endtime="20220502 07:09:27.895"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@id="firstName"]</arg>
+<arg>Hello</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220502 07:09:27.895" level="INFO">Typing text 'Hello' into text field '//*[@id="firstName"]'.</msg>
+<status status="PASS" starttime="20220502 07:09:27.895" endtime="20220502 07:09:37.126"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@id="lastName"]</arg>
+<arg>Robot</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220502 07:09:37.126" level="INFO">Typing text 'Robot' into text field '//*[@id="lastName"]'.</msg>
+<status status="PASS" starttime="20220502 07:09:37.126" endtime="20220502 07:09:46.300"/>
+</kw>
+<kw name="Get Selenium Speed" library="SeleniumLibrary">
+<var>${s_speed}</var>
+<doc>Gets the delay that is waited after each Selenium command.</doc>
+<msg timestamp="20220502 07:09:46.300" level="INFO">${s_speed} = 3 seconds</msg>
+<status status="PASS" starttime="20220502 07:09:46.300" endtime="20220502 07:09:46.300"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${s_speed}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220502 07:09:46.300" level="INFO">3 seconds</msg>
+<status status="PASS" starttime="20220502 07:09:46.300" endtime="20220502 07:09:46.300"/>
+</kw>
+<kw name="Get Selenium Timeout" library="SeleniumLibrary">
+<var>${s_timeout}</var>
+<doc>Gets the timeout that is used by various keywords.</doc>
+<msg timestamp="20220502 07:09:46.300" level="INFO">${s_timeout} = 5 seconds</msg>
+<status status="PASS" starttime="20220502 07:09:46.300" endtime="20220502 07:09:46.300"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${s_timeout}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220502 07:09:46.300" level="INFO">5 seconds</msg>
+<status status="PASS" starttime="20220502 07:09:46.300" endtime="20220502 07:09:46.300"/>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>10</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20220502 07:09:46.308" endtime="20220502 07:10:04.349"/>
+</kw>
+<kw name="Get Selenium Timeout" library="SeleniumLibrary">
+<var>${s_timeout}</var>
+<doc>Gets the timeout that is used by various keywords.</doc>
+<msg timestamp="20220502 07:10:04.349" level="INFO">${s_timeout} = 10 seconds</msg>
+<status status="PASS" starttime="20220502 07:10:04.349" endtime="20220502 07:10:04.349"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${s_timeout}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220502 07:10:04.349" level="INFO">10 seconds</msg>
+<status status="PASS" starttime="20220502 07:10:04.349" endtime="20220502 07:10:04.349"/>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<arg>Wait Until Page Contains</arg>
+<arg>adsf</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="PASS" starttime="20220502 07:10:04.349" endtime="20220502 07:10:04.349"/>
+</kw>
+<kw name="Get Selenium Implicit Wait" library="SeleniumLibrary">
+<var>${siw}</var>
+<doc>Gets the implicit wait value used by Selenium.</doc>
+<msg timestamp="20220502 07:10:04.349" level="INFO">${siw} = 0 seconds</msg>
+<status status="PASS" starttime="20220502 07:10:04.349" endtime="20220502 07:10:04.349"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${siw}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220502 07:10:04.349" level="INFO">0 seconds</msg>
+<status status="PASS" starttime="20220502 07:10:04.349" endtime="20220502 07:10:04.349"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>10</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220502 07:10:04.349" endtime="20220502 07:10:22.412"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${siw}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220502 07:10:22.412" level="INFO">0 seconds</msg>
+<status status="PASS" starttime="20220502 07:10:22.412" endtime="20220502 07:10:22.412"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>adsf</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<msg timestamp="20220502 07:10:39.143" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-7.png"&gt;&lt;img src="selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220502 07:10:39.143" level="FAIL">Text 'adsf' did not appear in 10 seconds.</msg>
+<status status="FAIL" starttime="20220502 07:10:22.412" endtime="20220502 07:10:39.143"/>
+</kw>
+<status status="FAIL" starttime="20220502 07:09:17.415" endtime="20220502 07:10:39.143">Text 'adsf' did not appear in 10 seconds.</status>
+</test>
+<test id="s1-s1-s4-t14" name="use_of_custom_keyword" line="200">
+<kw name="Count Of Characters" library="count_of_characters">
+<arg>Ranjan</arg>
+<msg timestamp="20220502 07:10:39.159" level="INFO">R occurred 1 times
+a occurred 2 times
+j occurred 1 times
+n occurred 2 times</msg>
+<status status="PASS" starttime="20220502 07:10:39.159" endtime="20220502 07:10:39.159"/>
+</kw>
+<status status="PASS" starttime="20220502 07:10:39.143" endtime="20220502 07:10:39.159"/>
+</test>
+<test id="s1-s1-s4-t15" name="html_table_validation" line="203">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://www.w3schools.com/html/html_tables.asp</arg>
+<arg>gc</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220502 07:10:39.159" level="INFO">Opening browser 'gc' to base url 'https://www.w3schools.com/html/html_tables.asp'.</msg>
+<status status="PASS" starttime="20220502 07:10:39.159" endtime="20220502 07:10:45.516"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220502 07:10:45.516" endtime="20220502 07:10:50.494"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${rows_count}</var>
+<arg>//table[@id="customers"]/tbody/tr</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20220502 07:10:54.256" level="INFO">${rows_count} = 7</msg>
+<status status="PASS" starttime="20220502 07:10:50.494" endtime="20220502 07:10:54.256"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${cols_count}</var>
+<arg>//table[@id="customers"]/tbody/tr[1]/th</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20220502 07:10:57.289" level="INFO">${cols_count} = 3</msg>
+<status status="PASS" starttime="20220502 07:10:54.256" endtime="20220502 07:10:57.289"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${rows_count}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220502 07:10:57.289" endtime="20220502 07:10:57.289"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${cols_count}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220502 07:10:57.289" endtime="20220502 07:10:57.289"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${captured_data}</var>
+<arg>//table[@id="customers"]/tbody/tr[5]/td[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220502 07:11:03.341" level="INFO">${captured_data} = Island Trading</msg>
+<status status="PASS" starttime="20220502 07:10:57.289" endtime="20220502 07:11:03.341"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${captured_data}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220502 07:11:03.341" endtime="20220502 07:11:03.341"/>
+</kw>
+<kw name="Table Column Should Contain" library="SeleniumLibrary">
+<arg>//table[@id="customers"]</arg>
+<arg>2</arg>
+<arg>Contact</arg>
+<doc>Verifies table column contains text ``expected``.</doc>
+<status status="PASS" starttime="20220502 07:11:03.341" endtime="20220502 07:11:15.395"/>
+</kw>
+<kw name="Table Row Should Contain" library="SeleniumLibrary">
+<arg>//table[@id="customers"]</arg>
+<arg>4</arg>
+<arg>Ernst Handel</arg>
+<doc>Verifies that table row contains text ``expected``.</doc>
+<status status="PASS" starttime="20220502 07:11:15.395" endtime="20220502 07:11:27.482"/>
+</kw>
+<kw name="Table Cell Should Contain" library="SeleniumLibrary">
+<arg>//table[@id="customers"]</arg>
+<arg>4</arg>
+<arg>2</arg>
+<arg>Roland Mendel</arg>
+<doc>Verifies table cell contains text ``expected``.</doc>
+<msg timestamp="20220502 07:11:55.609" level="INFO">Table cell contains 'Roland Mendel'.</msg>
+<status status="PASS" starttime="20220502 07:11:27.482" endtime="20220502 07:11:55.609"/>
+</kw>
+<kw name="Table Header Should Contain" library="SeleniumLibrary">
+<arg>//table[@id="customers"]</arg>
+<arg>Country</arg>
+<doc>Verifies table header contains text ``expected``.</doc>
+<status status="PASS" starttime="20220502 07:11:55.609" endtime="20220502 07:12:19.716"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220502 07:12:19.716" endtime="20220502 07:12:24.900"/>
+</kw>
+<status status="PASS" starttime="20220502 07:10:39.159" endtime="20220502 07:12:24.900"/>
+</test>
+<status status="FAIL" starttime="20220502 07:06:34.319" endtime="20220502 07:12:24.900"/>
+</suite>
+<suite id="s1-s1-s5" name="Read Write" source="D:\demoProjects\testcases\Read_Write.robot">
+<test id="s1-s1-s5-t1" name="TC01 Read Data From CSV" line="6">
+<kw name="Read CSV File" library="UDK">
+<arg>D:\\demoProjects\\testData\\user_data_csv.csv</arg>
+<kw name="Get File" library="OperatingSystem">
+<var>${data_set}</var>
+<arg>${file_name}</arg>
+<doc>Returns the contents of a specified file.</doc>
+<msg timestamp="20220502 07:12:24.932" level="INFO" html="true">Getting file '&lt;a href="file://D:\demoProjects\testData\user_data_csv.csv"&gt;D:\demoProjects\testData\user_data_csv.csv&lt;/a&gt;'.</msg>
+<msg timestamp="20220502 07:12:24.932" level="INFO">${data_set} = Name, Id
+ranjan, 5
+suman, 9</msg>
+<status status="PASS" starttime="20220502 07:12:24.916" endtime="20220502 07:12:24.932"/>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<arg>log</arg>
+<arg>${data_set}</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="PASS" starttime="20220502 07:12:24.932" endtime="20220502 07:12:24.932"/>
+</kw>
+<for flavor="IN">
+<var>${data}</var>
+<value>${data_set}</value>
+<iter>
+<var name="${data}">Name, Id
+ranjan, 5
+suman, 9</var>
+<kw name="Log" library="BuiltIn">
+<arg>*************************</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220502 07:12:24.932" level="INFO">*************************</msg>
+<status status="PASS" starttime="20220502 07:12:24.932" endtime="20220502 07:12:24.932"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${data}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220502 07:12:24.932" level="INFO">Name, Id
+ranjan, 5
+suman, 9</msg>
+<status status="PASS" starttime="20220502 07:12:24.932" endtime="20220502 07:12:24.932"/>
+</kw>
+<status status="PASS" starttime="20220502 07:12:24.932" endtime="20220502 07:12:24.932"/>
+</iter>
+<status status="PASS" starttime="20220502 07:12:24.932" endtime="20220502 07:12:24.932"/>
+</for>
+<kw name="Log" library="BuiltIn">
+<arg>${data_set}[0]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220502 07:12:24.932" level="INFO">N</msg>
+<status status="PASS" starttime="20220502 07:12:24.932" endtime="20220502 07:12:24.932"/>
+</kw>
+<status status="PASS" starttime="20220502 07:12:24.916" endtime="20220502 07:12:24.932"/>
+</kw>
+<status status="PASS" starttime="20220502 07:12:24.916" endtime="20220502 07:12:24.932"/>
+</test>
+<test id="s1-s1-s5-t2" name="TC02 Read Excel" line="9">
+<kw name="Open Excel Document" library="ExcelLibrary">
+<arg>D:\\demoProjects\\testData\\user_login_data.xlsx</arg>
+<arg>login data</arg>
+<doc>Opens xlsx document file.</doc>
+<status status="PASS" starttime="20220502 07:12:24.932" endtime="20220502 07:12:24.947"/>
+</kw>
+<kw name="Get List Sheet Names" library="ExcelLibrary">
+<var>${no_of_sheets}</var>
+<doc>Returns a list of sheet names in the current document.</doc>
+<msg timestamp="20220502 07:12:24.947" level="INFO">${no_of_sheets} = ['Sheet1']</msg>
+<status status="PASS" starttime="20220502 07:12:24.947" endtime="20220502 07:12:24.947"/>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<arg>Log To Console</arg>
+<arg>${no_of_sheets}</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="PASS" starttime="20220502 07:12:24.947" endtime="20220502 07:12:24.947"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${cell_data}</var>
+<arg>1</arg>
+<arg>1</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20220502 07:12:24.947" level="INFO">${cell_data} = ${username}</msg>
+<status status="PASS" starttime="20220502 07:12:24.947" endtime="20220502 07:12:24.947"/>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<arg>Log To Console</arg>
+<arg>${cell_data}</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="PASS" starttime="20220502 07:12:24.947" endtime="20220502 07:12:24.947"/>
+</kw>
+<kw name="Read Excel Row" library="ExcelLibrary">
+<var>${no_of_rows}</var>
+<arg>1</arg>
+<doc>Returns content of a row from the current sheet of the document.</doc>
+<msg timestamp="20220502 07:12:24.947" level="INFO">${no_of_rows} = ['${username}', '${password}']</msg>
+<status status="PASS" starttime="20220502 07:12:24.947" endtime="20220502 07:12:24.947"/>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<arg>Log To Console</arg>
+<arg>${no_of_rows}</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="PASS" starttime="20220502 07:12:24.947" endtime="20220502 07:12:24.947"/>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<var>${rows_len}</var>
+<arg>${no_of_rows}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<msg timestamp="20220502 07:12:24.947" level="INFO">Length is 2</msg>
+<msg timestamp="20220502 07:12:24.947" level="INFO">${rows_len} = 2</msg>
+<status status="PASS" starttime="20220502 07:12:24.947" endtime="20220502 07:12:24.947"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${rows_len}</var>
+<arg>${rows_len}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20220502 07:12:24.963" level="INFO">${rows_len} = 2</msg>
+<status status="PASS" starttime="20220502 07:12:24.963" endtime="20220502 07:12:24.963"/>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<arg>Log To Console</arg>
+<arg>${rows_len}</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="PASS" starttime="20220502 07:12:24.963" endtime="20220502 07:12:24.963"/>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<var>${no_of_cols}</var>
+<arg>1</arg>
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<msg timestamp="20220502 07:12:24.963" level="INFO">${no_of_cols} = ['${username}', 'A@gmail.com', 'B@outlook.com', 'C@gmail.com', 'D@outlook.com', 'E@gmail.com', 'F@outlook.com']</msg>
+<status status="PASS" starttime="20220502 07:12:24.963" endtime="20220502 07:12:24.963"/>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<arg>Log To Console</arg>
+<arg>${no_of_cols}</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="PASS" starttime="20220502 07:12:24.963" endtime="20220502 07:12:24.963"/>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<var>${cols_len}</var>
+<arg>${no_of_cols}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<msg timestamp="20220502 07:12:24.963" level="INFO">Length is 7</msg>
+<msg timestamp="20220502 07:12:24.963" level="INFO">${cols_len} = 7</msg>
+<status status="PASS" starttime="20220502 07:12:24.963" endtime="20220502 07:12:24.963"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${cols_len}</var>
+<arg>${cols_len}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20220502 07:12:24.963" level="INFO">${cols_len} = 7</msg>
+<status status="PASS" starttime="20220502 07:12:24.963" endtime="20220502 07:12:24.963"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${rows_len}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220502 07:12:24.963" level="INFO">2</msg>
+<status status="PASS" starttime="20220502 07:12:24.963" endtime="20220502 07:12:24.963"/>
+</kw>
+<status status="PASS" starttime="20220502 07:12:24.932" endtime="20220502 07:12:24.963"/>
+</test>
+<status status="PASS" starttime="20220502 07:12:24.900" endtime="20220502 07:12:24.963"/>
+</suite>
+<status status="FAIL" starttime="20220502 07:05:50.600" endtime="20220502 07:12:24.963"/>
+</suite>
+<status status="FAIL" starttime="20220502 07:05:50.553" endtime="20220502 07:12:24.979"/>
+</suite>
+<statistics>
+<total>
+<stat pass="23" fail="10" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="2" fail="0" skip="0">reg</stat>
+<stat pass="1" fail="0" skip="0">regression</stat>
+</tag>
+<suite>
+<stat pass="23" fail="10" skip="0" id="s1" name="demoProjects">demoProjects</stat>
+<stat pass="23" fail="10" skip="0" id="s1-s1" name="Testcases">demoProjects.Testcases</stat>
+<stat pass="4" fail="0" skip="0" id="s1-s1-s1" name="API scripts">demoProjects.Testcases.API scripts</stat>
+<stat pass="0" fail="6" skip="0" id="s1-s1-s2" name="Data Driven Test Sample">demoProjects.Testcases.Data Driven Test Sample</stat>
+<stat pass="5" fail="1" skip="0" id="s1-s1-s3" name="Database Test Cases">demoProjects.Testcases.Database Test Cases</stat>
+<stat pass="12" fail="3" skip="0" id="s1-s1-s4" name="GUI scripts">demoProjects.Testcases.GUI scripts</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1-s5" name="Read Write">demoProjects.Testcases.Read Write</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220502 07:06:02.379" level="WARN">Multiple tests with name 'app_ddt_loginTestUsingExcelData' executed in suite 'demoProjects.Testcases.Data Driven Test Sample'.</msg>
+<msg timestamp="20220502 07:06:08.720" level="WARN">Multiple tests with name 'app_ddt_loginTestUsingExcelData' executed in suite 'demoProjects.Testcases.Data Driven Test Sample'.</msg>
+<msg timestamp="20220502 07:06:14.947" level="WARN">Multiple tests with name 'app_ddt_loginTestUsingExcelData' executed in suite 'demoProjects.Testcases.Data Driven Test Sample'.</msg>
+<msg timestamp="20220502 07:06:21.263" level="WARN">Multiple tests with name 'app_ddt_loginTestUsingExcelData' executed in suite 'demoProjects.Testcases.Data Driven Test Sample'.</msg>
+<msg timestamp="20220502 07:06:27.739" level="WARN">Multiple tests with name 'app_ddt_loginTestUsingExcelData' executed in suite 'demoProjects.Testcases.Data Driven Test Sample'.</msg>
+<msg timestamp="20220502 07:08:25.514" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000002989F839128&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/8e20b56b4bd5bc1e76f2934eccd5449f/title</msg>
+<msg timestamp="20220502 07:08:29.594" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000002989F82EBE0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/8e20b56b4bd5bc1e76f2934eccd5449f/title</msg>
+<msg timestamp="20220502 07:08:33.648" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000002989F82EF98&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/8e20b56b4bd5bc1e76f2934eccd5449f/title</msg>
+<msg timestamp="20220502 07:08:41.783" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000002989F818860&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/8e20b56b4bd5bc1e76f2934eccd5449f/screenshot</msg>
+<msg timestamp="20220502 07:08:45.835" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000002989F818A90&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/8e20b56b4bd5bc1e76f2934eccd5449f/screenshot</msg>
+<msg timestamp="20220502 07:08:49.882" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000002989F818B00&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/8e20b56b4bd5bc1e76f2934eccd5449f/screenshot</msg>
+<msg timestamp="20220502 07:08:53.931" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: HTTPConnectionPool(host='localhost', port=49867): Max retries exceeded with url: /session/8e20b56b4bd5bc1e76f2934eccd5449f/screenshot (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000002989F6BFD68&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))</msg>
+</errors>
+</robot>

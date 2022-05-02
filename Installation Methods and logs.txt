@@ -1,0 +1,111 @@
+
+Selenium Library refrence
+https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Page%20Should%20Contain
+
+database:
+https://franz-see.github.io/Robotframework-Database-Library/api/0.5/DatabaseLibrary.html
+
+Excel Librar
+https://rawgit.com/peterservice-rnd/robotframework-excellib/master/docs/ExcelLibrary.html
+
+Built In Lib
+http://robotframework.org/robotframework/2.8.7/libraries/BuiltIn.html
+
+Reference Videos
+https://www.youtube.com/watch?v=Un0z8MgrS8k
+https://www.youtube.com/watch?v=wW4xdTvRbGw&list=PLUDwpEzHYYLsCHiiihnwl3L0xPspL7BPG&index=11  : Pawan
+
+pip show robotframework   to get detailed lib details
+pip check robotframework
+
+
+Note: 
+Python version must be <= 3.7 then we csn use ride as editor
+Command to install library
+cmd-- python -m pip install robotframework
+cmd-- python -m pip install robotframework-seleniumlibrary
+cmd-- python -m pip install robotframework-ride
+cmd-- python -m pip install robotframework-datadriver==0.0.5
+cmd-- python -m pip install robotframework-excellib
+pip install openpyxl
+pip install PyMySQL
+	
+	
+pip install robotframework-crypto
+
+parallele Execution
+Headless Execution
+
+======================================================================
+DB:localhost 127.0.0.1
+url: ranjanblr2019@gmail.com
+username: root
+pwd:Mysql2022@@@
+
+To execute test in vmd
+======================
+simple run: robot regression.robot
+selected test execution: robot --include reg regression.robot
+
+
+API Testing
+======================
+https://www.youtube.com/watch?v=LSRp2IwMAhM&list=PLUDwpEzHYYLvMLbma_Rp-6jrrpxkeH0VJ
+API Link: https://reqres.in/
+65563
+pip requests
+pip install robotframework-requests
+pip install  -u robotframework-jsonlibrary   to validate api request
+
+
+
+Github as code Repository
+===============================
+username: rkumar1433@gmail.com
+Password:Automation123@@@
+
+or create a new repository on the command line
+echo "# robot_project" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M master
+git remote add origin https://github.com/RanjanShrivastva/robot_project.git
+git push -u origin master
+
+
+git remote add origin https://github.com/RanjanShrivastva/robot_project.git
+git branch -M master
+git push -u origin master
+0
+
+
+
+Jenkin installation and use 
+==============================================
+password location  C:\Users\ranja\.jenkins\secrets
+password: 33882a5f3aa34133a7ef18becea490ff
+password1:  2bc3279020df45029b3f87f245d1d86a
+
+
+username: automation
+Password: Automation2022@@@
+name: automation
+Email: rkumar1433@gmail.com
+http://localhost:8888/
+
+
+
+=======================Xpath======================
+https://www.guru99.com/xpath-selenium.html
+Xpath=//tagname[@attribute='value']
+ex: Xpath=//input[@name='uid']
+Xpath=//*[contains(text(),'text')]
+OR and AND
+Xpath=//*[@type='submit' or @name='btnReset']
+Xpath=//input[@type='submit' and @name='btnLogin']
+Starts with
+Xpath=//label[starts-with(@id,'message')]
+text
+Xpath=//td[text()='UserID']
+ 

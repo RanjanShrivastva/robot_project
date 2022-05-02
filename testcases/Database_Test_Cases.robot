@@ -43,6 +43,7 @@ update data in table
     [Teardown]    UDK.Disconnect From Database
 
 retrieve data from table
+    [Tags]    db
     [Setup]    Establish Database Connection
     ${query_results}    query    select * from mydb.person;
     log    ${query_results}[0][0]
