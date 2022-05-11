@@ -3,6 +3,7 @@ Test Template
 Resource          ../common/commom_libraries.robot
 Library           C:/Python/Python37/Lib/site-packages/Custom Python Scripts/For Loop Keyword.py
 Library           ../utilities/count_of_characters.py
+Library           ../utilities/callingJavaFunctionInPythonThroughRobot.py
 
 *** Variables ***
 
@@ -23,7 +24,6 @@ app_login_01
     log    ${user_name}
     Should Be Equal    ${user_name}    Ranjan
     Comment    Click Element    //* [@class='_2KpZ6l _2HKlqd _3AWRsL']4555
-    Close Browser
 
 app_login_01_headless
     [Tags]    reg
@@ -153,7 +153,7 @@ app_switch_multiBrowser
     END
 
 test
-    count_of_characters    Ranjan
+    keyword_test
 
 app_alert
     Open Browser    https://demoqa.com/alerts    gc

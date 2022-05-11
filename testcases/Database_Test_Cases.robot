@@ -51,4 +51,5 @@ retrieve data from table
     log    ${query_results}[0][2]
     log    ${query_results}[1][0]
     Log To Console    ${query_results}
+    Set Global Variable    ${query_results}
     [Teardown]    UDK.Disconnect From Database

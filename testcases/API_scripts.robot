@@ -44,3 +44,10 @@ api_testing_delete_example
     log    ${response.status_code}
     log    ${response.content}
     log    ${response.headers}
+
+abc
+    user keyword
+
+*** Keywords ***
+user keyword
+    log    print data

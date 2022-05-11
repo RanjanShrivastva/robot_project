@@ -2,6 +2,7 @@
 Resource          ../testData/userProvidedValues.robot
 Resource          ../pageObjects/homePage.robot
 Resource          ../pageObjects/loginPage.robot
+Resource          ../common/commom_libraries.robot
 Library           SeleniumLibrary
 Library           requests
 Library           RequestsLibrary
@@ -84,3 +85,10 @@ Establish Database Connection
 
 Disconnect From Database
     DatabaseLibrary.Disconnect From Database
+
+Parameterized For Loop
+    [Arguments]    ${rows_len}    ${outer_loop}
+    FOR    ${inner_loop}    IN RANGE    1    ${rows_len}+1
+        ${cell_data}    Read Excel Cell    ${outer_loop}    ${inner_loop}
+        log    ${cell_data}
+    END

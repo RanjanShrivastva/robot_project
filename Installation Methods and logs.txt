@@ -1,43 +1,38 @@
 
-Selenium Library refrence
+Selenium Library:
 https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Page%20Should%20Contain
 
-database:
+database Library:
 https://franz-see.github.io/Robotframework-Database-Library/api/0.5/DatabaseLibrary.html
 
-Excel Librar
+Excel Library:
 https://rawgit.com/peterservice-rnd/robotframework-excellib/master/docs/ExcelLibrary.html
 
-Built In Lib
+Built In Library:
 http://robotframework.org/robotframework/2.8.7/libraries/BuiltIn.html
 
-Reference Videos
-https://www.youtube.com/watch?v=Un0z8MgrS8k
-https://www.youtube.com/watch?v=wW4xdTvRbGw&list=PLUDwpEzHYYLsCHiiihnwl3L0xPspL7BPG&index=11  : Pawan
 
 pip show robotframework   to get detailed lib details
 pip check robotframework
 
 
 Note: 
-Python version must be <= 3.7 then we csn use ride as editor
+Python version must be <= 3.7 then we can use ride as editor
 Command to install library
-cmd-- python -m pip install robotframework
-cmd-- python -m pip install robotframework-seleniumlibrary
-cmd-- python -m pip install robotframework-ride
-cmd-- python -m pip install robotframework-datadriver==0.0.5
-cmd-- python -m pip install robotframework-excellib
-pip install openpyxl
+pip install robotframework
+pip install robotframework-seleniumlibrary
+pip install robotframework-ride
+pip install robotframework-datadriver==0.0.5
+pip install robotframework-excellib
 pip install PyMySQL
-	
-	
+pip install openpyxl
 pip install robotframework-crypto
 
 parallele Execution
 Headless Execution
 
 ======================================================================
-DB:localhost 127.0.0.1
+DB:localhost or 127.0.0.1
 url: ranjanblr2019@gmail.com
 username: root
 pwd:Mysql2022@@@
@@ -45,7 +40,7 @@ pwd:Mysql2022@@@
 To execute test in vmd
 ======================
 simple run: robot regression.robot
-selected test execution: robot --include reg regression.robot
+selected test execution: robot --include reg GUI_scripts.robot
 
 
 API Testing
@@ -77,7 +72,18 @@ git push -u origin master
 git remote add origin https://github.com/RanjanShrivastva/robot_project.git
 git branch -M master
 git push -u origin master
-0
+git branch -a  --> To list all branch
+git pull
+
+reate the branch on your local machine and switch in this branch :
+$ git checkout -b [name_of_your_new_branch]
+
+Delete a branch on your local filesystem :
+$ git branch -d [name_of_your_new_branch]
+
+To force the deletion of local branch on your filesystem :
+$ git branch -D [name_of_your_new_branch]
+
 
 
 
