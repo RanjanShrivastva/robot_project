@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.7.0 on win32)" generated="20220522 03:11:34.342" rpa="false" schemaversion="3">
+<suite id="s1" name="demoProjects" source="D:\demoProjects">
+<suite id="s1-s1" name="Testcases" source="D:\demoProjects\testcases">
+<suite id="s1-s1-s1" name="Database Test Cases" source="D:\demoProjects\testcases\Database_Test_Cases.robot">
+<test id="s1-s1-s1-t1" name="insert update delete data in table_pdb" line="72">
+<kw name="Establish Database Connection_pdb" library="UDK" type="SETUP">
+<kw name="Connect To Postgresql" library="PostgreSQLDB">
+<arg>ecom</arg>
+<arg>postgres</arg>
+<arg>postgres</arg>
+<arg>127.0.0.1</arg>
+<arg>5432</arg>
+<doc>Connection to Postgres DB.</doc>
+<status status="PASS" starttime="20220522 03:11:35.171" endtime="20220522 03:11:35.223"/>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<arg>${query}=</arg>
+<arg>PostgreSQLDB.Execute Sql String</arg>
+<arg>SELECT * from customers;</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="PASS" starttime="20220522 03:11:35.223" endtime="20220522 03:11:35.223"/>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<arg>log</arg>
+<arg>Database connection established</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="PASS" starttime="20220522 03:11:35.223" endtime="20220522 03:11:35.223"/>
+</kw>
+<status status="PASS" starttime="20220522 03:11:35.171" endtime="20220522 03:11:35.223"/>
+</kw>
+<kw name="Execute Plpgsql Script" library="PostgreSQLDB">
+<var>${output}</var>
+<arg>D:\\demoProjects\\testData\\postgress_data.sql</arg>
+<doc>Execution of PL/PGSQL from file.
+For parametrized SQL queries please consider psycopg2 guide on the subject:
+http://initd.org/psycopg/docs/usage.html#passing-parameters-to-sql-queries</doc>
+<msg timestamp="20220522 03:11:35.223" level="INFO" html="true">&lt;details&gt;&lt;summary&gt;Running PL/PGSQL statement&lt;/summary&gt;&lt;p&gt;--CREATE TABLE
+create table person(id int, first_name varchar(100), last_name varchar(100));
+
+--INSERT
+--INSERT INTO customers (id, name, email, phone, address)
+--VALUES (6, &amp;#x27;test6man&amp;#x27;, &amp;#x27;test6@gmail.com&amp;#x27;, 7892186886, &amp;#x27;Marathalli Bangalore 560006&amp;#x27;);
+
+--UPDATE
+--UPDATE customers set phone=2222222222 where id =2;
+
+--DELETE
+--delete from customers where id=7;&lt;/p&gt;&lt;/details&gt;</msg>
+<msg timestamp="20220522 03:11:35.230" level="FAIL">DuplicateTable: relation "person" already exists
+</msg>
+<status status="FAIL" starttime="20220522 03:11:35.223" endtime="20220522 03:11:35.231"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${output}</var>
+<arg>${output}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" starttime="20220522 03:11:35.231" endtime="20220522 03:11:35.231"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${output}</arg>
+<arg>None</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" starttime="20220522 03:11:35.231" endtime="20220522 03:11:35.231"/>
+</kw>
+<kw name="Disconnect From Database_pdb" library="UDK" type="TEARDOWN">
+<kw name="Disconnect From Postgresql" library="PostgreSQLDB">
+<doc>Close active PostgreSQL connection.
+You will have to manually open or switch to a new connection.
+Due to how ConnectionCache works, connection's index and alias are not removed from cache, so you are able to switch to
+closed connection, if it was closed with Disconnect from Postgresql. It will still remain closed though.</doc>
+<status status="PASS" starttime="20220522 03:11:35.231" endtime="20220522 03:11:35.231"/>
+</kw>
+<status status="PASS" starttime="20220522 03:11:35.231" endtime="20220522 03:11:35.231"/>
+</kw>
+<status status="FAIL" starttime="20220522 03:11:35.171" endtime="20220522 03:11:35.231">DuplicateTable: relation "person" already exists
+</status>
+</test>
+<status status="FAIL" starttime="20220522 03:11:35.161" endtime="20220522 03:11:35.231"/>
+</suite>
+<status status="FAIL" starttime="20220522 03:11:34.397" endtime="20220522 03:11:35.240"/>
+</suite>
+<status status="FAIL" starttime="20220522 03:11:34.372" endtime="20220522 03:11:35.242"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="demoProjects">demoProjects</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Testcases">demoProjects.Testcases</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="Database Test Cases">demoProjects.Testcases.Database Test Cases</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

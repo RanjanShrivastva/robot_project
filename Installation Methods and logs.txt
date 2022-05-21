@@ -11,6 +11,9 @@ https://rawgit.com/peterservice-rnd/robotframework-excellib/master/docs/ExcelLib
 Built In Library:
 http://robotframework.org/robotframework/2.8.7/libraries/BuiltIn.html
 
+Postgres db
+pip install robotframework-postgresqldb
+
 
 pip show robotframework   to get detailed lib details
 pip check robotframework
@@ -19,8 +22,8 @@ pip check robotframework
 Note: 
 Python version must be <= 3.7 then we can use ride as editor
 Command to install library
-pip install robotframework
-pip install robotframework-seleniumlibrary
+D:\demoProjects\userDefinedKeywords
+python -m pip install robotframework-seleniumlibrary
 pip install robotframework-ride
 pip install robotframework-datadriver==0.0.5
 pip install robotframework-excellib
@@ -102,7 +105,79 @@ http://localhost:8888/
 
 
 
-=======================Xpath======================
+=======================Xpath=====================
+../--> used go one node up
+/*  --> used to go one node down
+
+Two types of xpath
+1) Absolute XPath : 
+	It is the direct way to find the element, 
+	but the disadvantage of the absolute XPath is that 
+	if there are any changes made in the path of the element then that XPath gets failed
+	The key characteristic of XPath is that it begins with the single forward slash(/) ,
+	which means you can select the element from the root node.
+2) Relative XPath
+	Relative Xpath starts from the middle of HTML DOM structure. 
+	It starts with double forward slash (//). 
+	It can search elements anywhere on the webpage, 
+	means no need to write a long xpath and you can start from the middle of HTML DOM structure. 
+	Relative Xpath is always preferred as it is not a complete path from the root element.
+
+How To Write Dynamic XPath In Selenium WebDriver
+1) Basic XPath: basis of attributes like ID , Name, Classname, etc
+	Xpath=//input[@name='uid']
+2) Contains():
+	Xpath=//*[contains(@type,'sub')]
+	Xpath=//*[contains(@name,'btn')]
+	Xpath=//*[contains(text(),'here')]
+	Xpath=//*[contains(@href,'guru99.com')]
+	
+3) Using OR & AND:
+	Xpath=//*[@type='submit' or @name='btnReset']
+	Xpath=//input[@type='submit' and @name='btnLogin']
+
+4) Xpath Starts-with
+	For example -: Suppose the ID of particular element changes dynamically like:
+	Id=” message12″
+	Id=” message345″
+	Id=” message8769″
+	EX Xpath=//label[starts-with(@id,'message')]
+
+5) XPath Text() Function
+	Xpath=//td[text()='UserID']
+
+6 a) Following:
+	Xpath=//*[@type='text']//following::input
+	Xpath=//*[@type='text']//following::input[1]
+	
+b) Ancestor:
+	Xpath=//*[text()='Enterprise Testing']//ancestor::div
+
+c) Child:
+	Xpath=//*[@id='java_technologies']//child::li[1]
+
+d) Preceding:
+	Xpath=//*[@type='submit']//preceding::input[1]
+	
+e) Following-sibling:
+	xpath=//*[@type='submit']//following-sibling::input
+
+f) Parent:
+	Xpath=//*[@id='rt-feature']//parent::div
+	
+g) Self:
+	Xpath =//*[@type='password']//self::input
+
+h) Descendant:
+	Xpath=//*[@id='rt-feature']//descendant::a[1]
+
+
+
+
+	
+	
+
+
 https://www.guru99.com/xpath-selenium.html
 Xpath=//tagname[@attribute='value']
 ex: Xpath=//input[@name='uid']
@@ -114,4 +189,6 @@ Starts with
 Xpath=//label[starts-with(@id,'message')]
 text
 Xpath=//td[text()='UserID']
+
+
  

@@ -53,3 +53,25 @@ retrieve data from table
     Log To Console    ${query_results}
     Set Global Variable    ${query_results}
     [Teardown]    UDK.Disconnect From Database
+
+connect to postgres db
+    # Keyword    DB NAME    DB_USERNAME    DB_PASSWORD    DB_HOST    DB_PORT
+    Connect To Postgresql    ecom    postgres    postgres    127.0.0.1    5432
+    ${query}=    PostgreSQLDB.Execute Sql String    SELECT * from customers;
+    log    ${query}=
+    # To select 1st Row
+    log    ${query}[0]
+    # To select 1st element of first element
+    log    ${query}[0][1]
+    # To select 4th element of first element
+    log    ${query}[0][4]
+    # To retrieve data into dictionaery type
+    ${query}=    PostgreSQLDB.Execute Sql String Mapped    SELECT * from customers;
+    log    ${query}=
+
+insert update delete data in table_pdb
+    [Setup]    Establish Database Connection_pdb
+    ${output}    PostgreSQLDB.Execute Plpgsql Script    D:\\demoProjects\\testData\\postgress_data.sql
+    ${output}    Convert To String    ${output}
+    Should Be Equal    ${output}    None
+    [Teardown]    Disconnect From Database_pdb

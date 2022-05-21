@@ -1,0 +1,10 @@
+i – Insert at cursor (goes into insert mode)
+a – Write after cursor (goes into insert mode)
+A – Write at the end of line (goes into insert mode)
+ESC – Terminate insert mode
+u – Undo last change
+U – Undo all changes to the entire line
+o – Open a new line (goes into insert mode)
+dd – Delete line
+
+fjjnvm.,nmgfjnmbm

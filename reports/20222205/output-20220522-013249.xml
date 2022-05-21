@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.7.0 on win32)" generated="20220522 01:32:49.131" rpa="false" schemaversion="3">
+<suite id="s1" name="demoProjects" source="D:\demoProjects">
+<suite id="s1-s1" name="Testcases" source="D:\demoProjects\testcases">
+<suite id="s1-s1-s1" name="Database Test Cases" source="D:\demoProjects\testcases\Database_Test_Cases.robot">
+<test id="s1-s1-s1-t1" name="connectn to postgres db" line="57">
+<kw name="Connect To Postgresql" library="PostgreSQLDB">
+<arg>postgres</arg>
+<arg>postgres</arg>
+<arg>postgres</arg>
+<doc>Connection to Postgres DB.</doc>
+<status status="PASS" starttime="20220522 01:32:49.990" endtime="20220522 01:32:50.041"/>
+</kw>
+<kw name="Execute Sql String" library="PostgreSQLDB">
+<var>@{query}</var>
+<arg>SELECT CURRENT_DATE;</arg>
+<doc>Execute PL/PGSQL string.
+For parametrized SQL queries please consider psycopg2 guide on the subject:
+http://initd.org/psycopg/docs/usage.html#passing-parameters-to-sql-queries</doc>
+<msg timestamp="20220522 01:32:50.042" level="INFO" html="true">&lt;details&gt;&lt;summary&gt;Running PL/PGSQL statement&lt;/summary&gt;&lt;p&gt;SELECT CURRENT_DATE;&lt;/p&gt;&lt;/details&gt;</msg>
+<msg timestamp="20220522 01:32:50.045" level="INFO" html="true">&lt;details&gt;&lt;summary&gt;SQL Query Result&lt;/summary&gt;&lt;p&gt;[(datetime.date(2022, 5, 22),)]&lt;/p&gt;&lt;/details&gt;</msg>
+<msg timestamp="20220522 01:32:50.045" level="INFO">@{query} = [ (datetime.date(2022, 5, 22),) ]</msg>
+<status status="PASS" starttime="20220522 01:32:50.041" endtime="20220522 01:32:50.045"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>@{query}=</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220522 01:32:50.045" endtime="20220522 01:32:50.045"/>
+</kw>
+<status status="PASS" starttime="20220522 01:32:49.989" endtime="20220522 01:32:50.045"/>
+</test>
+<status status="PASS" starttime="20220522 01:32:49.972" endtime="20220522 01:32:50.049"/>
+</suite>
+<status status="PASS" starttime="20220522 01:32:49.191" endtime="20220522 01:32:50.051"/>
+</suite>
+<status status="PASS" starttime="20220522 01:32:49.171" endtime="20220522 01:32:50.051"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="demoProjects">demoProjects</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Testcases">demoProjects.Testcases</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="Database Test Cases">demoProjects.Testcases.Database Test Cases</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

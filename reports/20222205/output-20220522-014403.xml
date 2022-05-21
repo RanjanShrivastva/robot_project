@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.7.0 on win32)" generated="20220522 01:44:03.131" rpa="false" schemaversion="3">
+<suite id="s1" name="demoProjects" source="D:\demoProjects">
+<suite id="s1-s1" name="Testcases" source="D:\demoProjects\testcases">
+<suite id="s1-s1-s1" name="Database Test Cases" source="D:\demoProjects\testcases\Database_Test_Cases.robot">
+<test id="s1-s1-s1-t1" name="connectn to postgres db" line="57">
+<kw name="Connect To Postgresql" library="PostgreSQLDB">
+<arg>postgres</arg>
+<arg>postgres</arg>
+<arg>postgres</arg>
+<doc>Connection to Postgres DB.</doc>
+<status status="PASS" starttime="20220522 01:44:04.085" endtime="20220522 01:44:04.141"/>
+</kw>
+<kw name="Execute Sql String" library="PostgreSQLDB">
+<arg>\c ecom;</arg>
+<doc>Execute PL/PGSQL string.
+For parametrized SQL queries please consider psycopg2 guide on the subject:
+http://initd.org/psycopg/docs/usage.html#passing-parameters-to-sql-queries</doc>
+<msg timestamp="20220522 01:44:04.141" level="INFO" html="true">&lt;details&gt;&lt;summary&gt;Running PL/PGSQL statement&lt;/summary&gt;&lt;p&gt;c ecom;&lt;/p&gt;&lt;/details&gt;</msg>
+<msg timestamp="20220522 01:44:04.141" level="FAIL">SyntaxError: syntax error at or near "c"
+LINE 1: c ecom;
+        ^
+</msg>
+<status status="FAIL" starttime="20220522 01:44:04.141" endtime="20220522 01:44:04.141"/>
+</kw>
+<kw name="Execute Sql String" library="PostgreSQLDB">
+<var>@{query}</var>
+<arg>SELECT * from customers;</arg>
+<doc>Execute PL/PGSQL string.
+For parametrized SQL queries please consider psycopg2 guide on the subject:
+http://initd.org/psycopg/docs/usage.html#passing-parameters-to-sql-queries</doc>
+<status status="NOT RUN" starttime="20220522 01:44:04.141" endtime="20220522 01:44:04.141"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>@{query}=</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220522 01:44:04.141" endtime="20220522 01:44:04.141"/>
+</kw>
+<status status="FAIL" starttime="20220522 01:44:04.085" endtime="20220522 01:44:04.150">SyntaxError: syntax error at or near "c"
+LINE 1: c ecom;
+        ^
+</status>
+</test>
+<status status="FAIL" starttime="20220522 01:44:04.062" endtime="20220522 01:44:04.150"/>
+</suite>
+<status status="FAIL" starttime="20220522 01:44:03.185" endtime="20220522 01:44:04.152"/>
+</suite>
+<status status="FAIL" starttime="20220522 01:44:03.160" endtime="20220522 01:44:04.152"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="demoProjects">demoProjects</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Testcases">demoProjects.Testcases</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="Database Test Cases">demoProjects.Testcases.Database Test Cases</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

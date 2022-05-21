@@ -81,6 +81,7 @@ Launch App Browser
     Maximize Browser Window
 
 Establish Database Connection
+    #    module    db name    username    password    host    port
     Connect To Database    pymysql    mydb    root    Mysql2022@@@    127.0.0.1    3306
 
 Disconnect From Database
@@ -92,3 +93,12 @@ Parameterized For Loop
         ${cell_data}    Read Excel Cell    ${outer_loop}    ${inner_loop}
         log    ${cell_data}
     END
+
+Establish Database Connection_pdb
+    # Keyword    DB NAME    DB_USERNAME    DB_PASSWORD    DB_HOST    DB_PORT
+    Connect To Postgresql    ecom    postgres    postgres    127.0.0.1    5432
+    Comment    ${query}=    PostgreSQLDB.Execute Sql String    SELECT * from customers;
+    Comment    log    Database connection established
+
+Disconnect From Database_pdb
+    PostgreSQLDB.Disconnect From Postgresql

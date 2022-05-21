@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.7.0 on win32)" generated="20220522 01:50:49.692" rpa="false" schemaversion="3">
+<suite id="s1" name="demoProjects" source="D:\demoProjects">
+<suite id="s1-s1" name="Testcases" source="D:\demoProjects\testcases">
+<suite id="s1-s1-s1" name="Database Test Cases" source="D:\demoProjects\testcases\Database_Test_Cases.robot">
+<test id="s1-s1-s1-t1" name="connectn to postgres db" line="57">
+<kw name="Connect To Postgresql" library="PostgreSQLDB">
+<arg>ecom</arg>
+<arg>postgres</arg>
+<arg>postgres</arg>
+<doc>Connection to Postgres DB.</doc>
+<status status="PASS" starttime="20220522 01:50:50.502" endtime="20220522 01:50:50.552"/>
+</kw>
+<kw name="Execute Sql String" library="PostgreSQLDB">
+<var>${query}</var>
+<arg>SELECT * from customers;</arg>
+<doc>Execute PL/PGSQL string.
+For parametrized SQL queries please consider psycopg2 guide on the subject:
+http://initd.org/psycopg/docs/usage.html#passing-parameters-to-sql-queries</doc>
+<msg timestamp="20220522 01:50:50.552" level="INFO" html="true">&lt;details&gt;&lt;summary&gt;Running PL/PGSQL statement&lt;/summary&gt;&lt;p&gt;SELECT * from customers;&lt;/p&gt;&lt;/details&gt;</msg>
+<msg timestamp="20220522 01:50:50.552" level="INFO" html="true">&lt;details&gt;&lt;summary&gt;SQL Query Result&lt;/summary&gt;&lt;p&gt;[(1, &amp;#x27;testman&amp;#x27;, &amp;#x27;test@gmail.com&amp;#x27;, &amp;#x27;7892186889   &amp;#x27;, &amp;#x27;Marathalli Bangalore                              &amp;#x27;), (2, &amp;#x27;test2man&amp;#x27;, &amp;#x27;test2@gmail.com&amp;#x27;, &amp;#x27;7892186882   &amp;#x27;, &amp;#x27;Marathalli Bangalore 560002                       &amp;#x27;), (3, &amp;#x27;test3man&amp;#x27;, &amp;#x27;test1@gmail.com&amp;#x27;, &amp;#x27;7892186883   &amp;#x27;, &amp;#x27;Marathalli Bangalore 560003                       &amp;#x27;), (4, &amp;#x27;test4man&amp;#x27;, &amp;#x27;test4@gmail.com&amp;#x27;, &amp;#x27;7892186884   &amp;#x27;, &amp;#x27;Marathalli Bangalore 560004                       &amp;#x27;), (5, &amp;#x27;test5man&amp;#x27;, &amp;#x27;test5@gmail.com&amp;#x27;, &amp;#x27;7892186885   &amp;#x27;, &amp;#x27;Marathalli Bangalore 560005                       &amp;#x27;)]&lt;/p&gt;&lt;/details&gt;</msg>
+<msg timestamp="20220522 01:50:50.552" level="INFO">${query} = [(1, 'testman', 'test@gmail.com', '7892186889   ', 'Marathalli Bangalore                              '), (2, 'test2man', 'test2@gmail.com', '7892186882   ', 'Marathalli Bangalore 560002              ...</msg>
+<status status="PASS" starttime="20220522 01:50:50.552" endtime="20220522 01:50:50.552"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${query}=</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220522 01:50:50.560" level="INFO">[(1, 'testman', 'test@gmail.com', '7892186889   ', 'Marathalli Bangalore                              '), (2, 'test2man', 'test2@gmail.com', '7892186882   ', 'Marathalli Bangalore 560002                       '), (3, 'test3man', 'test1@gmail.com', '7892186883   ', 'Marathalli Bangalore 560003                       '), (4, 'test4man', 'test4@gmail.com', '7892186884   ', 'Marathalli Bangalore 560004                       '), (5, 'test5man', 'test5@gmail.com', '7892186885   ', 'Marathalli Bangalore 560005                       ')]=</msg>
+<status status="PASS" starttime="20220522 01:50:50.552" endtime="20220522 01:50:50.560"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${query}[0]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220522 01:50:50.561" level="INFO">(1, 'testman', 'test@gmail.com', '7892186889   ', 'Marathalli Bangalore                              ')</msg>
+<status status="PASS" starttime="20220522 01:50:50.561" endtime="20220522 01:50:50.561"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${query}[0][0]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220522 01:50:50.562" level="INFO">1</msg>
+<status status="PASS" starttime="20220522 01:50:50.561" endtime="20220522 01:50:50.562"/>
+</kw>
+<status status="PASS" starttime="20220522 01:50:50.502" endtime="20220522 01:50:50.562"/>
+</test>
+<status status="PASS" starttime="20220522 01:50:50.490" endtime="20220522 01:50:50.562"/>
+</suite>
+<status status="PASS" starttime="20220522 01:50:49.748" endtime="20220522 01:50:50.562"/>
+</suite>
+<status status="PASS" starttime="20220522 01:50:49.722" endtime="20220522 01:50:50.562"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="demoProjects">demoProjects</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Testcases">demoProjects.Testcases</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="Database Test Cases">demoProjects.Testcases.Database Test Cases</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
