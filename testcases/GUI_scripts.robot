@@ -27,7 +27,7 @@ app_login_01
 
 app_login_01_headless
     [Tags]    reg
-    Open Browser    https://www.flipkart.com/    headlesschrome
+    Open Browser    https://www.flipkart.com/    gc    #headlesschrome
     Maximize Browser Window
     sleep    2
     Input text    //* [@class='_2IX_2- VJZDxU']    ${username_value}
