@@ -173,6 +173,15 @@ Email: rkumar1433@gmail.com
 http://localhost:8888/
 
 
+============To see execution===============
+reference: http://learnseleniumtesting.com/jenkins-and-continuous-test-execution/
+run the agentlike below
+Dashboard\manage Jenkins\ManageNodes and Clouds
+Click on Agent slave_Node_1
+click on "Launch"
+run the jlnp
+build run you program using build with param
+
 
 =======================Xpath=====================
 ../--> used go one node up
