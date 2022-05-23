@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.7.0 on win32)" generated="20220524 00:44:38.071" rpa="false" schemaversion="3">
+<suite id="s1" name="demoProjects" source="D:\demoProjects">
+<suite id="s1-s1" name="Testcases" source="D:\demoProjects\testcases">
+<suite id="s1-s1-s1" name="API scripts" source="D:\demoProjects\testcases\API_scripts.robot">
+<test id="s1-s1-s1-t1" name="api_testing_xml_example" line="55">
+<kw name="Parse Xml" library="XML">
+<var>${xml_obj}</var>
+<arg>D:\\demoProjects\\testData\\xmlSample.xml</arg>
+<doc>Parses the given XML file or string into an element structure.</doc>
+<msg timestamp="20220524 00:44:39.095" level="INFO">${xml_obj} = &lt;Element 'catalog' at 0x00000239C9E022C8&gt;</msg>
+<status status="PASS" starttime="20220524 00:44:39.093" endtime="20220524 00:44:39.095"/>
+</kw>
+<kw name="Get Element Text" library="XML">
+<var>${title_value}</var>
+<arg>${xml_obj}</arg>
+<arg>.//book[1]/title</arg>
+<doc>Returns all text of the element, possibly whitespace normalized.</doc>
+<msg timestamp="20220524 00:44:39.096" level="INFO">${title_value} = XML Developer's Guide</msg>
+<status status="PASS" starttime="20220524 00:44:39.095" endtime="20220524 00:44:39.096"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${title_value}</arg>
+<arg>XML Developer's Guide</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220524 00:44:39.097" endtime="20220524 00:44:39.098"/>
+</kw>
+<kw name="Get Element Text" library="XML">
+<var>${genre_value}</var>
+<arg>${xml_obj}</arg>
+<arg>.//book[1]/genre</arg>
+<doc>Returns all text of the element, possibly whitespace normalized.</doc>
+<msg timestamp="20220524 00:44:39.099" level="INFO">${genre_value} = Computer</msg>
+<status status="PASS" starttime="20220524 00:44:39.098" endtime="20220524 00:44:39.099"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${genre_value}</arg>
+<arg>Computer</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220524 00:44:39.099" endtime="20220524 00:44:39.100"/>
+</kw>
+<status status="PASS" starttime="20220524 00:44:39.092" endtime="20220524 00:44:39.100"/>
+</test>
+<status status="PASS" starttime="20220524 00:44:39.074" endtime="20220524 00:44:39.101"/>
+</suite>
+<status status="PASS" starttime="20220524 00:44:38.127" endtime="20220524 00:44:39.103"/>
+</suite>
+<status status="PASS" starttime="20220524 00:44:38.106" endtime="20220524 00:44:39.104"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="demoProjects">demoProjects</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Testcases">demoProjects.Testcases</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="API scripts">demoProjects.Testcases.API scripts</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

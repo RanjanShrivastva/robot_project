@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.7.0 on win32)" generated="20220524 00:46:47.866" rpa="false" schemaversion="3">
+<suite id="s1" name="demoProjects" source="D:\demoProjects">
+<suite id="s1-s1" name="Testcases" source="D:\demoProjects\testcases">
+<suite id="s1-s1-s1" name="API scripts" source="D:\demoProjects\testcases\API_scripts.robot">
+<test id="s1-s1-s1-t1" name="api_testing_xml_example" line="55">
+<kw name="Parse Xml" library="XML">
+<var>${xml_obj}</var>
+<arg>D:\\demoProjects\\testData\\xmlSample.xml</arg>
+<doc>Parses the given XML file or string into an element structure.</doc>
+<msg timestamp="20220524 00:46:48.839" level="INFO">${xml_obj} = &lt;Element 'catalog' at 0x00000143FD5522C8&gt;</msg>
+<status status="PASS" starttime="20220524 00:46:48.839" endtime="20220524 00:46:48.839"/>
+</kw>
+<kw name="Get Element Text" library="XML">
+<var>${title_value}</var>
+<arg>${xml_obj}</arg>
+<arg>.//book[1]/title</arg>
+<doc>Returns all text of the element, possibly whitespace normalized.</doc>
+<msg timestamp="20220524 00:46:48.839" level="INFO">${title_value} = XML Developer's Guide</msg>
+<status status="PASS" starttime="20220524 00:46:48.839" endtime="20220524 00:46:48.839"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${title_value}</arg>
+<arg>XML Developer's Guide</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220524 00:46:48.839" endtime="20220524 00:46:48.839"/>
+</kw>
+<kw name="Get Element Text" library="XML">
+<var>${genre_value}</var>
+<arg>${xml_obj}</arg>
+<arg>.//book[1]/genre</arg>
+<doc>Returns all text of the element, possibly whitespace normalized.</doc>
+<msg timestamp="20220524 00:46:48.839" level="INFO">${genre_value} = Computer</msg>
+<status status="PASS" starttime="20220524 00:46:48.839" endtime="20220524 00:46:48.839"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${genre_value}</arg>
+<arg>Computer</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220524 00:46:48.839" endtime="20220524 00:46:48.839"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>.//book[2]/genre</arg>
+<arg>Fantasy</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20220524 00:46:48.839" level="WARN">Keyword 'Element Text Should Be' found both from a custom library 'SeleniumLibrary' and a standard library 'XML'. The custom keyword is used. To select explicitly, and to get rid of this warning, use either 'SeleniumLibrary.Element Text Should Be' or 'XML.Element Text Should Be'.</msg>
+<msg timestamp="20220524 00:46:48.839" level="INFO">Verifying element './/book[2]/genre' contains exact text 'Fantasy'.</msg>
+<msg timestamp="20220524 00:46:48.839" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg timestamp="20220524 00:46:48.854" level="FAIL">No browser is open.</msg>
+<status status="FAIL" starttime="20220524 00:46:48.839" endtime="20220524 00:46:52.026"/>
+</kw>
+<status status="FAIL" starttime="20220524 00:46:48.839" endtime="20220524 00:46:52.026">No browser is open.</status>
+</test>
+<status status="FAIL" starttime="20220524 00:46:48.823" endtime="20220524 00:46:52.026"/>
+</suite>
+<status status="FAIL" starttime="20220524 00:46:47.929" endtime="20220524 00:46:52.026"/>
+</suite>
+<status status="FAIL" starttime="20220524 00:46:47.913" endtime="20220524 00:46:52.026"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="demoProjects">demoProjects</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Testcases">demoProjects.Testcases</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="API scripts">demoProjects.Testcases.API scripts</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220524 00:46:48.839" level="WARN">Keyword 'Element Text Should Be' found both from a custom library 'SeleniumLibrary' and a standard library 'XML'. The custom keyword is used. To select explicitly, and to get rid of this warning, use either 'SeleniumLibrary.Element Text Should Be' or 'XML.Element Text Should Be'.</msg>
+</errors>
+</robot>

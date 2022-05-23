@@ -34,11 +34,38 @@ pip install robotframework-crypto
 parallele Execution
 Headless Execution
 
-======================================================================
+============================MYSQL DB==========================================
 DB:localhost or 127.0.0.1
 url: ranjanblr2019@gmail.com
 username: root
 pwd:Mysql2022@@@
+
+==============================Postgressdb===========================================
+username: postgres
+Password: postgres
+portnumber: 5432
+
+to list all db
+	\l;
+
+to select db
+	\c ecom
+You are now connected to database "ecom" as user "postgres".
+
+To see all tables
+	\dt
+
+Craeting tables
+CREATE TABLE customers(
+   ID INT PRIMARY KEY     NOT NULL,
+   NAME           TEXT    NOT NULL,
+   EMAIL          TEXT,
+   PHONE          CHAR(13),
+   ADDRESS        CHAR(50)
+
+);
+
+
 
 To execute test in vmd
 ======================
@@ -54,6 +81,48 @@ API Link: https://reqres.in/
 pip requests
 pip install robotframework-requests
 pip install  -u robotframework-jsonlibrary   to validate api request
+
+JSON Node Data Verifier
+========================
+https://jsonpath.com/
+
+$.Name
+$.Address.City
+
+XMl data Validation
+.// refer root node
+
+Authentications
+===================
+Basic Authentication
+Bearer Authentication
+API Key Authentication
+
+Basic Authentication
+-------------------------
+${auth} = Create List	usernamepassword
+Create Session	mysession	${base_url}	auth=${auth}
+${response}=	get Request	mysession	URI(endpoint)	
+log	${response.content}
+
+Bearer Authentication
+---------------------
+${base_url}=	'https//google.com/'
+${bearer_token}=	bdkfjk498tsdfew4t9w3
+
+Create Session	mysession	${base_url}=
+${headers}	Craete Dictionary	Authorization=${bearer_token}	Content-Type=Application/json
+${req_body}=	get File	FilePath
+$response}	post request	mysession	data=${req_body}	headers=${headers}
+log	${response.content}
+
+API Authentication
+---------------------
+Create Session	mysession	${base_url}=
+${params}=	Craete Dictionary	key=API_KEY
+${response}=	get Request	mysession	URI(endpoint)	params=${params}
+
+
 
 
 

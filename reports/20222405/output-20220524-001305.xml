@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.7.0 on win32)" generated="20220524 00:13:05.848" rpa="false" schemaversion="3">
+<suite id="s1" name="demoProjects" source="D:\demoProjects">
+<suite id="s1-s1" name="Testcases" source="D:\demoProjects\testcases">
+<suite id="s1-s1-s1" name="API scripts" source="D:\demoProjects\testcases\API_scripts.robot">
+<test id="s1-s1-s1-t1" name="api_testing_put_example" line="5">
+<kw name="Comment" library="BuiltIn">
+<arg>Creating session</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="PASS" starttime="20220524 00:13:06.687" endtime="20220524 00:13:06.687"/>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>mySession</arg>
+<arg>https://reqres.in/</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220524 00:13:06.687" level="INFO">Creating Session using : alias=mySession, url=https://reqres.in/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220524 00:13:06.687" endtime="20220524 00:13:06.687"/>
+</kw>
+<kw name="Get File" library="OperatingSystem">
+<var>${data}</var>
+<arg>D:\\demoProjects\\testData\\putdata.txt</arg>
+<doc>Returns the contents of a specified file.</doc>
+<msg timestamp="20220524 00:13:06.687" level="INFO" html="true">Getting file '&lt;a href="file://D:\demoProjects\testData\putdata.txt"&gt;D:\demoProjects\testData\putdata.txt&lt;/a&gt;'.</msg>
+<msg timestamp="20220524 00:13:06.687" level="INFO">${data} = {
+    "name": "ranjan",
+    "job": "tester"
+}</msg>
+<status status="PASS" starttime="20220524 00:13:06.687" endtime="20220524 00:13:06.687"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${data}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220524 00:13:06.687" level="INFO">{
+    "name": "ranjan",
+    "job": "tester"
+}</msg>
+<status status="PASS" starttime="20220524 00:13:06.687" endtime="20220524 00:13:06.687"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${headers}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20220524 00:13:06.687" level="INFO">${headers} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20220524 00:13:06.687" endtime="20220524 00:13:06.687"/>
+</kw>
+<kw name="POST On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>mySession</arg>
+<arg>api/users/2</arg>
+<arg>${data}</arg>
+<arg>${headers}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20220524 00:13:07.288" level="INFO">POST Request : url=https://reqres.in/api/users/2 
+ path_url=/api/users/2 
+ headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '45'} 
+ body={
+    "name": "ranjan",
+    "job": "tester"
+} 
+ </msg>
+<msg timestamp="20220524 00:13:07.288" level="INFO">POST Response : url=https://reqres.in/api/users/2 
+ status=201, reason=Created 
+ headers={'Date': 'Mon, 23 May 2022 18:43:10 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '51', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"33-jSM3UM4/xFB2+C40X7WQvarTbkk"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=BYrLRcDbAPJPZZ6pOQtXn3stLLPyCB%2BiPHpBADZBjovkCcYCMl4ToO6pQviQts4SFuxWhm0OjTHjzP9ZS9z86sUyRDBZDMqlDHlrlOetRypKqsjG11nYkGHmj6CLHpi3%2BaL%2BgzCx%2B%2Fo%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '70ffef863a26a3dc-SIN', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'} 
+ body={"id":"236","createdAt":"2022-05-23T18:43:10.739Z"} 
+ </msg>
+<msg timestamp="20220524 00:13:07.288" level="INFO">c:\python\python37\lib\site-packages\urllib3\connectionpool.py:1050: InsecureRequestWarning: Unverified HTTPS request is being made to host 'reqres.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning,</msg>
+<msg timestamp="20220524 00:13:07.288" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20220524 00:13:06.687" endtime="20220524 00:13:07.288"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220524 00:13:07.288" level="INFO">201</msg>
+<status status="PASS" starttime="20220524 00:13:07.288" endtime="20220524 00:13:07.288"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${response.content}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220524 00:13:07.295" level="INFO">{"id":"236","createdAt":"2022-05-23T18:43:10.739Z"}</msg>
+<status status="PASS" starttime="20220524 00:13:07.288" endtime="20220524 00:13:07.295"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${response.headers}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220524 00:13:07.296" level="INFO">{'Date': 'Mon, 23 May 2022 18:43:10 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '51', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"33-jSM3UM4/xFB2+C40X7WQvarTbkk"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=BYrLRcDbAPJPZZ6pOQtXn3stLLPyCB%2BiPHpBADZBjovkCcYCMl4ToO6pQviQts4SFuxWhm0OjTHjzP9ZS9z86sUyRDBZDMqlDHlrlOetRypKqsjG11nYkGHmj6CLHpi3%2BaL%2BgzCx%2B%2Fo%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '70ffef863a26a3dc-SIN', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'}</msg>
+<status status="PASS" starttime="20220524 00:13:07.295" endtime="20220524 00:13:07.296"/>
+</kw>
+<status status="PASS" starttime="20220524 00:13:06.686" endtime="20220524 00:13:07.296"/>
+</test>
+<test id="s1-s1-s1-t2" name="api_testing_post_example" line="16">
+<kw name="Comment" library="BuiltIn">
+<arg>Creating session</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="PASS" starttime="20220524 00:13:07.296" endtime="20220524 00:13:07.296"/>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>mySession</arg>
+<arg>https://reqres.in/</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220524 00:13:07.296" level="INFO">Creating Session using : alias=mySession, url=https://reqres.in/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220524 00:13:07.296" endtime="20220524 00:13:07.300"/>
+</kw>
+<kw name="Get File" library="OperatingSystem">
+<var>${data}</var>
+<arg>D:\\demoProjects\\testData\\postdata.txt</arg>
+<doc>Returns the contents of a specified file.</doc>
+<msg timestamp="20220524 00:13:07.300" level="INFO" html="true">Getting file '&lt;a href="file://D:\demoProjects\testData\postdata.txt"&gt;D:\demoProjects\testData\postdata.txt&lt;/a&gt;'.</msg>
+<msg timestamp="20220524 00:13:07.301" level="INFO">${data} = {
+    "name": "Ranjan",
+    "job": "Anchor"
+}</msg>
+<status status="PASS" starttime="20220524 00:13:07.300" endtime="20220524 00:13:07.301"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${data}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220524 00:13:07.301" level="INFO">{
+    "name": "Ranjan",
+    "job": "Anchor"
+}</msg>
+<status status="PASS" starttime="20220524 00:13:07.301" endtime="20220524 00:13:07.301"/>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<arg>${data}</arg>
+<arg>Evaluate</arg>
+<arg>json.dumps($data)</arg>
+<arg>json</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="PASS" starttime="20220524 00:13:07.301" endtime="20220524 00:13:07.301"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${headers}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20220524 00:13:07.301" level="INFO">${headers} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20220524 00:13:07.301" endtime="20220524 00:13:07.301"/>
+</kw>
+<kw name="POST On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>mySession</arg>
+<arg>api/users</arg>
+<arg>${data}</arg>
+<arg>${headers}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20220524 00:13:07.876" level="INFO">POST Request : url=https://reqres.in/api/users 
+ path_url=/api/users 
+ headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '45'} 
+ body={
+    "name": "Ranjan",
+    "job": "Anchor"
+} 
+ </msg>
+<msg timestamp="20220524 00:13:07.876" level="INFO">POST Response : url=https://reqres.in/api/users 
+ status=201, reason=Created 
+ headers={'Date': 'Mon, 23 May 2022 18:43:11 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '51', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"33-CPNx8cMnllvNpLPYIZAI30SO810"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=H4klDqugWAafQtR9uZB5VNJJpM4wBqYvy1GrxBuhzsfq22Gz3%2FwaThOJ5C0L%2FJ82HcdYe5cBCQgRXEFFAJ7RrOiNwdcb8%2FNdpKK7DrlNvwmUf4mLPfYtuJFhiqb7eSFyExjrQiovc6s%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '70ffef8a083f020a-SIN', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'} 
+ body={"id":"697","createdAt":"2022-05-23T18:43:11.340Z"} 
+ </msg>
+<msg timestamp="20220524 00:13:07.876" level="INFO">c:\python\python37\lib\site-packages\urllib3\connectionpool.py:1050: InsecureRequestWarning: Unverified HTTPS request is being made to host 'reqres.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning,</msg>
+<msg timestamp="20220524 00:13:07.876" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20220524 00:13:07.301" endtime="20220524 00:13:07.876"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220524 00:13:07.876" level="INFO">201</msg>
+<status status="PASS" starttime="20220524 00:13:07.876" endtime="20220524 00:13:07.876"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${response.content}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220524 00:13:07.876" level="INFO">{"id":"697","createdAt":"2022-05-23T18:43:11.340Z"}</msg>
+<status status="PASS" starttime="20220524 00:13:07.876" endtime="20220524 00:13:07.876"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${response.headers}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220524 00:13:07.885" level="INFO">{'Date': 'Mon, 23 May 2022 18:43:11 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '51', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"33-CPNx8cMnllvNpLPYIZAI30SO810"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=H4klDqugWAafQtR9uZB5VNJJpM4wBqYvy1GrxBuhzsfq22Gz3%2FwaThOJ5C0L%2FJ82HcdYe5cBCQgRXEFFAJ7RrOiNwdcb8%2FNdpKK7DrlNvwmUf4mLPfYtuJFhiqb7eSFyExjrQiovc6s%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '70ffef8a083f020a-SIN', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'}</msg>
+<status status="PASS" starttime="20220524 00:13:07.876" endtime="20220524 00:13:07.885"/>
+</kw>
+<status status="PASS" starttime="20220524 00:13:07.296" endtime="20220524 00:13:07.885"/>
+</test>
+<test id="s1-s1-s1-t3" name="api_testing_get_example" line="28">
+<kw name="Comment" library="BuiltIn">
+<arg>Creating session</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="PASS" starttime="20220524 00:13:07.886" endtime="20220524 00:13:07.886"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${id}</var>
+<arg>2</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220524 00:13:07.887" level="INFO">${id} = 2</msg>
+<status status="PASS" starttime="20220524 00:13:07.886" endtime="20220524 00:13:07.887"/>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>mySession</arg>
+<arg>https://reqres.in/</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220524 00:13:07.888" level="INFO">Creating Session using : alias=mySession, url=https://reqres.in/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220524 00:13:07.888" endtime="20220524 00:13:07.889"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>mySession</arg>
+<arg>api/users/${id}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20220524 00:13:08.106" level="INFO">GET Request : url=https://reqres.in/api/users/2 
+ path_url=/api/users/2 
+ headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220524 00:13:08.106" level="INFO">GET Response : url=https://reqres.in/api/users/2 
+ status=200, reason=OK 
+ headers={'Date': 'Mon, 23 May 2022 18:43:11 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"118-pbdwwFo9SKNhD3Lx5iHJyngpq00"', 'Via': '1.1 vegur', 'Cache-Control': 'max-age=14400', 'CF-Cache-Status': 'HIT', 'Age': '3677', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=kzgpAbgU%2FszxP%2FPbF5mf6xIKtKMGKHqwlNysL8hf4QJpLq%2FNs7M%2Fx6FYyWKGJpaldV2mBCzk9uVl7%2BG2y7YaN5kIcj%2BqWnVfBkirVfbHUDFROwG7UnQlck3Vl%2Bo4krreXYNssNKbJSw%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '70ffef8dccbe5608-SIN', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'} 
+ body={"data":{"id":2,"email":"janet.weaver@reqres.in","first_name":"Janet","last_name":"Weaver","avatar":"https://reqres.in/img/faces/2-image.jpg"},"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}} 
+ </msg>
+<msg timestamp="20220524 00:13:08.106" level="INFO">c:\python\python37\lib\site-packages\urllib3\connectionpool.py:1050: InsecureRequestWarning: Unverified HTTPS request is being made to host 'reqres.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning,</msg>
+<msg timestamp="20220524 00:13:08.106" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220524 00:13:07.889" endtime="20220524 00:13:08.106"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220524 00:13:08.106" level="INFO">200</msg>
+<status status="PASS" starttime="20220524 00:13:08.106" endtime="20220524 00:13:08.106"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${responseCode_int}</var>
+<arg>${responseCode}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20220524 00:13:08.106" level="INFO">${responseCode_int} = 200</msg>
+<status status="PASS" starttime="20220524 00:13:08.106" endtime="20220524 00:13:08.106"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<arg>${responseCode_int}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220524 00:13:08.106" endtime="20220524 00:13:08.106"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${response.content}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220524 00:13:08.115" level="INFO">{"data":{"id":2,"email":"janet.weaver@reqres.in","first_name":"Janet","last_name":"Weaver","avatar":"https://reqres.in/img/faces/2-image.jpg"},"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}}</msg>
+<status status="PASS" starttime="20220524 00:13:08.106" endtime="20220524 00:13:08.115"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${response.headers}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220524 00:13:08.116" level="INFO">{'Date': 'Mon, 23 May 2022 18:43:11 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"118-pbdwwFo9SKNhD3Lx5iHJyngpq00"', 'Via': '1.1 vegur', 'Cache-Control': 'max-age=14400', 'CF-Cache-Status': 'HIT', 'Age': '3677', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=kzgpAbgU%2FszxP%2FPbF5mf6xIKtKMGKHqwlNysL8hf4QJpLq%2FNs7M%2Fx6FYyWKGJpaldV2mBCzk9uVl7%2BG2y7YaN5kIcj%2BqWnVfBkirVfbHUDFROwG7UnQlck3Vl%2Bo4krreXYNssNKbJSw%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '70ffef8dccbe5608-SIN', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'}</msg>
+<status status="PASS" starttime="20220524 00:13:08.115" endtime="20220524 00:13:08.116"/>
+</kw>
+<status status="PASS" starttime="20220524 00:13:07.885" endtime="20220524 00:13:08.116"/>
+</test>
+<test id="s1-s1-s1-t4" name="api_testing_delete_example" line="40">
+<kw name="Comment" library="BuiltIn">
+<arg>Creating session</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="PASS" starttime="20220524 00:13:08.118" endtime="20220524 00:13:08.118"/>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>mySession</arg>
+<arg>https://reqres.in/</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220524 00:13:08.118" level="INFO">Creating Session using : alias=mySession, url=https://reqres.in/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220524 00:13:08.118" endtime="20220524 00:13:08.118"/>
+</kw>
+<kw name="DELETE On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>mySession</arg>
+<arg>api/users/2</arg>
+<doc>Sends a DELETE request on a previously created HTTP Session.</doc>
+<msg timestamp="20220524 00:13:08.666" level="INFO">DELETE Request : url=https://reqres.in/api/users/2 
+ path_url=/api/users/2 
+ headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg timestamp="20220524 00:13:08.666" level="INFO">DELETE Response : url=https://reqres.in/api/users/2 
+ status=204, reason=No Content 
+ headers={'Date': 'Mon, 23 May 2022 18:43:12 GMT', 'Content-Length': '0', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"2-vyGp6PvFo4RvsFtPoIWeCReyIC8"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=yCFGTDtLgeL2Okn6APsC8pHhV9vqHYyIffYfXz60SSC6o3h%2F95JIfmpiTapFivCnis3pkLVUfyhqSYOJ4ukBwVgqTMyzx0%2BOS50TBqnCZcGWXxVMGn5OuFVQNyKigB6uYJQr2az7X%2BI%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '70ffef8f095818f4-SIN', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'} 
+ body=None 
+ </msg>
+<msg timestamp="20220524 00:13:08.666" level="INFO">c:\python\python37\lib\site-packages\urllib3\connectionpool.py:1050: InsecureRequestWarning: Unverified HTTPS request is being made to host 'reqres.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning,</msg>
+<msg timestamp="20220524 00:13:08.666" level="INFO">${response} = &lt;Response [204]&gt;</msg>
+<status status="PASS" starttime="20220524 00:13:08.118" endtime="20220524 00:13:08.666"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220524 00:13:08.666" level="INFO">204</msg>
+<status status="PASS" starttime="20220524 00:13:08.666" endtime="20220524 00:13:08.666"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${response.content}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220524 00:13:08.666" level="INFO"/>
+<status status="PASS" starttime="20220524 00:13:08.666" endtime="20220524 00:13:08.666"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${response.headers}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220524 00:13:08.666" level="INFO">{'Date': 'Mon, 23 May 2022 18:43:12 GMT', 'Content-Length': '0', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"2-vyGp6PvFo4RvsFtPoIWeCReyIC8"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=yCFGTDtLgeL2Okn6APsC8pHhV9vqHYyIffYfXz60SSC6o3h%2F95JIfmpiTapFivCnis3pkLVUfyhqSYOJ4ukBwVgqTMyzx0%2BOS50TBqnCZcGWXxVMGn5OuFVQNyKigB6uYJQr2az7X%2BI%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '70ffef8f095818f4-SIN', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'}</msg>
+<status status="PASS" starttime="20220524 00:13:08.666" endtime="20220524 00:13:08.666"/>
+</kw>
+<status status="PASS" starttime="20220524 00:13:08.116" endtime="20220524 00:13:08.666"/>
+</test>
+<status status="PASS" starttime="20220524 00:13:06.667" endtime="20220524 00:13:08.676"/>
+</suite>
+<status status="PASS" starttime="20220524 00:13:05.905" endtime="20220524 00:13:08.677"/>
+</suite>
+<status status="PASS" starttime="20220524 00:13:05.880" endtime="20220524 00:13:08.677"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="4" fail="0" skip="0" id="s1" name="demoProjects">demoProjects</stat>
+<stat pass="4" fail="0" skip="0" id="s1-s1" name="Testcases">demoProjects.Testcases</stat>
+<stat pass="4" fail="0" skip="0" id="s1-s1-s1" name="API scripts">demoProjects.Testcases.API scripts</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

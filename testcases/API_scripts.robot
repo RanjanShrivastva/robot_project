@@ -45,8 +45,26 @@ api_testing_delete_example
     log    ${response.content}
     log    ${response.headers}
 
-abc
-    user keyword
+api_testing_json_example
+    ${json_obj}    Load JSON From File    D:\\demoProjects\\testData\\jsonSample.json
+    ${name_value}    Get Value From Json    ${json_obj}    $.Name
+    Should Be Equal    Amit    ${name_value[0]}
+    ${city_value}    Get Value From Json    ${json_obj}    $.Address.City
+    Should Be Equal    bangalore    ${city_value[0]}
+
+api_testing_xml_example
+    ${xml_obj}    Parse Xml    D:\\demoProjects\\testData\\xmlSample.xml
+    ${title_value}    Get Element Text    ${xml_obj}    .//book[1]/title    #xpath
+    Should Be Equal    ${title_value}    XML Developer's Guide
+    ${genre_value}    Get Element Text    ${xml_obj}    .//book[1]/genre
+    Should Be Equal    ${genre_value}    Computer
+    #shortcut
+    XML.Element Text Should Be    ${xml_obj}    Fantasy    .//book[2]/genre
+    #Multiple Values
+    ${child_elements}    Get Child Elements    ${xml_obj}
+    Should Not Be Empty    ${child_elements}
+    ${first_element}    Get Element Text    ${child_elements[0][0]}
+    log    ${first_element}
 
 *** Keywords ***
 user keyword

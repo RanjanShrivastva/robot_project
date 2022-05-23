@@ -8,3 +8,7 @@ Library           C:/Python/Python37/Lib/site-packages/Custom Python Scripts/cou
 Library           ExcelLibrary
 Library           ExcelLibrary
 Library           PostgreSQLDB
+Library           JSONLibrary
+Library           os
+Library           Collections
+Library           XML

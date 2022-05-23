@@ -1,0 +1,17 @@
+{
+	"Name":"Amit",
+	"Age":30,
+	"Phone":"7892186889",
+	"City":["Bangalore", "Hydrabad", "Chennai"],
+	"Address":
+	{
+		"StreetName":"Munnekolal",
+		"HouseNumber":74,
+		"City":"bangalore",
+		"Number":
+			{
+				"Landline":"080258256",
+				"Mobile":"9738308627"
+			}
+	}
+}

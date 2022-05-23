@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.7.0 on win32)" generated="20220524 00:54:12.548" rpa="false" schemaversion="3">
+<suite id="s1" name="demoProjects" source="D:\demoProjects">
+<suite id="s1-s1" name="Testcases" source="D:\demoProjects\testcases">
+<suite id="s1-s1-s1" name="API scripts" source="D:\demoProjects\testcases\API_scripts.robot">
+<test id="s1-s1-s1-t1" name="api_testing_xml_example" line="55">
+<kw name="Parse Xml" library="XML">
+<var>${xml_obj}</var>
+<arg>D:\\demoProjects\\testData\\xmlSample.xml</arg>
+<doc>Parses the given XML file or string into an element structure.</doc>
+<msg timestamp="20220524 00:54:13.556" level="INFO">${xml_obj} = &lt;Element 'catalog' at 0x000001A8F4E57318&gt;</msg>
+<status status="PASS" starttime="20220524 00:54:13.556" endtime="20220524 00:54:13.556"/>
+</kw>
+<kw name="Get Element Text" library="XML">
+<var>${title_value}</var>
+<arg>${xml_obj}</arg>
+<arg>.//book[1]/title</arg>
+<doc>Returns all text of the element, possibly whitespace normalized.</doc>
+<msg timestamp="20220524 00:54:13.556" level="INFO">${title_value} = XML Developer's Guide</msg>
+<status status="PASS" starttime="20220524 00:54:13.556" endtime="20220524 00:54:13.556"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${title_value}</arg>
+<arg>XML Developer's Guide</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220524 00:54:13.556" endtime="20220524 00:54:13.556"/>
+</kw>
+<kw name="Get Element Text" library="XML">
+<var>${genre_value}</var>
+<arg>${xml_obj}</arg>
+<arg>.//book[1]/genre</arg>
+<doc>Returns all text of the element, possibly whitespace normalized.</doc>
+<msg timestamp="20220524 00:54:13.556" level="INFO">${genre_value} = Computer</msg>
+<status status="PASS" starttime="20220524 00:54:13.556" endtime="20220524 00:54:13.556"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${genre_value}</arg>
+<arg>Computer</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220524 00:54:13.565" endtime="20220524 00:54:13.565"/>
+</kw>
+<kw name="Element Text Should Be" library="XML">
+<arg>${xml_obj}</arg>
+<arg>Fantasy</arg>
+<arg>.//book[2]/genre</arg>
+<doc>Verifies that the text of the specified element is ``expected``.</doc>
+<status status="PASS" starttime="20220524 00:54:13.566" endtime="20220524 00:54:13.566"/>
+</kw>
+<kw name="Get Child Elements" library="XML">
+<var>${child_elements}</var>
+<arg>${xml_obj}</arg>
+<doc>Returns the child elements of the specified element as a list.</doc>
+<msg timestamp="20220524 00:54:13.568" level="INFO">${child_elements} = [&lt;Element 'book' at 0x000001A8F4E57368&gt;, &lt;Element 'book' at 0x000001A8F4E57598&gt;, &lt;Element 'book' at 0x000001A8F4E577C8&gt;, &lt;Element 'book' at 0x000001A8F4E579F8&gt;, &lt;Element 'book' at 0x000001A8F4E57C78&gt;,...</msg>
+<status status="PASS" starttime="20220524 00:54:13.568" endtime="20220524 00:54:13.568"/>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<arg>${child_elements}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<msg timestamp="20220524 00:54:13.568" level="INFO">Length is 12</msg>
+<status status="PASS" starttime="20220524 00:54:13.568" endtime="20220524 00:54:13.568"/>
+</kw>
+<kw name="Get Element Text" library="XML">
+<var>${first_element}</var>
+<arg>${child_elements[0]}</arg>
+<doc>Returns all text of the element, possibly whitespace normalized.</doc>
+<msg timestamp="20220524 00:54:13.568" level="INFO">${first_element} = 
+      Gambardella, Matthew
+      XML Developer's Guide
+      Computer
+      44.95
+      2000-10-01
+      An in-depth look at creating applications 
+      with XML.
+   </msg>
+<status status="PASS" starttime="20220524 00:54:13.568" endtime="20220524 00:54:13.568"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${first_element}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220524 00:54:13.568" level="INFO">
+      Gambardella, Matthew
+      XML Developer's Guide
+      Computer
+      44.95
+      2000-10-01
+      An in-depth look at creating applications 
+      with XML.
+   </msg>
+<status status="PASS" starttime="20220524 00:54:13.568" endtime="20220524 00:54:13.568"/>
+</kw>
+<status status="PASS" starttime="20220524 00:54:13.556" endtime="20220524 00:54:13.568"/>
+</test>
+<status status="PASS" starttime="20220524 00:54:13.537" endtime="20220524 00:54:13.568"/>
+</suite>
+<status status="PASS" starttime="20220524 00:54:12.608" endtime="20220524 00:54:13.568"/>
+</suite>
+<status status="PASS" starttime="20220524 00:54:12.581" endtime="20220524 00:54:13.568"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="demoProjects">demoProjects</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Testcases">demoProjects.Testcases</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="API scripts">demoProjects.Testcases.API scripts</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

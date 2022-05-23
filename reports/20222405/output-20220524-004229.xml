@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.7.0 on win32)" generated="20220524 00:42:29.274" rpa="false" schemaversion="3">
+<suite id="s1" name="demoProjects" source="D:\demoProjects">
+<suite id="s1-s1" name="Testcases" source="D:\demoProjects\testcases">
+<suite id="s1-s1-s1" name="API scripts" source="D:\demoProjects\testcases\API_scripts.robot">
+<test id="s1-s1-s1-t1" name="api_testing_xml_example" line="55">
+<kw name="Parse Xml" library="XML">
+<var>${xml_obj}</var>
+<arg>D:\\demoProjects\\testData\\xmlSample.xml</arg>
+<doc>Parses the given XML file or string into an element structure.</doc>
+<msg timestamp="20220524 00:42:30.268" level="INFO">${xml_obj} = &lt;Element 'catalog' at 0x0000019CDFE4E2C8&gt;</msg>
+<status status="PASS" starttime="20220524 00:42:30.267" endtime="20220524 00:42:30.268"/>
+</kw>
+<kw name="Get Element Text" library="XML">
+<var>${title_value}</var>
+<arg>${xml_obj}</arg>
+<arg>.//book[1]/title</arg>
+<doc>Returns all text of the element, possibly whitespace normalized.</doc>
+<msg timestamp="20220524 00:42:30.270" level="INFO">${title_value} = XML Developer's Guide</msg>
+<status status="PASS" starttime="20220524 00:42:30.269" endtime="20220524 00:42:30.270"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${title_value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220524 00:42:30.271" level="INFO">XML Developer's Guide</msg>
+<status status="PASS" starttime="20220524 00:42:30.271" endtime="20220524 00:42:30.271"/>
+</kw>
+<status status="PASS" starttime="20220524 00:42:30.266" endtime="20220524 00:42:30.272"/>
+</test>
+<status status="PASS" starttime="20220524 00:42:30.248" endtime="20220524 00:42:30.273"/>
+</suite>
+<status status="PASS" starttime="20220524 00:42:29.328" endtime="20220524 00:42:30.275"/>
+</suite>
+<status status="PASS" starttime="20220524 00:42:29.307" endtime="20220524 00:42:30.276"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="demoProjects">demoProjects</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Testcases">demoProjects.Testcases</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="API scripts">demoProjects.Testcases.API scripts</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
