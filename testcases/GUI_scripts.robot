@@ -230,7 +230,7 @@ html_table_validation
     [Teardown]    Close Browser
 
 app_login_cross_browser
-    [Tags]    reg
+    [Tags]    reg    cross
     Open Browser    https://www.flipkart.com/    browser=${browser}
     Maximize Browser Window
     sleep    2
