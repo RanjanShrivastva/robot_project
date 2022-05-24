@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.7.0 on win32)" generated="20220525 00:31:56.077" rpa="false" schemaversion="3">
+<suite id="s1" name="demoProjects" source="D:\demoProjects">
+<suite id="s1-s1" name="Testcases" source="D:\demoProjects\testcases">
+<suite id="s1-s1-s1" name="Read Write" source="D:\demoProjects\testcases\Read_Write.robot">
+<test id="s1-s1-s1-t1" name="TC01 Read Excel" line="5">
+<kw name="Open Excel Document" library="ExcelLibrary">
+<arg>D:\\demoProjects\\testData\\user_login_data.xlsx</arg>
+<arg>login data</arg>
+<doc>Opens xlsx document file.</doc>
+<status status="PASS" starttime="20220525 00:31:57.860" endtime="20220525 00:31:57.876"/>
+</kw>
+<kw name="Get List Sheet Names" library="ExcelLibrary">
+<var>${no_of_sheets}</var>
+<doc>Returns a list of sheet names in the current document.</doc>
+<msg timestamp="20220525 00:31:57.876" level="INFO">${no_of_sheets} = ['Sheet1']</msg>
+<status status="PASS" starttime="20220525 00:31:57.876" endtime="20220525 00:31:57.876"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${cell_data}</var>
+<arg>1</arg>
+<arg>1</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20220525 00:31:57.876" level="INFO">${cell_data} = ${username}</msg>
+<status status="PASS" starttime="20220525 00:31:57.876" endtime="20220525 00:31:57.892"/>
+</kw>
+<kw name="Read Excel Row" library="ExcelLibrary">
+<var>${no_of_rows}</var>
+<arg>1</arg>
+<doc>Returns content of a row from the current sheet of the document.</doc>
+<msg timestamp="20220525 00:31:57.892" level="INFO">${no_of_rows} = ['${username}', '${password}']</msg>
+<status status="PASS" starttime="20220525 00:31:57.892" endtime="20220525 00:31:57.892"/>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<var>${rows_len}</var>
+<arg>${no_of_rows}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<msg timestamp="20220525 00:31:57.892" level="INFO">Length is 2</msg>
+<msg timestamp="20220525 00:31:57.892" level="INFO">${rows_len} = 2</msg>
+<status status="PASS" starttime="20220525 00:31:57.892" endtime="20220525 00:31:57.892"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${rows_len}</var>
+<arg>${rows_len}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20220525 00:31:57.892" level="INFO">${rows_len} = 2</msg>
+<status status="PASS" starttime="20220525 00:31:57.892" endtime="20220525 00:31:57.892"/>
+</kw>
+<kw name="Read Excel Column" library="ExcelLibrary">
+<var>${no_of_cols}</var>
+<arg>1</arg>
+<doc>Returns content of a column from the current sheet of the document.</doc>
+<msg timestamp="20220525 00:31:57.892" level="INFO">${no_of_cols} = ['${username}', 'A@gmail.com', 'B@outlook.com', 'C@gmail.com', 'D@outlook.com', 'E@gmail.com', 'F@outlook.com']</msg>
+<status status="PASS" starttime="20220525 00:31:57.892" endtime="20220525 00:31:57.892"/>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<var>${cols_len}</var>
+<arg>${no_of_cols}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<msg timestamp="20220525 00:31:57.892" level="INFO">Length is 7</msg>
+<msg timestamp="20220525 00:31:57.892" level="INFO">${cols_len} = 7</msg>
+<status status="PASS" starttime="20220525 00:31:57.892" endtime="20220525 00:31:57.892"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${cols_len}</var>
+<arg>${cols_len}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20220525 00:31:57.892" level="INFO">${cols_len} = 7</msg>
+<status status="PASS" starttime="20220525 00:31:57.892" endtime="20220525 00:31:57.892"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${outer_loop}</var>
+<value>1</value>
+<value>${cols_len}+1</value>
+<iter>
+<var name="${outer_loop}">1</var>
+<kw name="Parameterized For Loop" library="UDK">
+<arg>${rows_len}</arg>
+<arg>${outer_loop}</arg>
+<for flavor="IN RANGE">
+<var>${inner_loop}</var>
+<value>1</value>
+<value>${rows_len}+1</value>
+<iter>
+<var name="${inner_loop}">1</var>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${cell_data}</var>
+<arg>${outer_loop}</arg>
+<arg>${inner_loop}</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20220525 00:31:57.892" level="INFO">${cell_data} = ${username}</msg>
+<status status="PASS" starttime="20220525 00:31:57.892" endtime="20220525 00:31:57.892"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${cell_data}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220525 00:31:57.892" level="INFO">${username}</msg>
+<status status="PASS" starttime="20220525 00:31:57.892" endtime="20220525 00:31:57.892"/>
+</kw>
+<status status="PASS" starttime="20220525 00:31:57.892" endtime="20220525 00:31:57.892"/>
+</iter>
+<iter>
+<var name="${inner_loop}">2</var>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${cell_data}</var>
+<arg>${outer_loop}</arg>
+<arg>${inner_loop}</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20220525 00:31:57.907" level="INFO">${cell_data} = ${password}</msg>
+<status status="PASS" starttime="20220525 00:31:57.892" endtime="20220525 00:31:57.907"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${cell_data}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220525 00:31:57.907" level="INFO">${password}</msg>
+<status status="PASS" starttime="20220525 00:31:57.907" endtime="20220525 00:31:57.907"/>
+</kw>
+<status status="PASS" starttime="20220525 00:31:57.892" endtime="20220525 00:31:57.907"/>
+</iter>
+<status status="PASS" starttime="20220525 00:31:57.892" endtime="20220525 00:31:57.907"/>
+</for>
+<status status="PASS" starttime="20220525 00:31:57.892" endtime="20220525 00:31:57.907"/>
+</kw>
+<status status="PASS" starttime="20220525 00:31:57.892" endtime="20220525 00:31:57.907"/>
+</iter>
+<iter>
+<var name="${outer_loop}">2</var>
+<kw name="Parameterized For Loop" library="UDK">
+<arg>${rows_len}</arg>
+<arg>${outer_loop}</arg>
+<for flavor="IN RANGE">
+<var>${inner_loop}</var>
+<value>1</value>
+<value>${rows_len}+1</value>
+<iter>
+<var name="${inner_loop}">1</var>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${cell_data}</var>
+<arg>${outer_loop}</arg>
+<arg>${inner_loop}</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20220525 00:31:57.907" level="INFO">${cell_data} = A@gmail.com</msg>
+<status status="PASS" starttime="20220525 00:31:57.907" endtime="20220525 00:31:57.907"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${cell_data}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220525 00:31:57.907" level="INFO">A@gmail.com</msg>
+<status status="PASS" starttime="20220525 00:31:57.907" endtime="20220525 00:31:57.907"/>
+</kw>
+<status status="PASS" starttime="20220525 00:31:57.907" endtime="20220525 00:31:57.907"/>
+</iter>
+<iter>
+<var name="${inner_loop}">2</var>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${cell_data}</var>
+<arg>${outer_loop}</arg>
+<arg>${inner_loop}</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20220525 00:31:57.907" level="INFO">${cell_data} = Namma2020@@@</msg>
+<status status="PASS" starttime="20220525 00:31:57.907" endtime="20220525 00:31:57.907"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${cell_data}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220525 00:31:57.923" level="INFO">Namma2020@@@</msg>
+<status status="PASS" starttime="20220525 00:31:57.907" endtime="20220525 00:31:57.923"/>
+</kw>
+<status status="PASS" starttime="20220525 00:31:57.907" endtime="20220525 00:31:57.923"/>
+</iter>
+<status status="PASS" starttime="20220525 00:31:57.907" endtime="20220525 00:31:57.923"/>
+</for>
+<status status="PASS" starttime="20220525 00:31:57.907" endtime="20220525 00:31:57.923"/>
+</kw>
+<status status="PASS" starttime="20220525 00:31:57.907" endtime="20220525 00:31:57.923"/>
+</iter>
+<iter>
+<var name="${outer_loop}">3</var>
+<kw name="Parameterized For Loop" library="UDK">
+<arg>${rows_len}</arg>
+<arg>${outer_loop}</arg>
+<for flavor="IN RANGE">
+<var>${inner_loop}</var>
+<value>1</value>
+<value>${rows_len}+1</value>
+<iter>
+<var name="${inner_loop}">1</var>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${cell_data}</var>
+<arg>${outer_loop}</arg>
+<arg>${inner_loop}</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20220525 00:31:57.923" level="INFO">${cell_data} = B@outlook.com</msg>
+<status status="PASS" starttime="20220525 00:31:57.923" endtime="20220525 00:31:57.923"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${cell_data}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220525 00:31:57.923" level="INFO">B@outlook.com</msg>
+<status status="PASS" starttime="20220525 00:31:57.923" endtime="20220525 00:31:57.923"/>
+</kw>
+<status status="PASS" starttime="20220525 00:31:57.923" endtime="20220525 00:31:57.923"/>
+</iter>
+<iter>
+<var name="${inner_loop}">2</var>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${cell_data}</var>
+<arg>${outer_loop}</arg>
+<arg>${inner_loop}</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20220525 00:31:57.923" level="INFO">${cell_data} = Namma2021@@@</msg>
+<status status="PASS" starttime="20220525 00:31:57.923" endtime="20220525 00:31:57.923"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${cell_data}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220525 00:31:57.923" level="INFO">Namma2021@@@</msg>
+<status status="PASS" starttime="20220525 00:31:57.923" endtime="20220525 00:31:57.939"/>
+</kw>
+<status status="PASS" starttime="20220525 00:31:57.923" endtime="20220525 00:31:57.939"/>
+</iter>
+<status status="PASS" starttime="20220525 00:31:57.923" endtime="20220525 00:31:57.939"/>
+</for>
+<status status="PASS" starttime="20220525 00:31:57.923" endtime="20220525 00:31:57.939"/>
+</kw>
+<status status="PASS" starttime="20220525 00:31:57.923" endtime="20220525 00:31:57.939"/>
+</iter>
+<iter>
+<var name="${outer_loop}">4</var>
+<kw name="Parameterized For Loop" library="UDK">
+<arg>${rows_len}</arg>
+<arg>${outer_loop}</arg>
+<for flavor="IN RANGE">
+<var>${inner_loop}</var>
+<value>1</value>
+<value>${rows_len}+1</value>
+<iter>
+<var name="${inner_loop}">1</var>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${cell_data}</var>
+<arg>${outer_loop}</arg>
+<arg>${inner_loop}</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20220525 00:31:57.939" level="INFO">${cell_data} = C@gmail.com</msg>
+<status status="PASS" starttime="20220525 00:31:57.939" endtime="20220525 00:31:57.939"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${cell_data}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220525 00:31:57.939" level="INFO">C@gmail.com</msg>
+<status status="PASS" starttime="20220525 00:31:57.939" endtime="20220525 00:31:57.939"/>
+</kw>
+<status status="PASS" starttime="20220525 00:31:57.939" endtime="20220525 00:31:57.939"/>
+</iter>
+<iter>
+<var name="${inner_loop}">2</var>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${cell_data}</var>
+<arg>${outer_loop}</arg>
+<arg>${inner_loop}</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20220525 00:31:57.939" level="INFO">${cell_data} = Namma2022@@@</msg>
+<status status="PASS" starttime="20220525 00:31:57.939" endtime="20220525 00:31:57.939"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${cell_data}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220525 00:31:57.939" level="INFO">Namma2022@@@</msg>
+<status status="PASS" starttime="20220525 00:31:57.939" endtime="20220525 00:31:57.939"/>
+</kw>
+<status status="PASS" starttime="20220525 00:31:57.939" endtime="20220525 00:31:57.939"/>
+</iter>
+<status status="PASS" starttime="20220525 00:31:57.939" endtime="20220525 00:31:57.939"/>
+</for>
+<status status="PASS" starttime="20220525 00:31:57.939" endtime="20220525 00:31:57.939"/>
+</kw>
+<status status="PASS" starttime="20220525 00:31:57.939" endtime="20220525 00:31:57.939"/>
+</iter>
+<iter>
+<var name="${outer_loop}">5</var>
+<kw name="Parameterized For Loop" library="UDK">
+<arg>${rows_len}</arg>
+<arg>${outer_loop}</arg>
+<for flavor="IN RANGE">
+<var>${inner_loop}</var>
+<value>1</value>
+<value>${rows_len}+1</value>
+<iter>
+<var name="${inner_loop}">1</var>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${cell_data}</var>
+<arg>${outer_loop}</arg>
+<arg>${inner_loop}</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20220525 00:31:57.954" level="INFO">${cell_data} = D@outlook.com</msg>
+<status status="PASS" starttime="20220525 00:31:57.954" endtime="20220525 00:31:57.954"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${cell_data}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220525 00:31:57.954" level="INFO">D@outlook.com</msg>
+<status status="PASS" starttime="20220525 00:31:57.954" endtime="20220525 00:31:57.954"/>
+</kw>
+<status status="PASS" starttime="20220525 00:31:57.954" endtime="20220525 00:31:57.954"/>
+</iter>
+<iter>
+<var name="${inner_loop}">2</var>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${cell_data}</var>
+<arg>${outer_loop}</arg>
+<arg>${inner_loop}</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20220525 00:31:57.954" level="INFO">${cell_data} = Namma2023@@@</msg>
+<status status="PASS" starttime="20220525 00:31:57.954" endtime="20220525 00:31:57.954"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${cell_data}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220525 00:31:57.954" level="INFO">Namma2023@@@</msg>
+<status status="PASS" starttime="20220525 00:31:57.954" endtime="20220525 00:31:57.954"/>
+</kw>
+<status status="PASS" starttime="20220525 00:31:57.954" endtime="20220525 00:31:57.954"/>
+</iter>
+<status status="PASS" starttime="20220525 00:31:57.954" endtime="20220525 00:31:57.954"/>
+</for>
+<status status="PASS" starttime="20220525 00:31:57.939" endtime="20220525 00:31:57.954"/>
+</kw>
+<status status="PASS" starttime="20220525 00:31:57.939" endtime="20220525 00:31:57.954"/>
+</iter>
+<iter>
+<var name="${outer_loop}">6</var>
+<kw name="Parameterized For Loop" library="UDK">
+<arg>${rows_len}</arg>
+<arg>${outer_loop}</arg>
+<for flavor="IN RANGE">
+<var>${inner_loop}</var>
+<value>1</value>
+<value>${rows_len}+1</value>
+<iter>
+<var name="${inner_loop}">1</var>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${cell_data}</var>
+<arg>${outer_loop}</arg>
+<arg>${inner_loop}</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20220525 00:31:57.954" level="INFO">${cell_data} = E@gmail.com</msg>
+<status status="PASS" starttime="20220525 00:31:57.954" endtime="20220525 00:31:57.954"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${cell_data}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220525 00:31:57.970" level="INFO">E@gmail.com</msg>
+<status status="PASS" starttime="20220525 00:31:57.970" endtime="20220525 00:31:57.970"/>
+</kw>
+<status status="PASS" starttime="20220525 00:31:57.954" endtime="20220525 00:31:57.970"/>
+</iter>
+<iter>
+<var name="${inner_loop}">2</var>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${cell_data}</var>
+<arg>${outer_loop}</arg>
+<arg>${inner_loop}</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20220525 00:31:57.970" level="INFO">${cell_data} = Namma2024@@@</msg>
+<status status="PASS" starttime="20220525 00:31:57.970" endtime="20220525 00:31:57.970"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${cell_data}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220525 00:31:57.970" level="INFO">Namma2024@@@</msg>
+<status status="PASS" starttime="20220525 00:31:57.970" endtime="20220525 00:31:57.970"/>
+</kw>
+<status status="PASS" starttime="20220525 00:31:57.970" endtime="20220525 00:31:57.970"/>
+</iter>
+<status status="PASS" starttime="20220525 00:31:57.954" endtime="20220525 00:31:57.970"/>
+</for>
+<status status="PASS" starttime="20220525 00:31:57.954" endtime="20220525 00:31:57.970"/>
+</kw>
+<status status="PASS" starttime="20220525 00:31:57.954" endtime="20220525 00:31:57.970"/>
+</iter>
+<iter>
+<var name="${outer_loop}">7</var>
+<kw name="Parameterized For Loop" library="UDK">
+<arg>${rows_len}</arg>
+<arg>${outer_loop}</arg>
+<for flavor="IN RANGE">
+<var>${inner_loop}</var>
+<value>1</value>
+<value>${rows_len}+1</value>
+<iter>
+<var name="${inner_loop}">1</var>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${cell_data}</var>
+<arg>${outer_loop}</arg>
+<arg>${inner_loop}</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20220525 00:31:57.970" level="INFO">${cell_data} = F@outlook.com</msg>
+<status status="PASS" starttime="20220525 00:31:57.970" endtime="20220525 00:31:57.970"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${cell_data}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220525 00:31:57.986" level="INFO">F@outlook.com</msg>
+<status status="PASS" starttime="20220525 00:31:57.986" endtime="20220525 00:31:57.986"/>
+</kw>
+<status status="PASS" starttime="20220525 00:31:57.970" endtime="20220525 00:31:57.986"/>
+</iter>
+<iter>
+<var name="${inner_loop}">2</var>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${cell_data}</var>
+<arg>${outer_loop}</arg>
+<arg>${inner_loop}</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20220525 00:31:57.986" level="INFO">${cell_data} = Namma2025@@@</msg>
+<status status="PASS" starttime="20220525 00:31:57.986" endtime="20220525 00:31:57.986"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${cell_data}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220525 00:31:57.986" level="INFO">Namma2025@@@</msg>
+<status status="PASS" starttime="20220525 00:31:57.986" endtime="20220525 00:31:57.986"/>
+</kw>
+<status status="PASS" starttime="20220525 00:31:57.986" endtime="20220525 00:31:57.986"/>
+</iter>
+<status status="PASS" starttime="20220525 00:31:57.970" endtime="20220525 00:31:57.986"/>
+</for>
+<status status="PASS" starttime="20220525 00:31:57.970" endtime="20220525 00:31:57.986"/>
+</kw>
+<status status="PASS" starttime="20220525 00:31:57.970" endtime="20220525 00:31:57.986"/>
+</iter>
+<status status="PASS" starttime="20220525 00:31:57.892" endtime="20220525 00:31:57.986"/>
+</for>
+<status status="PASS" starttime="20220525 00:31:57.860" endtime="20220525 00:31:57.986"/>
+</test>
+<status status="PASS" starttime="20220525 00:31:57.829" endtime="20220525 00:31:57.986"/>
+</suite>
+<status status="PASS" starttime="20220525 00:31:56.191" endtime="20220525 00:31:57.986"/>
+</suite>
+<status status="PASS" starttime="20220525 00:31:56.139" endtime="20220525 00:31:57.986"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="demoProjects">demoProjects</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Testcases">demoProjects.Testcases</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="Read Write">demoProjects.Testcases.Read Write</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

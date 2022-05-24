@@ -3,6 +3,7 @@ Resource          ../common/commom_libraries.robot
 
 *** Test Cases ***
 api_testing_put_example
+    [Tags]    reg
     Comment    Creating session
     Create Session    mySession    https://reqres.in/
     ${data}    Get File    D:\\demoProjects\\testData\\putdata.txt

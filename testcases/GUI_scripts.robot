@@ -10,7 +10,7 @@ Library           ../utilities/callingJavaFunctionInPythonThroughRobot.py
 *** Test Cases ***
 app_login_01
     [Tags]    reg
-    Open Browser    https://www.flipkart.com/    gc
+    Open Browser    https://www.flipkart.com/    ff
     Maximize Browser Window
     sleep    2
     Input text    //* [@class='_2IX_2- VJZDxU']    ${username_value}
@@ -24,10 +24,11 @@ app_login_01
     log    ${user_name}
     Should Be Equal    ${user_name}    Ranjan
     Comment    Click Element    //* [@class='_2KpZ6l _2HKlqd _3AWRsL']4555
+    [Teardown]    Close Browser
 
 app_login_01_headless
     [Tags]    reg
-    Open Browser    https://www.flipkart.com/    gc    #headlesschrome
+    Open Browser    https://www.flipkart.com/    headlesschrome    #headlesschrome
     Maximize Browser Window
     sleep    2
     Input text    //* [@class='_2IX_2- VJZDxU']    ${username_value}
@@ -42,6 +43,7 @@ app_login_01_headless
     Should Be Equal    ${user_name}    Ranjan
     Comment    Click Element    //* [@class='_2KpZ6l _2HKlqd _3AWRsL']4555
     Close Browser
+    [Teardown]    Close Browser
 
 pom_app_login
     [Documentation]    This test case is desgined in POM
@@ -50,6 +52,7 @@ pom_app_login
     App Login
     #Closing all running browsers
     Close All Browsers
+    [Teardown]    Close Browser
 
 app_radio_dropdown_checkbox_example
     # Launching Browser as chrome
@@ -72,6 +75,7 @@ app_radio_dropdown_checkbox_example
     Select Checkbox    //*[@name="terms_and_conditions"]
     # Close Browser
     Close Browser
+    [Teardown]    Close Browser
 
 app_button_example
     Open Browser    https://demoqa.com/buttons    gc
@@ -83,6 +87,7 @@ app_button_example
     sleep    5
     Click Element    //*[@class="mt-4"][2]//*[@class="btn btn-primary"]
     Close All Browser
+    [Teardown]    Close Browser
 
 app_upload_download
     Open Browser    https://demoqa.com/upload-download    gc
@@ -90,6 +95,7 @@ app_upload_download
     Click Element    //a[@id='downloadButton']
     # To perform download
     Choose File    //input[@id='uploadFile']    C:\\Users\\ranja\\OneDrive\\Desktop\\dummy.xlsx
+    [Teardown]    Close Browser
 
 app_switch_newTab
     Open Browser    https://demoqa.com/browser-windows    gc
@@ -102,8 +108,10 @@ app_switch_newTab
     log    ${sample_text}
     sleep    2
     Close Browser
+    [Teardown]    Close Browser
 
 app_switch_newWindow
+    [Setup]    Close Browser
     Open Browser    https://demoqa.com/browser-windows    gc
     Click Element    //button[@id='windowButton']
     Maximize Browser Window
@@ -151,6 +159,7 @@ app_switch_multiBrowser
     FOR    ${window}    IN    ${window_handles}
         log    ${window}
     END
+    [Teardown]    Close Browser
 
 test
     keyword_test
@@ -173,6 +182,7 @@ app_frame
     Select Frame    //*[@id="frame1"]
     ${myString}    Get Text    //h1[@id="sampleHeading"]
     log    ${myString}
+    [Teardown]    Close Browser
 
 app_sleep_speed_timeout_Implict
     Launch App Browser    https://demoqa.com/automation-practice-form
@@ -198,9 +208,11 @@ app_sleep_speed_timeout_Implict
     Set Selenium Implicit Wait    10
     log    ${siw}
     Wait Until Page Contains    adsf
+    [Teardown]    Close Browser
 
 use_of_custom_keyword
     count_of_characters    Ranjan
+    [Teardown]    Close Browser
 
 html_table_validation
     Open Browser    https://www.w3schools.com/html/html_tables.asp    gc
@@ -215,6 +227,24 @@ html_table_validation
     table row should contain    //table[@id="customers"]    4    Ernst Handel
     table cell should contain    //table[@id="customers"]    4    2    Roland Mendel
     table header should contain    //table[@id="customers"]    Country
+    [Teardown]    Close Browser
+
+app_login_cross_browser
+    [Tags]    reg
+    Open Browser    https://www.flipkart.com/    browser=${browser}
+    Maximize Browser Window
+    sleep    2
+    Input text    //* [@class='_2IX_2- VJZDxU']    ${username_value}
+    sleep    2
+    Input text    //* [@type='password']    ${password_value}
+    sleep    2
+    Click Element    //* [@class='_2KpZ6l _2HKlqd _3AWRsL']
+    sleep    2
+    Comment    Capture Page Screenshot
+    ${user_name}    get text    //*[@class='exehdJ']
+    log    ${user_name}
+    Should Be Equal    ${user_name}    Ranjan
+    Comment    Click Element    //* [@class='_2KpZ6l _2HKlqd _3AWRsL']4555
     [Teardown]    Close Browser
 
 *** Keywords ***

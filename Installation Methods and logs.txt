@@ -71,6 +71,8 @@ To execute test in vmd
 ======================
 simple run: robot regression.robot
 selected test execution: robot --include reg GUI_scripts.robot
+it must have 02 or more than 2
+pabot --processes 3  --include reg  D:\demoProjects\testcases
 
 
 API Testing
@@ -183,6 +185,14 @@ run the jlnp
 build run you program using build with param
 
 
+==================outputdir======================
+1997/01/27 18:30 
+%date:~-4,4%%date:~-10,2%%date:~-7,2% 
+year: appending with %date:~-4,4% the last 4 characters of the current locale date which is obviously the year,
+day: appending with %date:~-10,2% the tenth and ninth characters from right side of the current locale date which is most likely the month,
+month: appending with %date:~-7,2% the seventh and sixth characters from right side of the current locale date which is most likely the day,
+
+
 =======================Xpath=====================
 ../--> used go one node up
 /*  --> used to go one node down
@@ -252,10 +262,6 @@ h) Descendant:
 
 
 
-	
-	
-
-
 https://www.guru99.com/xpath-selenium.html
 Xpath=//tagname[@attribute='value']
 ex: Xpath=//input[@name='uid']
@@ -267,6 +273,34 @@ Starts with
 Xpath=//label[starts-with(@id,'message')]
 text
 Xpath=//td[text()='UserID']
+
+
+
+Additional topics
+===================
+Can we use Webdrivermanager in Robot framework
+Python Basics - coding
+For/If Else/Switch/loops – Coding
+User Defined Modules-->Done
+Optimizing Waits in scripts--Done
+Page Object Model--Done
+Data Driven through CVS/Xls or any other source (Single sheet mapping to different test cases)
+Exception Handling
+How to handle Tabbed - Browser windows/Complex elements--> look for this
+Test Report to generated with timestamp(so the reports are not overwritten)-->Done
+Data base connectivity & Validation-->Done
+Parallel Test Execution / Selenium Grid--Done suing pabot
+Triggering Jobs in b/w the test execution (Connecting to terminal during execution)
+Wait period of x mins for the jobs to complete
+How to set variable values from Run time command arguments to Robot framework (like browser , tags etc)
+Generation of emails after test execution for reports--Done
+Integration with Jenkins/GIT etc--Done
+API automation--Done
+Other features/capabilities of Robot framework, you may be aware of
+
+
+
+
 
 
  
